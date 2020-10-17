@@ -14,10 +14,7 @@ import AboutUsPage from "./AboutUs"
 import ContactPage from "./Contact"
 import ProductionPage from "./Production"
 import MainPage from "./MainPage"
-<<<<<<< HEAD
 import UnderPage from "./UnderPage"
-=======
->>>>>>> d656ca4929e111ebfb2f079384b7c5e67b9228a8
 
 
 // import components

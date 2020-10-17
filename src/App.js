@@ -15,25 +15,16 @@ import ProductionPage from "./pages/Production"
 import BaletkaPage from "./pages/Baletka"
 
 
-function App() {  
+function App() {
   return (
-
     <div className='appPage'>
-<<<<<<< HEAD
-
-      {/* auto */}
-      {/* <img alt="user-avatar" className={classes.photo} src={require('../../assets/img/person.png')}/> */}
-       <BrowserRouter>
-       <CssBaseline />
-=======
       <BrowserRouter>
-        <CssBaseline />
->>>>>>> d656ca4929e111ebfb2f079384b7c5e67b9228a8
-        <Switch>
-          <Route path="/" component={BaletkaPage} exact />
-          <Route path={["/contact", "/main", "/about-us", "/production"]} component={MainPage} />
-        </Switch>
-      </BrowserRouter>
+        <CssBaseline/>
+          <Switch>
+            <Route path="/" component={BaletkaPage} exact />
+            <Route path={["/contact", "/main", "/about-us", "/production"]} component={MainPage} />
+          </Switch>
+        </BrowserRouter>
     </div>
   );
 }

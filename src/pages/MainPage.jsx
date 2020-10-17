@@ -7,7 +7,7 @@ import { makeStyles, createStyles, styled } from '@material-ui/styles';
 import TmavaModra from "../picture/modratmava.jpg"
 import MainGridLayout from "../components/MainGridLayout"
 import BaletkaVideo from '../video/introVideo.mp4'
-import YoutubeIcon from '../picture/video-play.svg';
+// import YoutubeIcon from '../picture/video-play.svg';
 import { render } from '@testing-library/react';
 
 
@@ -55,7 +55,7 @@ function MainPage() {
                 <NavLink className='nav-link-button second' to='/about-us'><strong>read more</strong></NavLink>
                 <div className="video-cointainer">
                     <div className="main-overview" />
-                    <img className="instagram-icon" onClick={playVideo} src={YoutubeIcon} alt="Instagram icon" />
+                    <img className="instagram-icon" onClick={playVideo}  alt="Instagram icon" />
                     <video className="video" ref={vidRef} >
                         <source src={BaletkaVideo} type="video/mp4" />
                     </video>
