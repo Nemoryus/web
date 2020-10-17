@@ -4,7 +4,7 @@ import ProfilPicture from '../picture/profilPicutre.png'
 import ProfilPicture2 from '../picture/profilPicture2.png'
 import { Text } from '../containers/Language';
 
-function AboutUsPage(props) {
+function AboutUsPage() {
    return(
         <div className='container-about-us'>
             <h3><Text tid="contact" /></h3>

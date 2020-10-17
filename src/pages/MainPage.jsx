@@ -1,32 +1,47 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 // import { NavLink } from 'react-router-dom'  
 
 import { NavLink } from 'react-router-dom'
-import { makeStyles, createStyles, styled } from '@material-ui/styles';
 
-import TmavaModra from "../picture/modratmava.jpg"
 import MainGridLayout from "../components/MainGridLayout"
 import BaletkaVideo from '../video/introVideo.mp4'
-// import YoutubeIcon from '../picture/video-play.svg';
-import { render } from '@testing-library/react';
-
-
-
-
-
-
-
+import PlayButtonImg from '../picture/video-play.svg';
+import StopButtonImg from '../picture/video-stop.svg';
 
 
 function MainPage() {
     const vidRef = useRef(null);
+    let [hover, setHover] = useState(false);
+    let [isPlayed, setIsPlayed] = useState(false);
+    const styles = {
+        show: {
+            display: 'block'
+        },
+        hiden: {
+            display: 'none'
+        }
+    };
+
+    const hoverEnter = e => {
+        if (isPlayed) {
+            setHover(true);
+        }
+    };
+
+    const hoverLeave = e => {
+        setHover(false);
+    };
 
     const playVideo = () => {
         vidRef.current.play();
+        setIsPlayed(true);
+        setHover(true);
     }
 
     const stopVideo = () => {
-        vidRef.current.stop();
+        vidRef.current.pause();
+        setIsPlayed(false);
+        setHover(false)
     }
 
     return (
@@ -53,9 +68,10 @@ function MainPage() {
             </p>
 
                 <NavLink className='nav-link-button second' to='/about-us'><strong>read more</strong></NavLink>
-                <div className="video-cointainer">
-                    <div className="main-overview" />
-                    <img className="instagram-icon" onClick={playVideo}  alt="Instagram icon" />
+                <div className="video-cointainer" onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
+                    <div className="main-overview" style={isPlayed ? styles.hiden : styles.show} />
+                    <img className="button-icon play-button" onMouseLeave={hoverLeave} onClick={playVideo} style={isPlayed ? styles.hiden : styles.show} src={PlayButtonImg} alt="Instagram icon" />
+                    <img className="button-icon stop-button" onClick={stopVideo} style={hover ? styles.show : styles.hiden} src={StopButtonImg} alt="Instagram icon" />
                     <video className="video" ref={vidRef} >
                         <source src={BaletkaVideo} type="video/mp4" />
                     </video>

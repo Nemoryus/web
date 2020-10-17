@@ -13,7 +13,7 @@ import Logo from '../picture/logo.png';
 import BaletkaVideo from '../video/introVideo.mp4';
 import { NavLink } from 'react-router-dom'
 
-function BaletkaPage(props) {
+function BaletkaPage() {
   const [youtubeIcon, setYoutubeIcon] = useState({ img: YoutubeIcon });
   const [instagramIcon, setInstagramIcon] = useState({ img: InstagramIcon });
   const [facebookIcon, setFacebookIcon] = useState({ img: FacebookIcom });
