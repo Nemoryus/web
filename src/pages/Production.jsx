@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import { useHistory } from 'react-router-dom'
-import { makeStyles } from '@material-ui/core/styles';
-import AwesomeSlider from 'react-awesome-slider';
-import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import { Text } from '../containers/Language';
 
 // import 'react-awesome-slider/dist/styles.css';
 
-import CoreStyles from 'react-awesome-slider/src/core/styles.scss';
-import AnimationStyles from 'react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss';
 
 import UnderPage from "./UnderPage"
 //components
-import UnderPageMenu from '../components/UnderPageMenu';
 import CategoryMenu from '../components/CategoryMenu';
 import AllPerformaceMenu from '../components/AllPerformanceMenu';
 import ProductionFirstGrid from '../components/ProductionFirstGrid'
@@ -26,9 +19,8 @@ import { MUSICALS, BALLET_OPERA, SHOW, DANCE_THEATER } from '../data/data';
 // console.log("Prvy pokus: "+MUSICALS.length);
 
 
-export default function ProductionPage(props) {
+export default function ProductionPage() {
   const musicals = MUSICALS;
-  const history = useHistory();
 
 
 
@@ -54,7 +46,6 @@ export default function ProductionPage(props) {
   const numberOfLastDataArray = Object.keys(arrayOfAllData).length - 1;
   const numberOfLastVariableInDataArray = Object.keys(arrayOfAllData[numberOfLastDataArray]).length;
 
-  const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 
   function CreateAllGrid(handleSelectedPredstavenie) {
