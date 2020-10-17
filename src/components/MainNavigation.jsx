@@ -5,8 +5,8 @@ export default function MainNavigation(props) {
    return(
         <nav className='navigation'>
             <NavLink className='navlink about-us' to="/about-us" exact><strong>ABOUT US</strong></NavLink>
-            <NavLink className='navlink contact' to="/contact"><strong>CONTACT</strong></NavLink>
             <NavLink className='navlink production' to="/production"><strong>PRODUCTION</strong></NavLink>
+            <NavLink className='navlink contact' to="/contact"><strong>CONTACT</strong></NavLink>
         </nav>
     );   
 }

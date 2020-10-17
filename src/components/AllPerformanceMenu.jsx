@@ -9,14 +9,6 @@ import { SHOW } from '../data/data';
 import { DANCE_THEATER } from '../data/data';
 
 
-
-
-
-
-
-
-
-
 export default function CategoryMenu({ handleSelectedPredstavenie }) {
     const menu = [];
     let count = 1;

@@ -2,6 +2,13 @@ body{
     font-family: 'Montserrat'!important;
     overflow-x: hidden;
 }
+.MuiPaper-rounded {
+    border-radius:none!important;
+}
+
+.MuiPaper-elevation1{
+    border-radius:none!important;
+}
 
 .button{
     display: block;
@@ -10,8 +17,6 @@ body{
     border: 2px solid;
     border-color: #FF0000;
     border-radius: 8px;
-    /* box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3); */
-    /* text-transform: lowercase; */
     letter-spacing: 5px;
     white-space: nowrap;
     font-size: 0.75rem;
@@ -28,7 +33,6 @@ body{
     border: 2px solid;
     border-color: #FF0000;
     border-radius: 8px;
-    box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
     text-transform: lowercase;
     letter-spacing: 5px;
     white-space: nowrap;
@@ -37,6 +41,11 @@ body{
     height: 42px;
     text-decoration: none;
 }
+.nav-link-button:hover {
+    box-shadow: 0 0 5px 5px rgba(255, 105, 135, .3);
+}
+
+
 /*          Uvodna strana     -      Baletka      */
 
 
@@ -70,24 +79,24 @@ body{
 }
 .inner-container-baletka-first{
     top: 0;
-    height: 30%;
+    height: 40%;
 }
 
 .inner-container-baletka-second{
     display: block;
     bottom: 0;
-    height: 70%;
+    height: 60%;
 }
 
 .logo-container-baletka{
     display: inline-block;
-    height: 90%;
+    height: 80%;
     width: 100%;
 }
 
 .grid-container-baletka{
     display: inline-block;
-    height: 10%;
+    height: 2   0%;
     width: 100%;
 }
 
@@ -96,8 +105,7 @@ body{
 }
 
 .container-baletka .logo{
-    height: 300px;
-    width: 400px;
+    width: 200px;
 }
 
 .container-baletka .video{
@@ -119,7 +127,7 @@ body{
     top:0;
     opacity: 0.7;
     z-Index:-50;
-    background-color: #000623;
+    background-color: #040821;
 }
 
 
@@ -143,7 +151,7 @@ body{
 
 @media only screen and (min-width: 960px){
     .cointainer-socialIcon a{
-        margin-right: 5px;
+        margin-right: 10px;
     }
 
     .baletka-paper-socialIcon {
@@ -164,7 +172,7 @@ body{
     }
     
     .baletka-paper-socialIcon{
-        width: 230px;
+        width: 200px;
         margin: 0 auto!important;
     }
 
@@ -173,7 +181,7 @@ body{
         margin: 0 auto;
     }
     .cointainer-socialIcon a:not(:last-child){
-        margin-right: 47.5px;
+        margin-right: 32.5px;
     }
     
 }
@@ -240,31 +248,36 @@ body{
     }    
 
     .container-baletka .logo{
-        height: 200px;
-        width: 200px;
+        width: 30%;
+        max-width: 200px;
     }
 }
 
 
 /*      Hlavicka      */
 header{
-    height: 126px;
+    position: fixed;
+    top: 0;
     width: 100%;
-    background-color: #000623;
+    height: 100px;
+    width: 100%;
+    z-index: 200;
+    background-color: #040821;
 }
 .option:hover{
-    background-color: #000623!important;
+    background-color: #040821!important;
 }
 
 .MuiNativeSelect-select:not([multiple]) option, .MuiNativeSelect-select:not([multiple]) optgroup {
-    background-color: #000623!important;
+    background-color: #040821!important;
 }
 
 
 .header{
     display: block;
-    width: 100%; 
+    width: 95%; 
     height: 100%;
+    margin: 0 auto;
 }
 .header .MuiGrid-root{
     height:99%;
@@ -280,13 +293,12 @@ header{
 }
 
 .header-logo{
-    padding-bottom: 20px;
-    width: 183px;
-    height: 150px;
+    width: 100px;
+    margin-top: 25px;
 }
 
 .header .navlink-image{
-    background-color:#000623;
+    background-color:#040821;
     display: block;
     overflow: hidden;
     width: 100%;
@@ -294,10 +306,6 @@ header{
 }
 .header .MuiPaper-rounded {
     border-radius: 0px!important;
-}
-
-.header .MuiGrid-container{
-    padding-left: 20px;
 }
 
 
@@ -311,18 +319,18 @@ header .navigation {
     display: inline-block;
     letter-spacing: 5px;
     white-space: nowrap;
-    margin-top: 55px;
-    margin-left: 40px;
 }
 
 .navlink{
     color: white;
     text-decoration: none;  
 }
+.header-navigation-cointainer{
+    margin-top: 40px;
+}
 
 header .navlink:not(:last-child){
-    margin-right: 78%;
-
+    margin-right: 207px;
 }
 @media screen and (max-width: 1260px){
     header .navlink:not(:last-child){
@@ -346,6 +354,11 @@ header .navlink:not(:last-child){
 
 }
 
+
+.header .MuiPaper-elevation1{
+    box-shadow: none;
+}
+
 .header .MuiInputBase-root{
     color: white;
 }
@@ -363,22 +376,22 @@ header .navlink:not(:last-child){
 }
 
 .header .MuiSelect-select:focus{
-    background-color: #000623;
+    background-color: #040821;
 }
 
 .header .language-select-form-control{
     float: right;
 }
 .header-paper-language{
-    margin: 47px 20px;
+    margin-top: 34px;
 }
 
 /*        Footer     */
 footer{
     position: relative;
-    height: 480px;
+    height: 200px;
     width: 100%;
-    background-color: #000623;
+    background-color: #040821;
 }
 
 .footer{
@@ -386,14 +399,8 @@ footer{
     height: 100%;
 }
 
-.footer .MuiPaper-elevation1{
-    box-shadow: none!important;
-    width: 100%;
-}
-
 .footer-logo{
-    width: 183px;
-    height: 150px;
+    width: 100px;
 }
 
 .footer .MuiPaper-root{
@@ -419,8 +426,10 @@ footer p{
     float: right;
 }
 
-.footer .MuiGrid-container{
-    padding: 0 50px;
+.footer-grid-cointainer{
+    padding-top: 73px;
+    width: 90%!important;
+    margin: 0 auto;
 }
 
 
@@ -428,11 +437,6 @@ footer p{
     white-space: nowrap;
 }
 
-@media screen and (max-width: 1200px){
-    .footer-paperGrid-navigation {
-        padding-left: 120px;
-    }
-}
 
 footer nav a{
     float: none;
@@ -442,19 +446,25 @@ footer nav a{
     justify-content: flex-start;
 }
 
+.footer .MuiPaper-elevation1{
+    box-shadow: none!important;
+}
+
+
+@media screen and (max-width: 1200px){
+    .footer-paperGrid-navigation {
+        margin: 0 auto;
+    }
+}
+
 
 @media screen and (min-width: 960px){
-    .footer .MuiGrid-container .MuiGrid-item:not(:first-child){
-        padding-top:200px;
-    }
 
     .footer-paperGrid-navigation{
         padding-left: 100px;
     }
 
-    .footer-paperGrid-logo{
-        padding-top:150px;
-    }
+
     footer p {
         padding-left: 200px;
         padding-right: 200px;
@@ -468,6 +478,10 @@ footer nav a{
         height: 280px;
     }
     
+    .footer-paper-language, .footer-paper-socialIcon{
+        float: right;
+    }
+
     footer .socialIcon {
         height: 30px!important;
         width: 33px!important;
@@ -477,21 +491,22 @@ footer nav a{
     .footer-language{
         float: right!important;
     }
-    .footer-logo{
-        margin-left: -33px;
+
+    .footer-jan p{
+        font-size: 12px!important;
     }
+    
 
     .footer-paperGrid-navigation{
-        padding: 45px 0 0 60px;
+        margin-left: 12%;
+    }
+
+    .footer .MuiPaper-elevation1{
+        box-shadow: none!important;
     }
 
     .footer-paper-language{
-        padding-top: 45px;
-    }
-
-    .footer-logo {
-        width: 150px;
-        height: 130px;
+        /* padding-top: 45px; */
     }   
 
     .footer-paper-socialIcon, .footer-jan{
@@ -517,7 +532,7 @@ footer nav a{
 }
 
 .footer .MuiSelect-select:focus{
-    background-color: #000623;
+    background-color: #040821;
 }
 
 .footer .language-select-form-control{
@@ -530,6 +545,33 @@ marquee{
     margin-top: 1%;   
     color: white;
 }
+
+.main-overview{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+    opacity: 0.7;
+    background-color: #040821;
+}
+.video{
+    width: 100%;
+    height: 100%;
+}
+
+.inner-container-main-first{
+    height: 40%;
+}
+
+
+.container-main{
+    background-color: #040821;
+    margin-top: 100px;
+    
+}
+
 
 .container-main .nav-link-button{
     height: 46px;
@@ -551,8 +593,17 @@ marquee{
     text-align: center;
 }
 
-.container-main video{
+.video-cointainer .instagram-icon{
+    position: absolute;
+    top: 45%;
+    right: 45%;
+    width: 50px;
+    z-index: 200;
+}
+
+.container-main .video-cointainer{
     display: block;
+    position: relative;
     margin: 10% auto 0 auto;
     width: 854px;
     height: 478px;
@@ -569,7 +620,7 @@ marquee{
         width: 40%;
         }
 
-    .container-main video {
+    .container-main .video-cointainer {
         width: 640px;
     }
     
@@ -580,19 +631,19 @@ marquee{
         width: 55%;
     }
 
-    .container-main video {
+    .container-main .video-cointainer {
         width: 500px;
     }
 }
 
 @media screen and (max-width: 600px){
-    .container-main video {
+    .container-main .video-cointainer {
         width: 420px;
     }  
 }
 
 @media screen and (max-width: 600px){
-    .container-main video {
+    .container-main .video-cointainer {
         width: 320px;
     }
 }
@@ -628,7 +679,7 @@ marquee{
     position: absolute;
     top: 0;
     left: 0;
-    background-color:#000623;
+    background-color:#040821;
     width: 100%;
     height: 100%;
     opacity: 0.8;
@@ -656,7 +707,7 @@ marquee{
 }
 
 .dropMenu{
-    background-color: #000623!important;
+    background-color: #040821!important;
     display: none!important;
     position: absolute;
     top: 35px;
@@ -669,7 +720,7 @@ marquee{
 }
 
 .drop-menu-nav-links{
-    background-color:#000623!important;
+    background-color:#040821!important;
 }
 
 .MuiListItem-button a{
@@ -686,9 +737,6 @@ marquee{
     padding: 0 0 0 30px!important;
 }
 
-.footer .MuiPaper-elevation1{
-    box-shadow: none!important;
-}
 
 
 @media screen and (max-width: 960px){
@@ -706,17 +754,7 @@ marquee{
         padding-left: 0;
     }
 }
-@media screen and (max-width: 960px){   
 
-}
-
-@media screen and (max-width: 700px){
-
-}
-
-@media screen and (max-width: 600px){
-
-}
 
 /*          About us         */
 .container-about-us img{
@@ -810,6 +848,7 @@ marquee{
     padding-top: 50px;
     text-align: center;
     height: 800px;
+    background-color: #040821;
 }
 
 .container-contact p{
@@ -876,7 +915,7 @@ marquee{
 
 .container-contact .button-paper{
     height: 474px;
-    background-color: #000623!important;
+    background-color: #040821!important;
 }
 
 .container-contact-css-transition {
@@ -992,7 +1031,7 @@ marquee{
 
 .contact-form{
     height: 474px;
-    background-color: #000623!important;
+    background-color: #040821!important;
 }
 
 .container-contact .MuiGrid-container{
@@ -1099,7 +1138,7 @@ marquee{
     z-index: 101;
     opacity: 0.7;
     position: fixed;
-    background-color: #000623;
+    background-color: #040821;
 }
 
 .donttouchme{

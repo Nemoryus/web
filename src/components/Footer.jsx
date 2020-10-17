@@ -14,7 +14,7 @@ import Logo from '../picture/logo.png';
 export default function Footer(props) {
     return (
         <div className='footer'>
-            <Grid container>
+            <Grid  className = 'footer-grid-cointainer' container>
                 <Grid item xs={4} md={1}>
                     <Paper className='footer-paperGrid-logo'>
                         <img className="footer-logo" src={Logo} alt="Logo" />
@@ -34,7 +34,7 @@ export default function Footer(props) {
                 </Hidden>
                 <Grid item xs={6} md={7}>
                     <Paper className='footer-jan'>
-                        <p>Copyright © 2019 JAN PRODUCTION</p>
+                        <p>Copyright © 2020 Jan Entertainment</p>
                     </Paper>
                 </Grid>
                 <Grid item xs={6} md={2}>

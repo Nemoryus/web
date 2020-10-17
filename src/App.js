@@ -17,10 +17,12 @@ import BaletkaPage from "./pages/Baletka"
 //components
 import Header from "./components/Header"
 
-function App() {
+function App() {  
   return (
     
     <div className='appPage'>
+
+      {/* auto */}
       {/* <img alt="user-avatar" className={classes.photo} src={require('../../assets/img/person.png')}/> */}
        <BrowserRouter>
        <CssBaseline />

@@ -24,8 +24,6 @@ import ProductionPage from "./Production"
 import TmavoModra from "../picture/modratmava.jpg"
 import MainPage from "./MainPage"
 import UnderPage from "./UnderPage"
-import NewUnderPage2 from "./NewUnderPage2"
-import NewKOKOTINA from "./NewKOKOTINA"
 
 import MenuIcon from '@material-ui/icons/Menu';
 

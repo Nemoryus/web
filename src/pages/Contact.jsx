@@ -37,7 +37,7 @@ function ContactPage(props) {
 
     return (
         //`url(${TmavaModra})`
-        <div className='container-contact' style={{ backgroundImage:`url(${TmavaModra})`}}>
+        <div className='container-contact'>
             <h3 className=''><Text tid="contact" /></h3>
             <Grid container className='contanct-grid-container'>
                 <Grid item xs={isOpened ? 6 : 11} className='contanct-grid-first' >

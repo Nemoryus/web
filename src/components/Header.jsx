@@ -22,8 +22,8 @@ export default function Header(props) {
                     </Paper>
                 </Grid>
                 <Hidden  smDown>
-                    <Grid item md={6}>
-                        <Paper >
+                    <Grid  item md={8}>
+                        <Paper className ='header-navigation-cointainer' >
                             <MainNavigation />
                         </Paper>
                     </Grid>
@@ -36,7 +36,7 @@ export default function Header(props) {
                     </Grid>
                 </Hidden>
                 <Hidden smDown>
-                    <Grid item md={3}>
+                    <Grid item md={1}>
                         <Paper className='header-paper-language'>
                             <LanguageSelect className='header-selector' />
                         </Paper>
