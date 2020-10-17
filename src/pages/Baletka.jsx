@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import Button from '@material-ui/core/Button';
-import { styled } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Hidden from '@material-ui/core/Hidden';
 import Grid from "@material-ui/core/Grid";
@@ -15,6 +13,7 @@ import Logo from '../picture/logo.png';
 import BaletkaVideo from '../video/introVideo.mp4';
 import { NavLink } from 'react-router-dom'
 
+<<<<<<< HEAD
 function BaletkaPage(props) {
   const [youtubeIcon, setYoutubeIcon] = useState({ img: YoutubeIcon });
   const [instagramIcon, setInstagramIcon] = useState({ img: InstagramIcon });
@@ -47,6 +46,9 @@ function BaletkaPage(props) {
 
   }
 
+=======
+function BaletkaPage() {
+>>>>>>> d656ca4929e111ebfb2f079384b7c5e67b9228a8
   return (
     <div className="container-baletka">
       <div className="overview" />

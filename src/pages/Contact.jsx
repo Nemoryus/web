@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
 //picture
 import TmavaModra from '../picture/modratmava.jpg';
 import { Text } from '../containers/Language';
 import ContactFormular from '../components/ContactFormular'
-import { CSSTransition } from "react-css-transition";
 import Grid from "@material-ui/core/Grid";
-import Hidden from '@material-ui/core/Hidden';
 import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,8 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function ContactPage(props) {
-    const classes = useStyles();
+function ContactPage() {
     const [isOpened, setOpen] = React.useState(false);
 
     return (
