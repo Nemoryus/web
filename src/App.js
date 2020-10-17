@@ -23,7 +23,7 @@ function App() {
         <CssBaseline />
         <Switch>
           <Route path="/" component={BaletkaPage} exact />
-          <Route path="/main" component={MainPage} />
+          <Route path={["/contact", "/main", "/about-us", "/production"]} component={MainPage} />
         </Switch>
       </BrowserRouter>
     </div>
