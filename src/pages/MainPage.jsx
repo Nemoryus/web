@@ -49,8 +49,13 @@ function MainPage() {
             <div className='inner-container-main-first'>
                 <MainGridLayout></MainGridLayout>
 
-                <NavLink className='nav-link-button firs' to='/production'><strong>view all</strong></NavLink>
-                <marquee ><strong> "Preparation of The eight continent inspired by La Dame aux Camélias has started" / NEWS / "Gala Chorea 2019 sucessful for us "/ NEWS / "Gala Chorea 2019 sucessful for us</strong></marquee>
+                <NavLink className='nav-link-button first' to='/production'><strong>view all</strong></NavLink>
+                <div class="container">
+                    <div class="scrolling">On Monday (September 28, 2020) we started preparation for Stravinsky's evening which will combine two well-known works - Petrushka and The Firebird from the work of a Russian composer named Igor Fiodorovich Stravinsky. It is an interesting combination of modern ballet - dance, music and design. <strong style={{ color: 'red' }}> /NEWS/</strong></div>
+                    <div class="scrolling">On Monday (September 28, 2020) we started preparation for Stravinsky's evening which will combine two well-known works - Petrushka and The Firebird from the work of a Russian composer named Igor Fiodorovich Stravinsky. It is an interesting combination of modern ballet - dance, music and design. <strong style={{ color: 'red' }}> /NEWS/</strong></div>
+                    {/* <marquee ><strong> "Preparation of The eight continent inspired by La Dame aux Camélias has started" / NEWS / "Gala Chorea 2019 sucessful for us "/ NEWS / "Gala Chorea 2019 sucessful for us</strong></marquee> */}
+                </div>
+                
             </div>
             <div className='inner-container-main-second'>
                 <h4>ABOUT US</h4>

@@ -2,9 +2,7 @@ body{
     font-family: 'Montserrat'!important;
     overflow-x: hidden;
 }
-.MuiPaper-rounded {
-    border-radius:none!important;
-}
+
 
 .MuiPaper-elevation1{
     border-radius:none!important;
@@ -29,9 +27,10 @@ body{
 .nav-link-button{
     display: block;
     color: white;
-    width: 184px;
+    width: 180px;
     border: 2px solid;
     border-color: #FF0000;
+    background-color: #FF0000;
     border-radius: 8px;
     text-transform: lowercase;
     letter-spacing: 5px;
@@ -140,6 +139,10 @@ body{
     width:45px;
 }
 
+.baletka-paper-socialIcon{
+    margin-right: 20px;
+}
+
 .baletka-paper-socialIcon, .baletka-paper-button{
     background: transparent!important;
     box-shadow: none!important;
@@ -197,11 +200,11 @@ body{
     }
  
     .inner-container-baletka-first{
-        height: 20%;
+        height: 40%;
     }
 
     .inner-container-baletka-second{
-        height: 80%;
+        height: 60%;
     }
 }
 
@@ -304,7 +307,7 @@ header{
     width: 100%;
     height: 100%;
 }
-.header .MuiPaper-rounded {
+.header .MuiPaper-rounded  {
     border-radius: 0px!important;
 }
 
@@ -416,6 +419,10 @@ footer{
     height: 100%;
 }
 
+.footer-paper-socialIcon{
+    float: right;
+}
+
 footer p{
     display:block;
     color: white;
@@ -428,7 +435,7 @@ footer p{
 
 .footer-grid-cointainer{
     padding-top: 73px;
-    width: 90%!important;
+    width: 95%!important;
     margin: 0 auto;
 }
 
@@ -450,6 +457,14 @@ footer nav a{
     box-shadow: none!important;
 }
 
+.footer-jan{
+    width: 100%;
+}
+
+.footer-jan p{
+    width: 100%;
+    text-align: center;
+}
 
 @media screen and (max-width: 1200px){
     .footer-paperGrid-navigation {
@@ -461,22 +476,21 @@ footer nav a{
 @media screen and (min-width: 960px){
 
     .footer-paperGrid-navigation{
-        padding-left: 100px;
+        padding-left: 50px;
     }
 
-
-    footer p {
-        padding-left: 200px;
-        padding-right: 200px;
-    }
-
-
+  
 }
 
 @media screen and (max-width: 960px){
     footer{
         height: 280px;
     }
+
+    .footer-jan p {
+        text-align: left;
+    }
+
     
     .footer-paper-language, .footer-paper-socialIcon{
         float: right;
@@ -505,9 +519,7 @@ footer nav a{
         box-shadow: none!important;
     }
 
-    .footer-paper-language{
-        /* padding-top: 45px; */
-    }   
+    
 
     .footer-paper-socialIcon, .footer-jan{
         margin-top: 50px;
@@ -542,9 +554,65 @@ footer nav a{
 
 /*   Main page      */
 marquee{
-    margin-top: 1%;   
-    color: white;
+    
 }
+.main-grid-first-cointainer{
+    z-index: 10;
+}
+
+.main-grid-second-cointainer{
+    z-index: 10;
+}
+
+.main-contianer{
+    position: relative;
+}
+
+.main-grid{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.background-shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 0 20px 0px black;
+    background-color: black;
+    opacity: 0.5;
+    /* margin: 50px 50px; */
+}
+
+.container-main .container {
+    box-shadow: -1px 0px 10px 0px rgba(250, 8, 8, 0.842);
+    margin-top: 50px;   
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 50px;
+    padding-top: 10px;
+  }
+  
+  .scrolling {
+    animation: marquee 50s linear infinite;
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 24px;
+  }
+  
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+      /* left: 0%; */
+    }
+    to { 
+      transform: translateX(-100%);
+      /* left: 100%; */
+    }
+  }
 
 .main-overview{
     position: absolute;
@@ -576,11 +644,11 @@ marquee{
 .container-main .nav-link-button{
     height: 46px;
     padding: 13px 0;
-    margin:2% auto 0 auto;
+    margin:40px auto 0 auto;
 }
 
 .container-main h4{
-    margin:2% auto 0 auto;
+    margin:100px auto 0 auto;
     color:white;
     letter-spacing: 5px;
     text-align: center;
@@ -596,7 +664,7 @@ marquee{
 .video-cointainer .button-icon{
     position: absolute;
     top: 45%;
-    right: 45%;
+    left: 49%;
     width: 50px;
     z-index: 200;
 }
@@ -728,11 +796,24 @@ marquee{
     color: white;
 }
 
-.dropMenuPaper{
-    left: -28px!important;
+/* .dropMenuPaper{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translate3d(-78px, 49px, 0px)!important;
+    will-change: transform;
     width: 144px!important;
+} */
+
+/* .dropMenuPaper {
+    text-align: center;
+    width: 100%;
 }
 
+.dropMenuPaper strong{
+    text-align: center!;
+    width: 100%;
+} */
 .header .MuiListItem-gutters{
     padding: 0 0 0 30px!important;
 }
@@ -743,7 +824,14 @@ marquee{
     .dropMenu{
          display: block!important;
      }
+
+     .header{
+        width: 80%;
+     }
      
+     .drop-menu-container{
+         position: relative;
+     }
 }
 
 @media screen and (max-width: 700px){
@@ -1063,6 +1151,10 @@ marquee{
     box-shadow: none;
 }
 
+.production-under-page-cointainer{
+    margin-top: 100px;
+}
+
 .container-production .MuiGrid-root{
     cursor: pointer;
     text-align: center;
@@ -1120,14 +1212,10 @@ marquee{
 }
 
 .under-page-video-cointainer{
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-    position: fixed;
-    /* outline: none !important;
-    overflow:hidden; */
+    position: absolute;
+    top: 30px;
+    left: 100px; 
+    z-index: 102;
 }
 
 .under-page-overview{
@@ -1137,23 +1225,22 @@ marquee{
     height: 100%;
     z-index: 101;
     opacity: 0.7;
-    position: fixed;
+    position: absolute;
     background-color: #040821;
+
 }
 
-.donttouchme{
+/* .donttouchme{
     z-index: 102 ;
-}
+} */
 
-.video-under-page{
-    /* margin: 5% auto 0 auto; */
-    /* margin-top: 2%; */
+/* .video-under-page{
     top: 20%;
     left: 25%;
     width: 50%;
     z-index: 103;
     position: fixed;
-}
+}  */
 .under-page-slider-container{
     position: relative;
     height: 400px;
@@ -1165,6 +1252,7 @@ marquee{
 }
 
 .button-underpage{
+    display: block;
     position: absolute!important;
     left: 100%;
     top: 50%;
@@ -1185,3 +1273,16 @@ marquee{
     background: transparent!important;
 }
 
+.button-underpage-text{
+    position: relative;
+    display: inline-block;
+}
+
+.utton-underpage-icon{
+    position: relative;
+    display: inline-block;
+}
+
+.MuiPaper-rounded {
+    border-radius:none!important;
+}

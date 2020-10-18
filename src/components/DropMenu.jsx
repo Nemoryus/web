@@ -87,9 +87,9 @@ export default function MenuListComposition() {
               <Paper className='drop-menu-nav-links'>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem><NavLink to="/about-us"><strong>ABOUT US</strong></NavLink></MenuItem>
-                    <MenuItem><NavLink to="/contact"><strong>CONTACT</strong></NavLink></MenuItem>
-                    <MenuItem><NavLink to="/production"><strong>PRODUCTION</strong></NavLink></MenuItem>
+                    <MenuItem><NavLink className="dropMenuPaper" to="/about-us"><strong>ABOUT US</strong></NavLink></MenuItem>
+                    <MenuItem><NavLink className="dropMenuPaper" to="/contact"><strong>CONTACT</strong></NavLink></MenuItem>
+                    <MenuItem><NavLink className="dropMenuPaper" to="/production"><strong>PRODUCTION</strong></NavLink></MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

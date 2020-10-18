@@ -238,7 +238,7 @@ export default function ProductionPage() {
           </div>
         </div>
       ) : (
-          <div>
+          <div className='production-under-page-cointainer'>
             <UnderPage categoryItems={categoryItems} indexSelectedPredstavenie={indexSelectedPredstavenie} />
           </div>
         )

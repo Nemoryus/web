@@ -42,6 +42,16 @@ const slider = (
 function UnderPage({ categoryItems, indexSelectedPredstavenie }) {
   const [isOpened, setOpen] = React.useState(false);
 
+  const styles = {
+    show: {
+        display: 'block'
+    },
+    hiden: {
+        display: 'none'
+    }
+};
+
+
   const [currentlyIndexSelectedPredstavenie, setCurentlyIndexSelectedPredstavenie] = useState(indexSelectedPredstavenie);
 
   const handleSelectedPredstavenie = (underPageMenuSelectedIndex) => {
@@ -67,22 +77,12 @@ function UnderPage({ categoryItems, indexSelectedPredstavenie }) {
   return (
     <div className='under-page-container' onClick = {overflowNone}>
       <div className='under-page-slider-container'>
+      <div className="under-page-overview" style= {isOpened? styles.show:styles.hiden} onClick = {overflowNone}/>
         {slider}
-        <IconButton className='button-underpage' onClick={handleClick}>
-          Trailer
-          <SvgIcon >
-            <ArrowDropDownIcon />
-          </SvgIcon>
-        </IconButton>
-        {/* <Button className='button-underpage' onClick={handleClick} >TRAILER</Button> */}
-      </div>
-
-      {console.log("currentlyIndexSelectedPredstavenie: " + currentlyIndexSelectedPredstavenie)}
-      {/* {categoryItems[currentlyIndexSelectedPredstavenie].name} */}
-      <div>
         {isOpened &&
+        
           <div className='under-page-video-cointainer'>
-            <div className="under-page-overview" onClick = {overflowNone}/>
+            
             <div className='donttouchme'>
               <ClickAwayListener onClickAway={handleClickAway}>
                 {/* <video className='video-under-page' autoPlay loop muted >
@@ -92,7 +92,14 @@ function UnderPage({ categoryItems, indexSelectedPredstavenie }) {
               </ClickAwayListener>
             </div>
           </div>}
+        <IconButton className='button-underpage' onClick={handleClick}>
+          <span className= 'button-underpage-text'>Trailer</span>
+          <SvgIcon className= 'button-underpage-icon'>
+            <ArrowDropDownIcon />
+          </SvgIcon>
+        </IconButton>
       </div>
+     
       <div className='menu-under-page'>
         <UnderPageMenu handleSelectedNewIdexPredstavenie={handleSelectedPredstavenie} categoryItems={categoryItems} indexSelectedPredstavenie={indexSelectedPredstavenie} />
       </div>

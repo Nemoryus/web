@@ -29,7 +29,7 @@ export default function Header(props) {
                     </Grid>
                 </Hidden>
                 <Hidden mdUp>
-                    <Grid item xs={6}>
+                    <Grid className='drop-menu-container' item xs={6}>
                         <Paper>
                             <DropMenu />
                         </Paper>

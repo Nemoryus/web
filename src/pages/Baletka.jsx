@@ -4,11 +4,12 @@ import Paper from '@material-ui/core/Paper';
 import Hidden from '@material-ui/core/Hidden';
 import Grid from "@material-ui/core/Grid";
 
-import FacebookIcom from '../picture/facebookIcon.svg';
-import InstagramIcon from '../picture/instagramIcon.svg';
-import InstagramIcon2 from '../picture/instagramIcon2.svg';
-import YoutubeIcon from '../picture/youtubeIcon.svg';
-import YoutubeIcon2 from '../picture/youtubeIcon2.svg';
+import FacebookIcomHover from '../picture/facebookHover.svg';
+import FacebookIcom from '../picture/facebook.svg';
+import InstagramIcon from '../picture/instagram.svg';
+import InstagramIconHover from '../picture/instagramHover.svg';
+import YoutubeIconHover from '../picture/yotubeHover.svg';
+import YoutubeIcon from '../picture/youtube.svg';
 import Logo from '../picture/logo.png';
 import BaletkaVideo from '../video/introVideo.mp4';
 import { NavLink } from 'react-router-dom'
@@ -19,31 +20,41 @@ function BaletkaPage() {
   const [facebookIcon, setFacebookIcon] = useState({ img: FacebookIcom });
 
 
-  const MouseEnterEvent = () => {
+  const MouseEnterEventYotube = () => {
     setYoutubeIcon({
-      img: YoutubeIcon2,
+      img: YoutubeIconHover,
     })
-    setInstagramIcon({
-      img: InstagramIcon2,
-    })
-    setFacebookIcon({
-      img: FacebookIcom,
-    })
-
   }
 
-  const MouseOutEvent = () => {
-    setYoutubeIcon({
-      img: YoutubeIcon,
+  const MouseEnterEventInstagram = () => {
+    setInstagramIcon({
+      img: InstagramIconHover,
     })
+  }
+
+  const MouseEnterEventFacebook = () => {
+    setFacebookIcon({
+      img: FacebookIcomHover,
+    })
+  }
+
+  const MouseOutEventYotube = () => {
+        setYoutubeIcon({
+          img: YoutubeIcon,
+        })
+  }
+
+  const MouseOutEventInstagram = () => {
     setInstagramIcon({
       img: InstagramIcon,
     })
-    setFacebookIcon({
-      img: FacebookIcom,
-    })
+}
 
-  }
+const MouseOutEventFacebook = () => {
+  setFacebookIcon({
+    img: FacebookIcom,
+  })
+}
 
   return (
     <div className="container-baletka">
@@ -72,20 +83,20 @@ function BaletkaPage() {
               <div className='cointainer-socialIcon'>
                 <a href="https://www.facebook.com/durovcikjan">
                   <img className="socialIcon facebook" src={facebookIcon.img} alt="Facebook icon"
-                  onMouseEnter={MouseEnterEvent}
-                  onMouseOut={MouseOutEvent} />
+                    onMouseEnter={MouseEnterEventFacebook}
+                    onMouseOut={MouseOutEventFacebook} />
                 </a>
 
                 <a href="https://www.facebook.com/durovcikjan">
-                  <img className="socialIcon instagram" src={instagramIcon.img} alt="Instagram icon" 
-                  onMouseEnter={MouseEnterEvent}
-                  onMouseOut={MouseOutEvent} />
+                  <img className="socialIcon instagram" src={instagramIcon.img} alt="Instagram icon"
+                    onMouseEnter={MouseEnterEventInstagram}
+                    onMouseOut={MouseOutEventInstagram} />
                 </a>
                 {/* {console.log("image2: " + image.img)} */}
                 <a href="https://www.facebook.com/durovcikjan">
                   <img className="socialIcon youtube" src={youtubeIcon.img} alt="Youtube icon"
-                    onMouseEnter={MouseEnterEvent}
-                    onMouseOut={MouseOutEvent} />
+                    onMouseEnter={MouseEnterEventYotube}
+                    onMouseOut={MouseOutEventYotube} />
                 </a>
               </div>
             </Paper>
