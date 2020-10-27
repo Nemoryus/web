@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
@@ -78,7 +77,7 @@ export default function MenuListComposition() {
         >
           <SvgIcon className='drop-menu-icon'src={MenuIcon}></SvgIcon>
         </IconButton>
-        <Popper className="dropMenuPaper"  open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+        <Popper className="dropMenuPaper" open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}

@@ -39,7 +39,7 @@ const slider = (
 );
 
 
-function UnderPage({ categoryItems, indexSelectedPredstavenie }) {
+function UnderPage({ performances, indexSelectedPredstavenie }) {
   const [isOpened, setOpen] = React.useState(false);
 
   const styles = {
@@ -101,7 +101,7 @@ function UnderPage({ categoryItems, indexSelectedPredstavenie }) {
       </div>
      
       <div className='menu-under-page'>
-        <UnderPageMenu handleSelectedNewIdexPredstavenie={handleSelectedPredstavenie} categoryItems={categoryItems} indexSelectedPredstavenie={indexSelectedPredstavenie} />
+        <UnderPageMenu handleSelectedNewIdexPredstavenie={handleSelectedPredstavenie} performances={performances} indexSelectedPredstavenie={indexSelectedPredstavenie} />
       </div>
 
 

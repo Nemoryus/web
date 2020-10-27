@@ -1,12 +1,51 @@
 import React from "react";
 import {NavLink} from "react-router-dom"
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
 
-export default function MainNavigation(props) {
+const navItems = [
+    {
+        label: 'About us', 
+        url: 'about-us'
+    },
+    {
+        label: 'Production', 
+        url: 'production'
+    },
+    {
+        label: 'Contact', 
+        url: 'contact'
+    }
+]
+
+export default function MainNavigation({ inGrid }) {
    return(
-        <nav className='navigation'>
-            <NavLink className='navlink about-us' to="/about-us" exact><strong>ABOUT US</strong></NavLink>
-            <NavLink className='navlink production' to="/production"><strong>PRODUCTION</strong></NavLink>
-            <NavLink className='navlink contact' to="/contact"><strong>CONTACT</strong></NavLink>
-        </nav>
-    );   
+       <React.Fragment>
+            {inGrid ?
+                <Grid className="header-navigation" container justify="center">
+                    {
+                        navItems.map(navItem => {
+                            return (
+                                <Grid key={navItem.url} item className="t-center" md={3}>
+                                    <NavLink className='navlink' to={navItem.url}>{navItem.label}</NavLink>
+                                </Grid>
+                            ) 
+                        })
+                    }
+                </Grid>
+            :
+                <Box className="footer-navigation">
+                    {
+                        navItems.map(navItem => {
+                            return (
+                                <Box key={navItem.url}>
+                                    <NavLink className='navlink' to={navItem.url}>{navItem.label}</NavLink>
+                                </Box>
+                            )
+                        })
+                    }
+                </Box>
+            }
+        </React.Fragment>
+    );
 }

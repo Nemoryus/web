@@ -1,32 +1,62 @@
 import React from 'react';
+import { Switch, BrowserRouter, Route } from 'react-router-dom';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core'
+import CssBaseline from '@material-ui/core/CssBaseline';
+
 import './App.css';
 import './assets/css/mainCss.css'
 
-import { BrowserRouter } from 'react-router-dom'
-import { Switch, Route } from 'react-router-dom';
-import CssBaseline from '@material-ui/core/CssBaseline';
-
-
-//import pages
-import AboutUsPage from "./pages/AboutUs"
 import MainPage from "./pages/Main"
-import ContactPage from "./pages/Contact"
-import ProductionPage from "./pages/Production"
 import BaletkaPage from "./pages/Baletka"
 
+// const theme = createMuiTheme({
+//   palette: {
+//     text: {
+//       primary: '#fff',
+//       main: 'white'
+//     },
+//     primary: {
+//       main: '#040821',
+//       contrastText: 'white'
+//     },
+//     secondary: {
+//       main: '#FF0000',
+//       contrastText: 'black'
+//     },
+//     // error: {
+//     //   main: '#dc004e',
+//     //   contrastText: 'white'
+//     // },
+//     // blue: {
+//     //   main: blue[500],
+//     //   contrastText: 'white'
+//     // },
+//     // background: {
+//     //   default: '#eef2ec'
+//     // }
+//   },
+// })
 
 function App() {
   return (
     <div className='appPage'>
       <BrowserRouter>
-        <CssBaseline/>
+        {/* <MuiThemeProvider theme={theme}> */}
+          <CssBaseline/>
           <Switch>
-            <Route path="/" component={BaletkaPage} exact />
-            <Route path={["/contact", "/main", "/about-us", "/production"]} component={MainPage} />
+            <Route path="/" component={BaletkaPage} exact/>
+            <Route path={["/contact", "/home", "/about-us", "/production"]} component={MainPage}/>
           </Switch>
-        </BrowserRouter>
+        {/* </MuiThemeProvider> */}
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
+//todo:
+// alt to images and videos
+// header navlinks -> menu items
+// spravit textove konstanty z BALLET_OPERA, SHOW, DANCE_THEATER, MUSICAL a mozno aj este nieco ine co sa viac krat pouziva v app  
+// preklad

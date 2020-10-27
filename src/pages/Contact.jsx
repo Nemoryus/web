@@ -1,69 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-//picture
-import TmavaModra from '../picture/modratmava.jpg';
+
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+
 import { Text } from '../containers/Language';
 import ContactFormular from '../components/ContactFormular'
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-            width: '25ch',
-        },
-    },
-    dropdown: {
-        position: 'absolute',
-        top: 28,
-        right: 0,
-        left: 0,
-        zIndex: 1,
-        border: '1px solid',
-        padding: theme.spacing(1),
-        backgroundColor: theme.palette.background.paper,
-    },
-}));
-
 
 function ContactPage() {
-    const [isOpened, setOpen] = React.useState(false);
+    const [isOpenedForm, setOpenForm] = useState(false);
+
+    const toggleOpenedForm = () => {
+        setOpenForm((isOpenedForm) => !isOpenedForm);
+    };
 
     return (
-        //`url(${TmavaModra})`
-        <div className='container-contact'>
-            <h3 className=''><Text tid="contact" /></h3>
-            <Grid container className='contanct-grid-container'>
-                <Grid item xs={isOpened ? 6 : 11} className='contanct-grid-first' >
-                    <Paper >
+        <Box id="contact-page" className='content-dark padd-top padd-btm t-center'>
+            <h3 className='page-title padd-top-dbl'><Text tid="contact"/></h3>
+            <Box className="push-btm push-top padd-btm-hlf padd-top-hlf">
+                <Grid className="contact-content" container alignItems='center'>
+                    <Grid className="contact-info" item xs={isOpenedForm ? 5 : 12}>
                         <p>
-                            Ján Durovčík<br />
-                                Adress<br />
-                                Pribinova 25, 811 09 Bratislava, SLOVAKIA<br />
-                                Phone<br />
-                                +421-2-54645811<br />
-                                E-mail<br />
-                                jan@jan.sk<br />
+                            <span className="o-low">Ján Durovčík</span>
                         </p>
-                    </Paper>
+                        <p>
+                            Adress<br/>
+                            <span className="o-low">Pribinova 25, 811 09 Bratislava, SLOVAKIA</span>
+                        </p>
+                        <p>
+                            Phone<br/>
+                            <span className="o-low">+421-2-54645811</span>
+                        </p>
+                        <p>
+                            Email<br/>
+                            <span className="o-low">jan@jan.sk</span>
+                        </p>
+                    </Grid>
+                    <Grid className='contact-form-wrapper' item xs={isOpenedForm ? 6 : 1}>
+                        {isOpenedForm ? 
+                            <ContactFormular toggleOpen={toggleOpenedForm}/>
+                        :
+                            <Grid item xs={1} className="contact-form-btn-wrapper">
+                                <Button className='btn btn-2 contact-form-btn' onClick={toggleOpenedForm}>Contact form</Button>
+                            </Grid>
+                    }
+                    </Grid>
                 </Grid>
-                <Grid item xs={1}>
-                    <Paper className='button-paper'>
-                        <div className='button-cointainer'>
-                            <Button className='nav-link-button' onClick={() => setOpen(!isOpened)}>contact form</Button>
-                        </div>
-                    </Paper>
-                </Grid>
-                {isOpened && <Grid className='grid-contact-formular' item xs={5} >
-                    <Paper>
-                        <ContactFormular />
-                    </Paper>
-                </Grid>
-                }
-            </Grid>
-        </div>
+                <Box className="fake-space"></Box>
+            </Box>
+        </Box>
     );
 }
 export default ContactPage;

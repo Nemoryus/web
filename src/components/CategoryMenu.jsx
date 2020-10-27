@@ -1,36 +1,22 @@
 import React from 'react';
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
-export default function CategoryMenu({handleSelectedCategory}) {
-    const handleOnClickSelectPredstavenie = (selectedCategory) => {
-        handleSelectedCategory(selectedCategory)
-    }
+export default function CategoryMenu({handleChangeCategory}) {
 
     return (
-        <div className='container-category-menu'>
-            <Grid container spacing={3} >
-                <Grid item xs={3}>
-                    <Paper onClick={() => handleOnClickSelectPredstavenie("MUSICAL")}>
-                        <span >MUSICAL</span>
-                    </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper onClick={() => handleOnClickSelectPredstavenie("BALLET_OPERA")}>
-                        <span>BALET & OPERA</span>
-                    </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper onClick={() => handleOnClickSelectPredstavenie("SHOW")}>
-                        <span>SHOW</span>
-                    </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                    <Paper onClick={() => handleOnClickSelectPredstavenie("DANCE_THEATER")}>
-                        <span>DANCE THEATER</span>
-                    </Paper>
-                </Grid>
+        <Grid container spacing={3} >
+            <Grid item xs={3} className="production-category-btn">
+                <span className='hand' onClick={() => handleChangeCategory("MUSICAL")}>Musicals</span>
             </Grid>
-        </div>
+            <Grid item xs={3} className="production-category-btn">
+                <span className='hand' onClick={() => handleChangeCategory("BALLET_OPERA")}>Ballet & Opera</span>
+            </Grid>
+            <Grid item xs={3} className="production-category-btn">
+                <span className='hand' onClick={() => handleChangeCategory("SHOW")}>Shows</span>
+            </Grid>
+            <Grid item xs={3} className="production-category-btn">
+                <span className='hand' onClick={() => handleChangeCategory("DANCE_THEATER")}>Dance theater</span>
+            </Grid>
+        </Grid>
     );
 }

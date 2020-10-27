@@ -24,12 +24,12 @@ import { DANCE_THEATER } from '../data/data';
 
 
 
-export default function UnderPageMenu({handleSelectedNewIdexPredstavenie,categoryItems, indexSelectedPredstavenie}) {
+export default function UnderPageMenu({handleSelectedNewIdexPredstavenie,performances, indexSelectedPredstavenie}) {
    
 
 
     let [mainPosition,setMainPosition] = useState(indexSelectedPredstavenie);
-    // let [currentlyData ,setCurrentlyData] = useState(categoryItems);
+    // let [currentlyData ,setCurrentlyData] = useState(performances);
     
     const GoLeft = () => {
         if (mainPosition != 0) {
@@ -40,7 +40,7 @@ export default function UnderPageMenu({handleSelectedNewIdexPredstavenie,categor
     }
     
     const GoRight = () => {
-        if (mainPosition != categoryItems.length -1) {
+        if (mainPosition != performances.length -1) {
             setMainPosition(mainPosition + 1);
             handleSelectedNewIdexPredstavenie(mainPosition);
         }
@@ -59,7 +59,7 @@ export default function UnderPageMenu({handleSelectedNewIdexPredstavenie,categor
                             if (position - 2 > 0) {
                                 return (
                                     <div >
-                                        {categoryItems[localPosition].name}
+                                        {performances[localPosition].name}
                                     </div>)
                             }
                         })()}
@@ -73,7 +73,7 @@ export default function UnderPageMenu({handleSelectedNewIdexPredstavenie,categor
                             if (position - 1 > 0) {
                                 return (
                                     <div >
-                                        {categoryItems[localPosition].name}
+                                        {performances[localPosition].name}
                                     </div>)
                             }
                         })()}
@@ -91,7 +91,7 @@ export default function UnderPageMenu({handleSelectedNewIdexPredstavenie,categor
                 <Grid item xs={2}>
                     <Paper>
                         {console.log("Main position: "+mainPosition)}
-                        {categoryItems[mainPosition].name}
+                        {performances[mainPosition].name}
                     </Paper>
                 </Grid>
                 <Grid item xs={1}>
@@ -108,11 +108,11 @@ export default function UnderPageMenu({handleSelectedNewIdexPredstavenie,categor
                         {(() => {
                             const position = mainPosition + 1;
                             const localPosition = mainPosition + 1;
-                            const lengthOfDataArray = Object.keys(categoryItems).length;
+                            const lengthOfDataArray = Object.keys(performances).length;
                             if (position + 1 <= lengthOfDataArray) {
                                 return (
                                     <div >
-                                        {categoryItems[localPosition].name}
+                                        {performances[localPosition].name}
                                     </div>)
                             }
                         })()}
@@ -123,11 +123,11 @@ export default function UnderPageMenu({handleSelectedNewIdexPredstavenie,categor
                         {(() => {
                             const position = mainPosition + 1;
                             const localPosition = mainPosition + 2;
-                            const lengthOfDataArray = Object.keys(categoryItems).length;
+                            const lengthOfDataArray = Object.keys(performances).length;
                             if (position + 2 <= lengthOfDataArray) {
                                 return (
                                     <div >
-                                        {categoryItems[localPosition].name}
+                                        {performances[localPosition].name}
                                     </div>)
                             }
                         })()}

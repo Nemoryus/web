@@ -1,14 +1,17 @@
 import React from "react";
 import {NavLink} from "react-router-dom"
+
+import Button from '@material-ui/core/Button';
+import Box from "@material-ui/core/Box";
 import ProfilPicture from '../picture/profilPicutre.png'
 import ProfilPicture2 from '../picture/profilPicture2.png'
 import { Text } from '../containers/Language';
 
 function AboutUsPage() {
    return(
-        <div className='container-about-us'>
-            <h3><Text tid="contact" /></h3>
-            <p className='p-first'>
+        <Box id="about-us-page" className="content-light padd-top padd-btm">
+            <h3 className='page-title padd-top-dbl'><Text tid="aboutUs"/></h3>
+            <p className='page-title-text push-btm push-top padd-btm-hlf padd-top-hlf'>
                 Lorem ipsum dolor sit amet, consectetuer 
                 adipiscing elit, sed diam nonummy nibh
                 euismod tincidunt ut laoreet dolore magna 
@@ -24,23 +27,27 @@ function AboutUsPage() {
                 zzril delenit augue duis dolore te feugait
                 nulla facilisi.
             </p>
-            <img src={ProfilPicture2}/>
-            <h1>JÁN ĎUROVČÍK</h1>
-            <img src={ProfilPicture}/>
-            <p className='p-second'>
-                Has studied choreography at the Academy 
-                of Music and Dramatic Arts (VŠMU) in 
-                Bratislava under the direction of 
-                professor Štefan Nosáľ and at the
-                Institute for Dance and Dance Instruction 
-                in Belgian Antwerp. Later on, he acquired 
-                job as the solo dancer in the H.F.
-                Dansetheatre Amsterdam and was teaching 
-                modern dance at the International Dance 
-                Stage Bornem in Belgium.
-            </p>
-            <NavLink className='nav-link-button'to='/'>view all</NavLink>
-        </div>
+            <Box className="page-content">
+                <img src={ProfilPicture2}/>
+                <h1>JÁN ĎUROVČÍK</h1>
+                <img src={ProfilPicture}/>
+                <p className='page-content-text'>
+                    Has studied choreography at the Academy 
+                    of Music and Dramatic Arts (VŠMU) in 
+                    Bratislava under the direction of 
+                    professor Štefan Nosáľ and at the
+                    Institute for Dance and Dance Instruction 
+                    in Belgian Antwerp. Later on, he acquired 
+                    job as the solo dancer in the H.F.
+                    Dansetheatre Amsterdam and was teaching 
+                    modern dance at the International Dance 
+                    Stage Bornem in Belgium.
+                </p>
+            </Box>
+            <Box className='t-center padd-btm-dbl push-btm push-top-dbl'>
+                <Button component={NavLink} className='btn btn-1' to='/'>View all</Button>
+            </Box>
+        </Box>
     );   
 }
 export default AboutUsPage;

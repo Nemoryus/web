@@ -1,48 +1,37 @@
 import React from "react";
 import { NavLink } from 'react-router-dom'
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import Logo from '../picture/logo.png';
+
 //import components
 import MainNavigation from "../components/MainNavigation"
 import DropMenu from "../components/DropMenu"
 import Hidden from '@material-ui/core/Hidden';
 import LanguageSelect from '../components/LanguageSelect';
 
-
 export default function Header(props) {
     return (
-        <div className='header'>
-            <Grid container>
-                <Grid item xs={6} md={3}>
-                    <Paper className='header-paperGrid'>
-                        <NavLink className='navlink-image' to="/main">
-                            <img className="header-logo" src={Logo} alt="Logo" />
-                        </NavLink>
-                    </Paper>
+        <header className="header-wrapper">
+            <Grid className="header" container justify="center" alignItems="center">
+                <Grid item xs={6} md={2}>
+                    <NavLink className='navlink-image' to="/home">
+                        <img className="logo" src={Logo}/>
+                    </NavLink>
                 </Grid>
-                <Hidden  smDown>
-                    <Grid  item md={8}>
-                        <Paper className ='header-navigation-cointainer' >
-                            <MainNavigation />
-                        </Paper>
-                    </Grid>
-                </Hidden>
                 <Hidden mdUp>
                     <Grid className='drop-menu-container' item xs={6}>
-                        <Paper>
-                            <DropMenu />
-                        </Paper>
+                        <DropMenu />
                     </Grid>
                 </Hidden>
                 <Hidden smDown>
-                    <Grid item md={1}>
-                        <Paper className='header-paper-language'>
-                            <LanguageSelect className='header-selector' />
-                        </Paper>
+                    <Grid item md={8}>
+                        <MainNavigation inGrid={true} />
+                    </Grid>
+                    <Grid item md={2}>
+                        <LanguageSelect />
                     </Grid>
                 </Hidden>
             </Grid>
-        </div>
+        </header>
     );
 }
