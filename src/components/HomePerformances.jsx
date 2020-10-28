@@ -4,7 +4,7 @@ import Performance from './Performance'
 
 export default function HomePerformances({ performances, handleSelectedPerformance }) {
     return (
-        <Grid container spacing={3} className="homepage-performances">
+        <Grid container spacing={3} className="homepage-performances fullHeight">
             <Grid item xs={3} className="fullHeight">
                 <Grid container direction='column' spacing={3} className="fullHeight">
                     <Grid item xs={8}>

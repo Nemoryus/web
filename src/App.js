@@ -4,7 +4,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core'
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import './App.css';
-import './assets/css/mainCss.css'
+import './assets/css/main.css'
 
 import MainPage from "./pages/Main"
 import BaletkaPage from "./pages/Baletka"
