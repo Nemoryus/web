@@ -5,15 +5,14 @@ import { LanguageProvider } from '../containers/Language';
 import { Switch, Route } from 'react-router-dom';
 
 //import pages
-import AboutUsPage from "./AboutUs"
-import ContactPage from "./Contact"
-import ProductionPage from "./Production"
+import AboutUsPage from "./AboutUsPage"
+import ContactPage from "./ContactPage"
+import ProductionPage from "./ProductionPage"
 import HomePage from "./HomePage"
 
 // import components
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import CategoryGrid from '../components/CategoryGrid';
 
 function Main() {
   return (
@@ -26,7 +25,6 @@ function Main() {
             <Route path="/about-us" component={AboutUsPage} />
             <Route path="/contact" component={ContactPage} />
             <Route path="/production" component={ProductionPage} />
-            <Route path="/production/balet" component={CategoryGrid} />
           </Switch>
         </main>
 

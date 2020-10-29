@@ -18,10 +18,10 @@ const navItems = [
     }
 ]
 
-export default function MainNavigation({ inGrid }) {
+export default function MainNavigation({ from }) {
    return(
        <React.Fragment>
-            {inGrid ?
+            {from == 'Header' ?
                 <Grid className="header-navigation" container justify="center">
                     {
                         navItems.map(navItem => {
