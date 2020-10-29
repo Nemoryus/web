@@ -186,6 +186,9 @@ a {
 .push-rgt-dbl {
 	margin-right: 60px !important
 }
+.letter-s{
+    letter-spacing: 5px!important;
+}
 
 /* UNDERILINE EFFECT */
 .underline-effect {
@@ -245,7 +248,7 @@ a {
 }
 
 .home-page-span{
-    transform:translate(-90%, 0);
+    transform:translate(-66%, 0);
 }
 
 .page-title {
@@ -534,6 +537,8 @@ footer p{
 }
 
 .baletka-img{
+    min-height: 100%;
+    min-width: 100%;
     max-height: 100%;
 }
 .whitBlur{
@@ -549,17 +554,18 @@ footer p{
 
 .arrow-image {
     top:46%;
+    left: -65px;
 }
 
 .home-button-view-all{
-    margin-top: 200px!important;
+    /* margin-top: 200px!important; */
 }
 .inner-container-home-first .wrapper-social-icons a{
     margin:0!important;
 }
 
 .main-grid-wrapper{
-    height: 600px;
+    height: 550px;
 }
 
 .vericaltext{
@@ -569,11 +575,6 @@ footer p{
     font-size: 15px;
     writing-mode: vertical-lr;
     text-orientation: upright;
-}
-
-.homepage-performances {
-    box-shadow: 0px 0px 50px 10px black;
-    background-color: rgba(0, 0, 0, .5)
 }
 
 .container-home .container {
@@ -609,6 +610,7 @@ footer p{
 }
 
 .inner-container-home-first{
+    padding-top: 100px;
     height: 40%;
 }
 
@@ -915,9 +917,8 @@ footer p{
 }
 
 #contact-page .contact-form-wrapper .contact-form {
-    background-color: #0d1335;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    background-color: #000819;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
     padding: 60px 200px 40px 110px;
     color: white !important;
 }

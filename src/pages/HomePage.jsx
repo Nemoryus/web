@@ -100,7 +100,7 @@ function HomePage() {
             {
                 selectedPerformance == null ? (
                     <div className='container-home'>
-                        <div className='inner-container-home-first padd-top pos-rel padd-btm-dbl' style={styles.backGroundWithBlurEfect}>
+                        <div className='inner-container-home-first  pos-rel padd-btm-dbl' style={styles.backGroundWithBlurEfect}>
                             <img className={'baletka-img pos-abs-00 ' + (show ? "whitBlur" : "whithoutBlur")} width='100%' max-height='100%' src={BaletkaImg}></img>
                             <Box className="main-grid-wrapper pos-rel" display="flex" justifyContent="space-between" >
                                 <Box className='width-small flex-row' onClick={toggleShowGrid}>
@@ -108,7 +108,7 @@ function HomePage() {
                                         <Box className='vertical-line-red hight-25 center' />
                                         <Box className='center hight-50' >
                                             <Box className='rotated-270 flex-column center' >
-                                                <span className='home-page-span font-size-20'>PRODUCTION</span>
+                                                <span className='home-page-span font-size-20 letter-s t-red'>PRODUCTION</span>
                                             </Box>
                                         </Box>
                                         <Box className='vertical-line-red hight-25 center' />
@@ -125,7 +125,7 @@ function HomePage() {
                                 </Box>
                                 <Box className='width-small fullHeight flex-column'>
                                     <Box className='follow-us-wrapper hight-33'>
-                                        <p className="vericaltext t-red center">
+                                        <p className="vericaltext t-red center bold">
                                             FOLLOW US
                                         </p>
                                     </Box>
@@ -137,7 +137,7 @@ function HomePage() {
                                     </Box>
                                 </Box>
                             </Box>
-                            <Box className='home-button-view-all t-center padd-btm-dbl push-btm push-top-dbl'>
+                            <Box className='home-button-view-all t-center push-top-dbl push-btm-dbl'>
                                 <Button className='btn btn-3 center' component={NavLink} style={show ? styles.show : styles.hiden} to='/production'>view all</Button>
                             </Box>
                             <div className="container">
@@ -159,8 +159,8 @@ function HomePage() {
                                 et iusto odio dignissim qui blandit praesent luptatum zzril delenit
                                 augue duis dolore te
                         </p>
-                            <Box className='home-button-view-all t-center padd-btm-dbl push-btm push-top-dbl'>
-                                <Button className='btn btn-3 center' component={NavLink} style={show ? styles.show : styles.hiden} to='/about-us'>view all</Button>
+                            <Box className='t-center push-top push-btm-dbl'>
+                                <Button className='btn btn-2 center' component={NavLink} to='/about-us'>enter</Button>
                             </Box>
                             <div className="video-cointainer" onClick={toggleVideoPlay} onMouseEnter={toggleVideoHover} onMouseLeave={toggleVideoHover}>
                                 {videoHover && !videoIsPlayed && <img className="button-icon play-button" src={PlayButtonImg} />}
