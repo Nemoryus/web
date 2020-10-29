@@ -6,7 +6,7 @@ import Logo from '../picture/logo.png';
 import BaletkaVideo from '../video/introVideo.mp4';
 
 
-function BaletkaPage() {
+function WelcomePage() {
   return (
     <div className="container-baletka">
       <div className="overlay"/>
@@ -23,4 +23,4 @@ function BaletkaPage() {
     </div>
   );
 }
-export default BaletkaPage;
+export default WelcomePage;
