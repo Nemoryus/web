@@ -14,7 +14,7 @@ export default function Header(props) {
         <header className="header-wrapper">
             <Grid className="header" container justify="center" alignItems="center">
                 <Grid item xs={6} md={2}>
-                    <NavLink className='navlink-image' to="/home">
+                    <NavLink to="/home">
                         <img className="logo" src={Logo}/>
                     </NavLink>
                 </Grid>
@@ -25,7 +25,7 @@ export default function Header(props) {
                 </Hidden>
                 <Hidden smDown>
                     <Grid item md={8}>
-                        <MainNavigation inGrid={true} />
+                        <MainNavigation from='Header' />
                     </Grid>
                     <Grid item md={2}>
                         <LanguageSelect />

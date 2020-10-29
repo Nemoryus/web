@@ -16,13 +16,13 @@ export default function Footer() {
         <footer className="footer-wrapper">
             <Grid className="footer" container alignItems="center">
                 <Grid item xs={4} md={1}>
-                    <NavLink className='navlink-image' to="/home">
+                    <NavLink to="/home">
                         <img className="logo" src={Logo}/>
                     </NavLink>
                 </Grid>
                 <Grid item xs={4} md={2}>
                     <Box className="padd-lft push-lft-hlf">
-                        <MainNavigation/>
+                        <MainNavigation from='Footer'/>
                     </Box>
                 </Grid>
                 <Hidden mdUp>

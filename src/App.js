@@ -6,8 +6,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import './App.css';
 import './assets/css/main.css'
 
-import MainPage from "./pages/Main"
-import BaletkaPage from "./pages/Baletka"
+import Main from "./pages/Main"
+import WelcomePage from "./pages/WelcomePage"
 
 // const theme = createMuiTheme({
 //   palette: {
@@ -44,8 +44,8 @@ function App() {
         {/* <MuiThemeProvider theme={theme}> */}
           <CssBaseline/>
           <Switch>
-            <Route path="/" component={BaletkaPage} exact/>
-            <Route path={["/contact", "/home", "/about-us", "/production"]} component={MainPage}/>
+            <Route path="/" component={WelcomePage} exact/>
+            <Route path={["/contact", "/home", "/about-us", "/production"]} component={Main}/>
           </Switch>
         {/* </MuiThemeProvider> */}
       </BrowserRouter>
@@ -60,3 +60,7 @@ export default App;
 // header navlinks -> menu items
 // spravit textove konstanty z BALLET_OPERA, SHOW, DANCE_THEATER, MUSICAL a mozno aj este nieco ine co sa viac krat pouziva v app  
 // preklad
+// warnings
+
+// sticky header
+// production menu in center 

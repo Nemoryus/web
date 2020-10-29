@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import { NavLink } from 'react-router-dom'
 
 import HomePerformances from "../components/HomePerformances"
-import UnderPage from "./UnderPage"
+import CategoryPage from "./CategoryPage"
 import BaletkaVideo from '../video/introVideo.mp4'
 //img
 import PlayButtonImg from '../picture/video-play.svg';
@@ -21,6 +21,12 @@ function HomePage() {
     let [videoHover, setVideoHover] = useState(false);
     let [videoIsPlayed, setVideoIsPlayed] = useState(false);
     let [show, setShow] = useState(false);
+
+    // performances useStates
+    const [selectedPerformance, setSelectedPerformance] = useState(null);
+    const [performances, setPerformances] = useState([
+        MUSICALS[0], MUSICALS[1], MUSICALS[2], MUSICALS[3], MUSICALS[4], MUSICALS[5], MUSICALS[6], MUSICALS[7], MUSICALS[8]
+    ]);
 
     const styles = {
         showGrid: {
@@ -53,20 +59,13 @@ function HomePage() {
 
     }
 
-
-
-    const [selectedPerformance, setSelectedPerformance] = useState(null);
-    const [performances, setPerformances] = useState([
-        MUSICALS[0], MUSICALS[1], MUSICALS[2], MUSICALS[3], MUSICALS[4], MUSICALS[5], MUSICALS[6], MUSICALS[7], MUSICALS[8]
-    ]);
+    const toggleShowGrid = () => {
+        setShow((show) => !show);
+    }
 
     const handleSelectedPerformance = (performance) => {
         handleSetPerformances(performance.category)
         setSelectedPerformance(performance)
-    }
-
-    const toggleShowGrid = () => {
-        setShow((show) => !show);
     }
 
     const handleSetPerformances = (categoryName) => {
@@ -168,12 +167,10 @@ function HomePage() {
                         </div>
                     </div>
                 )
-                    :
-                    (
-                        <div className='production-under-page-cointainer'>
-                            <UnderPage performances={performances} indexSelectedPredstavenie={1} />
-                        </div>
-                    )
+            :
+                (
+                    <CategoryPage performances={performances} indexSelectedPredstavenie={1} />
+                )
             }
         </Fragment>
     );

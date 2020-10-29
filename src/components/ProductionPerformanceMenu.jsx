@@ -6,14 +6,25 @@ import { BALLET_OPERA } from '../data/data';
 import { SHOW } from '../data/data';
 import { DANCE_THEATER } from '../data/data';
 
-export default function CategoryMenu({ handleSelectedPerformance }) {
+export default function ProductionPerformanceMenu({ selectedCategory, handleSelectedPerformance }) {
     const menuItems = [];
     
     function PerformanceList() {
-        getPerformances(MUSICALS);
-        getPerformances(BALLET_OPERA)
-        getPerformances(SHOW);
-        getPerformances(DANCE_THEATER);
+        if (selectedCategory === 'MUSICALS') {
+            getPerformances(MUSICALS);
+        } else if (selectedCategory === 'BALLET_OPERA') {
+            getPerformances(BALLET_OPERA);
+        } else if (selectedCategory === 'SHOW') {
+            getPerformances(SHOW);
+        } else if (selectedCategory === 'DANCE_THEATER'){
+            getPerformances(DANCE_THEATER);
+        } else {
+            // all performances
+            getPerformances(MUSICALS)
+            getPerformances(BALLET_OPERA)
+            getPerformances(SHOW);
+            getPerformances(DANCE_THEATER);
+        }
         return <Box className="production-performencas-menu padd-btm push-btm-hlf padd-top push-top-hlf">{menuItems}</Box>;
     }
 

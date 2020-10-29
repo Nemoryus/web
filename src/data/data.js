@@ -9,7 +9,7 @@ export const MUSICALS = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'Gasp',
             info: 'October 06.2018 - August 08.2019',
             note: 'Zilina - OC Duben'
@@ -26,7 +26,7 @@ export const MUSICALS = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'Carmen Electra',
             info: 'Tuesday',
             note: 'Severka'
@@ -43,7 +43,7 @@ export const MUSICALS = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'Karol Duchon',
             info: '09.2020 - 10.2020',
             note: 'Zbojnicka koliba'
@@ -60,7 +60,7 @@ export const MUSICALS = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'School of rock',
             info: 'November 2020 - December 2020',
             note: 'Bobrov national theater'
@@ -77,7 +77,7 @@ export const MUSICALS = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'Pomada',
             info: '1999 - 2000',
             note: 'Slovak national theater'
@@ -94,7 +94,7 @@ export const MUSICALS = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'Heaven is a place on the earth',
             info: 'Always',
             note: 'Slovak national theater'
@@ -110,7 +110,7 @@ export const MUSICALS = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'West side Hano',
             info: '28.12.1992',
             note: 'Slovak national theater'
@@ -126,7 +126,7 @@ export const MUSICALS = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'Voda co ma drzi nad vodou',
             info: '08. October 2020 - 10. October 2020',
             note: 'Slovak national theater'
@@ -142,7 +142,7 @@ export const MUSICALS = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'La dame aux camelias',
             info: 'October 06.2018 - August 08.2019',
             note: 'Slovak national theater'
@@ -315,7 +315,7 @@ export const BALLET_OPERA = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -332,7 +332,7 @@ export const BALLET_OPERA = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -349,7 +349,7 @@ export const BALLET_OPERA = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -366,7 +366,7 @@ export const BALLET_OPERA = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -383,7 +383,7 @@ export const BALLET_OPERA = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -400,7 +400,7 @@ export const BALLET_OPERA = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -416,7 +416,7 @@ export const BALLET_OPERA = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -433,7 +433,7 @@ export const BALLET_OPERA = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -452,7 +452,7 @@ export const SHOW = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -469,7 +469,7 @@ export const SHOW = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -486,7 +486,7 @@ export const SHOW = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -503,7 +503,7 @@ export const SHOW = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -520,7 +520,7 @@ export const SHOW = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -537,7 +537,7 @@ export const SHOW = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -553,7 +553,7 @@ export const SHOW = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -570,7 +570,7 @@ export const SHOW = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -587,7 +587,7 @@ export const SHOW = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -606,7 +606,7 @@ export const DANCE_THEATER = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -623,7 +623,7 @@ export const DANCE_THEATER = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -640,7 +640,7 @@ export const DANCE_THEATER = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -657,7 +657,7 @@ export const DANCE_THEATER = [
             thirdPatch: 'patch3',
         },
         video: 'DANCE_THEATER 5',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -674,7 +674,7 @@ export const DANCE_THEATER = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -691,7 +691,7 @@ export const DANCE_THEATER = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
@@ -707,7 +707,7 @@ export const DANCE_THEATER = [
             thirdPatch: 'patch3',
         },
         video: 'video patch',
-        overlay: {
+        additionalData: {
             title: 'title text',
             info: 'info text',
             note: 'Slovak national theater'
