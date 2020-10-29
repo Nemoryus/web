@@ -36,16 +36,16 @@ function HomePage() {
             zIndex: -200
         },
 
-        backGroundWithBlurEfect:{
+        backGroundWithBlurEfect: {
             // filter:'blur(40px)',
             // backgroundImage: `url(${BaletkaImg})`,
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
         },
-        backGroundWithoutBlurEfect:{
+        backGroundWithoutBlurEfect: {
             // backgroundImage: filter(largeimg.jpg), blur(20px));
-            filter:'none',
+            filter: 'none',
             // backgroundImage: `url(${BaletkaImg})`,
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -102,20 +102,20 @@ function HomePage() {
                 selectedPerformance == null ? (
                     <div className='container-home'>
                         <div className='inner-container-home-first padd-top pos-rel' style={styles.backGroundWithBlurEfect}>
-                            <img className={'baletka-img pos-abs-00 '+ (show ? "whitBlur" : "whithoutBlur" )} width='100%' max-height='100%' src={BaletkaImg}></img>
+                            <img className={'baletka-img pos-abs-00 ' + (show ? "whitBlur" : "whithoutBlur")} width='100%' max-height='100%' src={BaletkaImg}></img>
                             <Box className="main-grid-wrapper pos-rel" display="flex" justifyContent="space-between" >
                                 <Box className='width-small flex-row' onClick={toggleShowGrid}>
                                     <Box className="fullHeight flex-column">
                                         <Box className='vertical-line-red hight-25 center' />
                                         <Box className='center hight-50' >
                                             <Box className='rotated-270 flex-column center' >
-                                                <span className='home-page-span font-size-20'>Production</span>
+                                                <span className='home-page-span font-size-20'>PRODUCTION</span>
                                             </Box>
                                         </Box>
                                         <Box className='vertical-line-red hight-25 center' />
                                     </Box>
                                     <Box className='pos-rel'>
-                                        <img style={show ? styles.hiden : styles.show } className='arrow-image pos-abs' src={SipkaImg} width="40" />
+                                        <img style={show ? styles.hiden : styles.show} className='arrow-image pos-abs' src={SipkaImg} width="40" />
                                     </Box>
 
                                 </Box>
@@ -130,7 +130,9 @@ function HomePage() {
                                             FOLLOW US
                                         </p>
                                     </Box>
-                                    <Box className='vertical-line-red hight-33 center push-top-hlf' />
+                                    <Box className='vertical-line-wrapper hight-33 push-top-hlf'>
+                                        <Box className='vertical-line-red fullHeight fullWidth' />
+                                    </Box>
                                     <Box className='hight-33 width-45px center padd-top'>
                                         <SocialIcons />
                                     </Box>
@@ -158,8 +160,9 @@ function HomePage() {
                                 et iusto odio dignissim qui blandit praesent luptatum zzril delenit
                                 augue duis dolore te
                         </p>
-
-                            <NavLink className='nav-link-button second' to='/about-us'><strong>read more</strong></NavLink>
+                            <Box className='home-button-view-all t-center padd-btm-dbl push-btm push-top-dbl'>
+                                <Button className='btn btn-3 center' component={NavLink} style={show ? styles.show : styles.hiden} to='/about-us'>view all</Button>
+                            </Box>
                             <div className="video-cointainer" onClick={toggleVideoPlay} onMouseEnter={toggleVideoHover} onMouseLeave={toggleVideoHover}>
                                 {videoHover && !videoIsPlayed && <img className="button-icon play-button" src={PlayButtonImg} />}
                                 {videoHover && videoIsPlayed && <img className="button-icon stop-button" src={StopButtonImg} />}

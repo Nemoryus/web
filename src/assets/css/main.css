@@ -525,6 +525,8 @@ footer p{
 }
 
 .vericaltext{
+    margin: 0;
+    float: right;
     width: 30px!important;
     font-size: 15px;
     writing-mode: vertical-lr;
