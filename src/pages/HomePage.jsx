@@ -37,15 +37,16 @@ function HomePage() {
         },
 
         backGroundWithBlurEfect:{
-            filter: 'blur(30px)',
-            backgroundImage: `url(${BaletkaImg})`,
+            // filter:'blur(40px)',
+            // backgroundImage: `url(${BaletkaImg})`,
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
         },
         backGroundWithoutBlurEfect:{
-            filter: 'none',
-            backgroundImage: `url(${BaletkaImg})`,
+            // backgroundImage: filter(largeimg.jpg), blur(20px));
+            filter:'none',
+            // backgroundImage: `url(${BaletkaImg})`,
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
@@ -100,14 +101,15 @@ function HomePage() {
             {
                 selectedPerformance == null ? (
                     <div className='container-home'>
-                        <div className='inner-container-home-first padd-top' style={styles.backGroundWithoutBlurEfect}>
-                            <Box className="main-grid-wrapper" display="flex" justifyContent="space-between" >
+                        <div className='inner-container-home-first padd-top pos-rel' style={styles.backGroundWithBlurEfect}>
+                            <img className={'baletka-img pos-abs-00 '+ (show ? "whitBlur" : "whithoutBlur" )} width='100%' max-height='100%' src={BaletkaImg}></img>
+                            <Box className="main-grid-wrapper pos-rel" display="flex" justifyContent="space-between" >
                                 <Box className='width-small flex-row' onClick={toggleShowGrid}>
                                     <Box className="fullHeight flex-column">
                                         <Box className='vertical-line-red hight-25 center' />
                                         <Box className='center hight-50' >
                                             <Box className='rotated-270 flex-column center' >
-                                                <span className='font-size-20'>Production</span>
+                                                <span className='home-page-span font-size-20'>Production</span>
                                             </Box>
                                         </Box>
                                         <Box className='vertical-line-red hight-25 center' />
@@ -129,7 +131,7 @@ function HomePage() {
                                         </p>
                                     </Box>
                                     <Box className='vertical-line-red hight-33 center push-top-hlf' />
-                                    <Box className='hight-33 width-32px center padd-top'>
+                                    <Box className='hight-33 width-45px center padd-top'>
                                         <SocialIcons />
                                     </Box>
                                 </Box>
