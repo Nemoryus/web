@@ -100,7 +100,7 @@ function HomePage() {
             {
                 selectedPerformance == null ? (
                     <div className='container-home'>
-                        <div className='inner-container-home-first padd-top pos-rel' style={styles.backGroundWithBlurEfect}>
+                        <div className='inner-container-home-first padd-top pos-rel padd-btm-dbl' style={styles.backGroundWithBlurEfect}>
                             <img className={'baletka-img pos-abs-00 ' + (show ? "whitBlur" : "whithoutBlur")} width='100%' max-height='100%' src={BaletkaImg}></img>
                             <Box className="main-grid-wrapper pos-rel" display="flex" justifyContent="space-between" >
                                 <Box className='width-small flex-row' onClick={toggleShowGrid}>
@@ -124,15 +124,15 @@ function HomePage() {
                                     </Box>
                                 </Box>
                                 <Box className='width-small fullHeight flex-column'>
-                                    <Box className='hight-33'>
+                                    <Box className='follow-us-wrapper hight-33'>
                                         <p className="vericaltext t-red center">
                                             FOLLOW US
                                         </p>
                                     </Box>
-                                    <Box className='vertical-line-wrapper hight-33 push-top-hlf'>
+                                    <Box className='vertical-line-wrapper hight-33 padd-top'>
                                         <Box className='vertical-line-red fullHeight fullWidth' />
                                     </Box>
-                                    <Box className='hight-33 width-45px center padd-top'>
+                                    <Box className='home-social-icon-wrapper hight-33 fullWidth padd-top-dbl'>
                                         <SocialIcons />
                                     </Box>
                                 </Box>

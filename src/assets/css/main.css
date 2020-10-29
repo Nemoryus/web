@@ -29,7 +29,7 @@ a {
     height: 100%
 }
 .fullWidth {
-    width: 100%
+    width: 100%!important
 }
 .width-small{
     width: 10%;
@@ -245,7 +245,7 @@ a {
 }
 
 .home-page-span{
-    transform:translate(-115%, 0);
+    transform:translate(-90%, 0);
 }
 
 .page-title {
@@ -516,6 +516,23 @@ footer p{
 }
 
 /*   Home page      */
+.follow-us-wrapper{
+    padding-right: 50px;
+}
+
+.vertical-line-wrapper{
+    padding-right: 66px;
+}
+
+.home-social-icon-wrapper{
+    padding-right: 45px;
+}
+
+.container-home .wrapper-social-icons{
+    width: 45px;
+    float: right;
+}
+
 .baletka-img{
     max-height: 100%;
 }
@@ -560,8 +577,7 @@ footer p{
 }
 
 .container-home .container {
-    box-shadow: -1px 0px 10px 0px rgba(250, 8, 8, 0.842);
-    margin-top: 50px;   
+    box-shadow: -1px 0px 10px 0px rgba(250, 8, 8, 0.842); 
     color: white;
     overflow: hidden;
     white-space: nowrap;
