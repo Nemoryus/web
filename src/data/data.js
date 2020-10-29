@@ -13,13 +13,24 @@ export const MUSICALS = [
             title: 'Gasp',
             info: 'October 06.2018 - August 08.2019',
             note: 'Zilina - OC Duben'
+        },
+        review: {
+            review1: {
+                body: 'Bolot to super',
+                author: 'Za nic to nestalo'
+            },
+         
+            review2: {
+                body: 'Bolot to super',
+                author: 'Za nic to nestalo'
+            }
         }
     },
 
     {
         id: 2,
         name: 'Carmen',
-        category:'MUSICALS',
+        category: 'MUSICALS',
         img: {
             firstPatch: 'carmen.jpg',
             secondPatch: 'patch2',
@@ -34,9 +45,9 @@ export const MUSICALS = [
     },
 
     {
-        id: 3, 
+        id: 3,
         name: 'Duchons',
-        category:'MUSICALS',
+        category: 'MUSICALS',
         img: {
             firstPatch: 'duchons.jpg',
             secondPatch: 'patch2',
@@ -53,7 +64,7 @@ export const MUSICALS = [
     {
         id: 4,
         name: 'School of rock',
-        category:'MUSICALS',
+        category: 'MUSICALS',
         img: {
             firstPatch: 'schoolOfRock.jpg',
             secondPatch: 'patch2',
@@ -70,7 +81,7 @@ export const MUSICALS = [
     {
         id: 5,
         name: 'Grease',
-        category:'MUSICALS',
+        category: 'MUSICALS',
         img: {
             firstPatch: 'pomada.jpg',
             secondPatch: 'patch2',
@@ -87,7 +98,7 @@ export const MUSICALS = [
     {
         id: 6,
         name: 'Superstar',
-        category:'MUSICALS',
+        category: 'MUSICALS',
         img: {
             firstPatch: 'superstar.jpg',
             secondPatch: 'patch2',
@@ -103,7 +114,7 @@ export const MUSICALS = [
     {
         id: 7,
         name: 'West side story',
-        category:'MUSICALS',
+        category: 'MUSICALS',
         img: {
             firstPatch: 'westside.jpg',
             secondPatch: 'patch2',
@@ -119,7 +130,7 @@ export const MUSICALS = [
     {
         id: 8,
         name: 'Voda nad vodou',
-        category:'MUSICALS',
+        category: 'MUSICALS',
         img: {
             firstPatch: 'voda.jpg',
             secondPatch: 'patch2',
@@ -135,7 +146,7 @@ export const MUSICALS = [
     {
         id: 9,
         name: 'Camelias',
-        category:'MUSICALS',
+        category: 'MUSICALS',
         img: {
             firstPatch: 'camelias.jpg',
             secondPatch: 'patch2',
@@ -306,9 +317,10 @@ export const MUSICALS = [
 ];
 
 export const BALLET_OPERA = [
-    {id: 1,
+    {
+        id: 1,
         name: 'BALLET_OPERA 1',
-        category:'BALLET_OPERA',
+        category: 'BALLET_OPERA',
         img: {
             firstPatch: '',
             secondPatch: 'patch2',
@@ -325,7 +337,7 @@ export const BALLET_OPERA = [
     {
         id: 2,
         name: 'BALLET_OPERA 2',
-        category:'BALLET_OPERA',
+        category: 'BALLET_OPERA',
         img: {
             firstPatch: '',
             secondPatch: 'patch2',
@@ -340,9 +352,9 @@ export const BALLET_OPERA = [
     },
 
     {
-        id: 3, 
+        id: 3,
         name: 'BALLET_OPERA 3',
-        category:'BALLET_OPERA',
+        category: 'BALLET_OPERA',
         img: {
             firstPatch: '',
             secondPatch: 'patch2',
@@ -359,7 +371,7 @@ export const BALLET_OPERA = [
     {
         id: 4,
         name: 'BALLET_OPERA 4',
-        category:'BALLET_OPERA',
+        category: 'BALLET_OPERA',
         img: {
             firstPatch: 'superstar.jpg',
             secondPatch: 'patch2',
@@ -376,7 +388,7 @@ export const BALLET_OPERA = [
     {
         id: 5,
         name: 'BALLET_OPERA 5',
-        category:'BALLET_OPERA',
+        category: 'BALLET_OPERA',
         img: {
             firstPatch: '',
             secondPatch: 'patch2',
@@ -393,7 +405,7 @@ export const BALLET_OPERA = [
     {
         id: 6,
         name: 'BALLET_OPERA 6',
-        category:'BALLET_OPERA',
+        category: 'BALLET_OPERA',
         img: {
             firstPatch: '',
             secondPatch: 'patch2',
@@ -409,7 +421,7 @@ export const BALLET_OPERA = [
     {
         id: 7,
         name: 'BALLET_OPERA 7',
-        category:'BALLET_OPERA',
+        category: 'BALLET_OPERA',
         img: {
             firstPatch: '',
             secondPatch: 'patch2',
@@ -426,7 +438,7 @@ export const BALLET_OPERA = [
     {
         id: 8,
         name: 'BALLET_OPERA 8',
-        category:'BALLET_OPERA',
+        category: 'BALLET_OPERA',
         img: {
             firstPatch: '',
             secondPatch: 'patch2',
@@ -445,7 +457,7 @@ export const SHOW = [
     {
         id: 1,
         name: 'SHOW 1',
-        category:'SHOW',
+        category: 'SHOW',
         img: {
             firstPatch: '',
             secondPatch: 'patch2',
@@ -462,7 +474,7 @@ export const SHOW = [
     {
         id: 2,
         name: 'SHOW 2',
-        category:'SHOW',
+        category: 'SHOW',
         img: {
             firstPatch: 'show_picture.png',
             secondPatch: 'patch2',
@@ -477,9 +489,9 @@ export const SHOW = [
     },
 
     {
-        id: 3, 
+        id: 3,
         name: 'SHOW 3',
-        category:'SHOW',
+        category: 'SHOW',
         img: {
             firstPatch: 'show_picture.png',
             secondPatch: 'patch2',
@@ -496,7 +508,7 @@ export const SHOW = [
     {
         id: 4,
         name: 'SHOW 4',
-        category:'SHOW',
+        category: 'SHOW',
         img: {
             firstPatch: 'show_picture.png',
             secondPatch: 'patch2',
@@ -513,7 +525,7 @@ export const SHOW = [
     {
         id: 5,
         name: 'SHOW 5',
-        category:'SHOW',
+        category: 'SHOW',
         img: {
             firstPatch: 'show_picture.png',
             secondPatch: 'patch2',
@@ -530,7 +542,7 @@ export const SHOW = [
     {
         id: 6,
         name: 'SHOW 6',
-        category:'SHOW',
+        category: 'SHOW',
         img: {
             firstPatch: 'show_picture.png',
             secondPatch: 'patch2',
@@ -546,7 +558,7 @@ export const SHOW = [
     {
         id: 4,
         name: 'SHOW 4',
-        category:'SHOW',
+        category: 'SHOW',
         img: {
             firstPatch: 'show_picture.png',
             secondPatch: 'patch2',
@@ -563,7 +575,7 @@ export const SHOW = [
     {
         id: 5,
         name: 'SHOW 5',
-        category:'SHOW',
+        category: 'SHOW',
         img: {
             firstPatch: 'show_picture.png',
             secondPatch: 'patch2',
@@ -580,7 +592,7 @@ export const SHOW = [
     {
         id: 6,
         name: 'SHOW 6',
-        category:'SHOW',
+        category: 'SHOW',
         img: {
             firstPatch: 'show_picture.png',
             secondPatch: 'patch2',
@@ -595,11 +607,11 @@ export const SHOW = [
     },
 ];
 
-export const DANCE_THEATER = [  
+export const DANCE_THEATER = [
     {
         id: 1,
         name: 'DANCE_THEATER 1',
-        category:'DANCE_THEATER',
+        category: 'DANCE_THEATER',
         img: {
             firstPatch: 'dance_theate_picture.png',
             secondPatch: 'patch2',
@@ -616,7 +628,7 @@ export const DANCE_THEATER = [
     {
         id: 2,
         name: 'DANCE_THEATER 2',
-        category:'DANCE_THEATER',
+        category: 'DANCE_THEATER',
         img: {
             firstPatch: 'dance_theate_picture.png',
             secondPatch: 'patch2',
@@ -631,9 +643,9 @@ export const DANCE_THEATER = [
     },
 
     {
-        id: 3, 
+        id: 3,
         name: 'DANCE_THEATER 3',
-        category:'DANCE_THEATER',
+        category: 'DANCE_THEATER',
         img: {
             firstPatch: 'dance_theate_picture.png',
             secondPatch: 'patch2',
@@ -650,7 +662,7 @@ export const DANCE_THEATER = [
     {
         id: 4,
         name: 'DANCE_THEATER 4',
-        category:'DANCE_THEATER',
+        category: 'DANCE_THEATER',
         img: {
             firstPatch: 'dance_theate_picture.png',
             secondPatch: 'patch2',
@@ -667,7 +679,7 @@ export const DANCE_THEATER = [
     {
         id: 5,
         name: 'DANCE_THEATER 5',
-        category:'DANCE_THEATER',
+        category: 'DANCE_THEATER',
         img: {
             firstPatch: 'dance_theate_picture.png',
             secondPatch: 'patch2',
@@ -684,7 +696,7 @@ export const DANCE_THEATER = [
     {
         id: 6,
         name: 'DANCE_THEATER 6',
-        category:'DANCE_THEATER',
+        category: 'DANCE_THEATER',
         img: {
             firstPatch: 'dance_theate_picture.png',
             secondPatch: 'patch2',
@@ -700,7 +712,7 @@ export const DANCE_THEATER = [
     {
         id: 6,
         name: 'DANCE_THEATER 6',
-        category:'DANCE_THEATER',
+        category: 'DANCE_THEATER',
         img: {
             firstPatch: 'dance_theate_picture.png',
             secondPatch: 'patch2',
