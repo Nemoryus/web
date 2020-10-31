@@ -50,10 +50,10 @@ a {
 }
 
 .pos-rel {
-    position: relative;
+    position: relative !important;
 }
 .pos-abs {
-    position: absolute;
+    position: absolute !important;
 }
 
 .t-center {
@@ -279,16 +279,6 @@ a {
 
 .overlay {
     position: relative;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color:#040821;
-    opacity: .7
-}
-
-.overlay-absolut{
-    position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
