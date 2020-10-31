@@ -35,27 +35,19 @@ function HomePage() {
         hidenGrid: {
             left: '-120%'
         },
+        arrowRotate0: {
+            transform: 'rotate(0deg)'
+        },
+        arrowRotate180: {
+            transform: 'rotate(180deg)'
+        },
         show: {
-            zIndex: 0
+            zIndex: 0,
+            transform: 'translate(30%)'
         },
         hiden: {
-            zIndex: -200
-        },
-
-        backGroundWithBlurEfect: {
-            // filter:'blur(40px)',
-            // backgroundImage: `url(${BaletkaImg})`,
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-        },
-        backGroundWithoutBlurEfect: {
-            // backgroundImage: filter(largeimg.jpg), blur(20px));
-            filter: 'none',
-            // backgroundImage: `url(${BaletkaImg})`,
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
+            zIndex: -200,
+            transform: 'translate(30%)'
         },
 
     }
@@ -100,23 +92,24 @@ function HomePage() {
             {
                 selectedPerformance == null ? (
                     <div className='container-home'>
-                        <div className='inner-container-home-first padd-top pos-rel' style={styles.backGroundWithBlurEfect}>
+                        <div className='inner-container-home-first  pos-rel padd-btm-dbl' style={styles.backGroundWithBlurEfect}>
                             <img className={'baletka-img pos-abs-00 ' + (show ? "whitBlur" : "whithoutBlur")} width='100%' max-height='100%' src={BaletkaImg}></img>
                             <Box className="main-grid-wrapper pos-rel" display="flex" justifyContent="space-between" >
-                                <Box className='width-small flex-row' onClick={toggleShowGrid}>
+                                <Box className='width-small flex-row'>
                                     <Box className="fullHeight flex-column">
                                         <Box className='vertical-line-red hight-25 center' />
                                         <Box className='center hight-50' >
                                             <Box className='rotated-270 flex-column center' >
-                                                <span className='home-page-span font-size-20'>PRODUCTION</span>
+                                                <span className='home-page-span font-size-20 letter-s t-red'>PRODUCTION</span>
                                             </Box>
                                         </Box>
                                         <Box className='vertical-line-red hight-25 center' />
                                     </Box>
-                                    <Box className='pos-rel'>
-                                        <img style={show ? styles.hiden : styles.show} className='arrow-image pos-abs' src={SipkaImg} width="40" />
+                                    <Box className='pos-rel fullHeight'>
+                                        <Box className={'pos-abs arrow-img-wrapper' + (show ? "-leftBorder" : "-rightBorder")} onClick={toggleShowGrid}>
+                                        {show ? <Box className='arrow arrow-left'/> : <Box className='arrow arrow-right'/>}
+                                        </Box>
                                     </Box>
-
                                 </Box>
                                 <Box className='grid-section pos-rel fullHeight width-bigg ' >
                                     <Box className='grid-wraper pos-abs fullWidth fullHeight push-top' style={show ? styles.showGrid : styles.hidenGrid}>
@@ -124,20 +117,20 @@ function HomePage() {
                                     </Box>
                                 </Box>
                                 <Box className='width-small fullHeight flex-column'>
-                                    <Box className='hight-33'>
-                                        <p className="vericaltext t-red center">
+                                    <Box className='follow-us-wrapper hight-33'>
+                                        <p className="vericaltext t-red center bold">
                                             FOLLOW US
                                         </p>
                                     </Box>
-                                    <Box className='vertical-line-wrapper hight-33 push-top-hlf'>
+                                    <Box className='vertical-line-wrapper hight-33 padd-top'>
                                         <Box className='vertical-line-red fullHeight fullWidth' />
                                     </Box>
-                                    <Box className='hight-33 width-45px center padd-top'>
+                                    <Box className='home-social-icon-wrapper hight-33 fullWidth padd-top-dbl'>
                                         <SocialIcons />
                                     </Box>
                                 </Box>
                             </Box>
-                            <Box className='home-button-view-all t-center padd-btm-dbl push-btm push-top-dbl'>
+                            <Box className='home-button-view-all t-center push-top push-btm'>
                                 <Button className='btn btn-3 center' component={NavLink} style={show ? styles.show : styles.hiden} to='/production'>view all</Button>
                             </Box>
                             <div className="container">
@@ -159,11 +152,12 @@ function HomePage() {
                                 et iusto odio dignissim qui blandit praesent luptatum zzril delenit
                                 augue duis dolore te
                         </p>
-                            <Box className='home-button-view-all t-center padd-btm-dbl push-btm push-top-dbl'>
-                                <Button className='btn btn-3 center' component={NavLink} style={show ? styles.show : styles.hiden} to='/about-us'>view all</Button>
+                            <Box className='t-center push-top push-btm-dbl'>
+                                <Button className='btn btn-2 center' component={NavLink} to='/about-us'>enter</Button>
                             </Box>
-                            <div className="video-cointainer" onClick={toggleVideoPlay} onMouseEnter={toggleVideoHover} onMouseLeave={toggleVideoHover}>
-                                {videoHover && !videoIsPlayed && <img className="button-icon play-button" src={PlayButtonImg} />}
+                            <div className="video-cointainer pos-rel" onClick={toggleVideoPlay} onMouseEnter={toggleVideoHover} onMouseLeave={toggleVideoHover}>
+                                {!videoIsPlayed && <div className='overlay-absolut'> </div>}
+                                {!videoIsPlayed && <img className="button-icon play-button" src={PlayButtonImg} />}
                                 {videoHover && videoIsPlayed && <img className="button-icon stop-button" src={StopButtonImg} />}
                                 <video className="video" ref={vidRef} onEnded={() => toggleVideoPlay()}>
                                     <source src={BaletkaVideo} type="video/mp4" />
@@ -172,10 +166,10 @@ function HomePage() {
                         </div>
                     </div>
                 )
-            :
-                (
-                    <CategoryPage performances={performances} indexSelectedPredstavenie={1} />
-                )
+                    :
+                    (
+                        <CategoryPage performances={performances} indexSelectedPredstavenie={1} />
+                    )
             }
         </Fragment>
     );

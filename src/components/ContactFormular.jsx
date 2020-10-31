@@ -45,13 +45,6 @@ export default function ContactFormular({toggleOpen}) {
           autoFocus
           value={email.name || ""}
           onChange={handleChange}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                  <FaceIcon/>
-              </InputAdornment>
-            ),
-          }}
         />
         <TextField
           className="push-btm"
@@ -61,13 +54,6 @@ export default function ContactFormular({toggleOpen}) {
           name="email"
           value={email.email || ""}
           onChange={handleChange}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <EmailIcon/>
-              </InputAdornment>
-            ),
-          }}
         />
         <TextField
           className="push-btm"
@@ -77,13 +63,6 @@ export default function ContactFormular({toggleOpen}) {
           name="subject"
           value={email.subject || ""}
           onChange={handleChange}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <ChevronRightIcon/>
-              </InputAdornment>
-            ),
-          }}
         />
         <TextField 
           className="push-btm"
@@ -95,13 +74,6 @@ export default function ContactFormular({toggleOpen}) {
           name="message"
           value={email.message || ""}
           onChange={handleChange}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <MessageIcon/>
-              </InputAdornment>
-            ),
-          }}
         />
         <Button className='push-top-dbl btn btn-2 contact-form-btn' onClick={sendEmail}>send</Button>
       </form>
