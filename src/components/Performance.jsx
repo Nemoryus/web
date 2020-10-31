@@ -5,9 +5,9 @@ function Performance({performance, setSelectedPerformance}) {
     return (
         <Box className='performance-item-wrapper overflow pos-rel fullHeight hand'>
             <Box className='performance-item' onClick={() => setSelectedPerformance(performance)}>
-                {/* {performance.img[0] != '' &&
-                    <img className='performance-image' src={require(`../picture/${performance.img[0]}`)} />
-                } */}
+                {performance.images.length > 0 &&
+                    <img className='performance-image' src={require(`../picture/${performance.images[0]}`)} />
+                }
                 <Box className='overlay performance-overlay'>
                     <Box className="performance-name middle fullWidth">
                         {performance.name}
