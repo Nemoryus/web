@@ -42,6 +42,7 @@ function SliderImages({ images }) {
 function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
   const performances = getPerformances(selectedPerformance.category)
   const showProductionPage = () => {
+    window.scrollTo(0, 0) // on change go back to top
     setSelectedPerformance(null)
   }
 

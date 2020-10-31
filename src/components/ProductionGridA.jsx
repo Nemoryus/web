@@ -2,9 +2,9 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 
-import Performance from '../components/Performance'
+import Performance from './Performance'
 
-export default function ProductionFirstGrid({ performances, setSelectedPerformance }) {
+export default function ProductionGridA({ performances, setSelectedPerformance }) {
 
     return (
         <Grid container spacing={3} className="production-performances">

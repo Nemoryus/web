@@ -140,8 +140,11 @@ function HomePage() {
                                 <Button className='btn btn-2 center' component={NavLink} to='/about-us'>enter</Button>
                             </Box>
                             <div className="video-cointainer pos-rel" onClick={toggleVideoPlay} onMouseEnter={toggleVideoHover} onMouseLeave={toggleVideoHover}>
-                                {!videoIsPlayed && <div className='overlay-absolut'> </div>}
-                                {!videoIsPlayed && <img className="button-icon play-button" src={PlayButtonImg} />}
+                                {!videoIsPlayed && 
+                                    <div className='overlay pos-abs'>
+                                        <img className="button-icon play-button" src={PlayButtonImg} />
+                                    </div>
+                                }
                                 {videoHover && videoIsPlayed && <img className="button-icon stop-button" src={StopButtonImg} />}
                                 <video className="video" ref={vidRef} onEnded={() => toggleVideoPlay()}>
                                     <source src={BaletkaVideo} type="video/mp4" />

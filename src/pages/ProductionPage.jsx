@@ -8,8 +8,9 @@ import Box from "@material-ui/core/Box";
 import CategoryPage from "./CategoryPage"
 import ProductionMenu from '../components/ProductionMenu';
 import ProductionPerformanceMenu from '../components/ProductionPerformanceMenu';
-import ProductionFirstGrid from '../components/ProductionFirstGrid'
-import ProductionSecondGrid from '../components/ProductionSecondGrid'
+import ProductionGrid from '../components/ProductionGrid'
+import ProductionGridA from '../components/ProductionGridA'
+import ProductionGridB from '../components/ProductionGridB'
 
 
 import ScrollBar from "react-perfect-scrollbar";
@@ -34,28 +35,24 @@ export default function ProductionPage() {
   function ProductionGridLayout() {
     let arrayOfGrids = [];
     let tmpPerformances = [];
-    let isFirst = false;
+    let countOfGrid = 0
     performances.map((performance, index) => {
       if(index != 0) {
         if(index % (gridSize * 2) == 0) {
-          arrayOfGrids.push(<ProductionSecondGrid key={index} performances={tmpPerformances} setSelectedPerformance={setSelectedPerformance} />);
-          isFirst = false;
+          arrayOfGrids.push(<ProductionGridB key={countOfGrid} performances={tmpPerformances} setSelectedPerformance={setSelectedPerformance} />);
           tmpPerformances = []
+          countOfGrid++;
         } else if(index % gridSize == 0) {
-          arrayOfGrids.push(<ProductionFirstGrid key={index} performances={tmpPerformances} setSelectedPerformance={setSelectedPerformance} />);
-          isFirst = true;
+          arrayOfGrids.push(<ProductionGridA key={countOfGrid} performances={tmpPerformances} setSelectedPerformance={setSelectedPerformance} />);
           tmpPerformances = []
+          countOfGrid++;
         }
       }
       tmpPerformances.push(performance);
     })
 
     if(tmpPerformances.length != 0) {
-      // if(!isFirst) {
-      //   arrayOfGrids.push(<ProductionFirstGrid key={tmpPerformances.length} performances={tmpPerformances} handleSelectedPerformance={handleSelectedPerformance} />);
-      // } else {
-      //   arrayOfGrids.push(<ProductionSecondGrid key={tmpPerformances.length} performances={tmpPerformances} handleSelectedPerformance={handleSelectedPerformance} />);
-      // }
+      arrayOfGrids.push(<ProductionGrid key={countOfGrid} performances={tmpPerformances} setSelectedPerformance={setSelectedPerformance} />);
     }
     return (
       <Box className="padd-btm push-btm-hlf padd-top push-top-hlf">{arrayOfGrids}</Box>

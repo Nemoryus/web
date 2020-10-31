@@ -750,8 +750,8 @@ export const SHOW = [
         ]
     },
     {
-        id: 4,
-        name: 'SHOW 4',
+        id: 7,
+        name: 'SHOW 7',
         category: 'SHOW',
         poster: '',
         images: [
@@ -782,8 +782,8 @@ export const SHOW = [
         ]
     },
     {
-        id: 5,
-        name: 'SHOW 5',
+        id: 8,
+        name: 'SHOW 8',
         category: 'SHOW',
         poster: '',
         images: [
@@ -814,8 +814,72 @@ export const SHOW = [
         ]
     },
     {
-        id: 6,
-        name: 'SHOW 6',
+        id: 9,
+        name: 'SHOW 9',
+        category: 'SHOW',
+        poster: '',
+        images: [
+        ],
+        video: 'video patch',
+        additionalData: {
+            title: 'title text',
+            info: 'info text',
+            note: 'Slovak national theater'
+        },
+        reviews: [
+            {
+                body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
+                author: 'Ronald S. Taft, holder of the musical rights'
+            },
+            {
+                body: 'The musical was appreciated by the audience with twenty minutes of standing ovations.',
+                author: 'Denik.cz'
+            },
+            {
+                body: 'Great fun and positive energy, and all of that in superior direction and absolutely excellent choreography of Jan Ďurovčík.',
+                author: 'Musical.cz'
+            },
+            {
+                body: 'Once again, Ján Ďurovčík gets the absolute maximum out of every cast member, everyone is dancing for their life and the sweatsoaked shirts at the end of the show make for clear evidence.',
+                author: 'Musical.cz'
+            }
+        ]
+    },
+    {
+        id: 10,
+        name: 'SHOW 10',
+        category: 'SHOW',
+        poster: '',
+        images: [
+        ],
+        video: 'video patch',
+        additionalData: {
+            title: 'title text',
+            info: 'info text',
+            note: 'Slovak national theater'
+        },
+        reviews: [
+            {
+                body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
+                author: 'Ronald S. Taft, holder of the musical rights'
+            },
+            {
+                body: 'The musical was appreciated by the audience with twenty minutes of standing ovations.',
+                author: 'Denik.cz'
+            },
+            {
+                body: 'Great fun and positive energy, and all of that in superior direction and absolutely excellent choreography of Jan Ďurovčík.',
+                author: 'Musical.cz'
+            },
+            {
+                body: 'Once again, Ján Ďurovčík gets the absolute maximum out of every cast member, everyone is dancing for their life and the sweatsoaked shirts at the end of the show make for clear evidence.',
+                author: 'Musical.cz'
+            }
+        ]
+    },
+    {
+        id: 10,
+        name: 'SHOW 11',
         category: 'SHOW',
         poster: '',
         images: [
