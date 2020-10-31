@@ -14,7 +14,8 @@ import SocialIcons from '../components/SocialIcons';
 import BaletkaImg from '../picture/baletka.jpg';
 
 
-import { MUSICALS, BALLET_OPERA, SHOW, DANCE_THEATER } from '../data/data';
+import { getPerformances } from '../data/constans'
+import { MUSICALS } from '../data/data';
 
 function HomePage() {
     const vidRef = useRef(null);
@@ -54,23 +55,6 @@ function HomePage() {
 
     const toggleShowGrid = () => {
         setShow((show) => !show);
-    }
-
-    const handleSelectedPerformance = (performance) => {
-        handleSetPerformances(performance.category)
-        setSelectedPerformance(performance)
-    }
-
-    const handleSetPerformances = (categoryName) => {
-        if (categoryName === 'MUSICAL') {
-            setPerformances(MUSICALS)
-        } else if (categoryName === 'BALLET_OPERA') {
-            setPerformances(BALLET_OPERA)
-        } else if (categoryName === 'SHOW') {
-            setPerformances(SHOW)
-        } else if (categoryName === 'DANCE_THEATER') {
-            setPerformances(DANCE_THEATER)
-        }
     }
 
     const toggleVideoHover = () => {
@@ -113,7 +97,7 @@ function HomePage() {
                                 </Box>
                                 <Box className='grid-section pos-rel fullHeight width-bigg ' >
                                     <Box className='grid-wraper pos-abs fullWidth fullHeight push-top' style={show ? styles.showGrid : styles.hidenGrid}>
-                                        <HomePerformances performances={performances} handleSelectedPerformance={handleSelectedPerformance} />
+                                        <HomePerformances performances={performances} setSelectedPerformance={setSelectedPerformance} />
                                     </Box>
                                 </Box>
                                 <Box className='width-small fullHeight flex-column'>
@@ -168,7 +152,7 @@ function HomePage() {
                 )
                     :
                     (
-                        <CategoryPage performances={performances} indexSelectedPredstavenie={1} />
+                        <CategoryPage selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance} />
                     )
             }
         </Fragment>

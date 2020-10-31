@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Text } from '../containers/Language';
 
+
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 
@@ -13,33 +14,22 @@ import ProductionSecondGrid from '../components/ProductionSecondGrid'
 
 import ScrollBar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
-import { MUSICALS, BALLET_OPERA, SHOW, DANCE_THEATER } from '../data/data';
+
+import { getPerformances } from '../data/constans'
 
 export default function ProductionPage() {
   const gridSize = 6; // count of performances in a grid 
   const [selectedPerformance, setSelectedPerformance] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [performances, setPerformances] = useState([...MUSICALS, ...BALLET_OPERA, ...SHOW, ...DANCE_THEATER]); // set all performances as default
+  const [selectedCategory, setSelectedCategory] = useState('ALL');
+  const [performances, setPerformances] = useState(getPerformances('ALL')); // set all performances as default
 
   useEffect(() => {
-    if (selectedCategory === 'MUSICALS') {
-      setPerformances(MUSICALS)
-    } else if (selectedCategory === 'BALLET_OPERA') {
-      setPerformances(BALLET_OPERA)
-    } else if (selectedCategory === 'SHOW') {
-      setPerformances(SHOW)
-    } else if (selectedCategory === 'DANCE_THEATER'){
-      setPerformances(DANCE_THEATER)
-    } else {
-      // all performances
-      setPerformances([...MUSICALS, ...BALLET_OPERA, ...SHOW, ...DANCE_THEATER])
-    }
-  }, [selectedCategory])
+    window.scrollTo(0, 0) // on change go back to top
+  }, [selectedPerformance])
 
-  const handleSelectedPerformance = (performance) => {
-    setSelectedCategory(performance.category)
-    setSelectedPerformance(performance)
-  }
+  useEffect(() => {
+    setPerformances(getPerformances(selectedCategory))
+  }, [selectedCategory])
 
   function ProductionGridLayout() {
     let arrayOfGrids = [];
@@ -48,11 +38,11 @@ export default function ProductionPage() {
     performances.map((performance, index) => {
       if(index != 0) {
         if(index % (gridSize * 2) == 0) {
-          arrayOfGrids.push(<ProductionSecondGrid key={index} performances={tmpPerformances} handleSelectedPerformance={handleSelectedPerformance} />);
+          arrayOfGrids.push(<ProductionSecondGrid key={index} performances={tmpPerformances} setSelectedPerformance={setSelectedPerformance} />);
           isFirst = false;
           tmpPerformances = []
         } else if(index % gridSize == 0) {
-          arrayOfGrids.push(<ProductionFirstGrid key={index} performances={tmpPerformances} handleSelectedPerformance={handleSelectedPerformance} />);
+          arrayOfGrids.push(<ProductionFirstGrid key={index} performances={tmpPerformances} setSelectedPerformance={setSelectedPerformance} />);
           isFirst = true;
           tmpPerformances = []
         }
@@ -84,7 +74,7 @@ export default function ProductionPage() {
                   <ProductionMenu selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
                 </Grid>
               </Grid>
-              <ProductionPerformanceMenu selectedCategory={selectedCategory} handleSelectedPerformance={handleSelectedPerformance} />
+              <ProductionPerformanceMenu selectedCategory={selectedCategory} setSelectedPerformance={setSelectedPerformance} />
               <ProductionGridLayout/>
               {/*{firstTime && CreateAllGrid(handleSelectedPredstavenie)}
               <div className='scroleArea'>
@@ -99,7 +89,7 @@ export default function ProductionPage() {
         ) 
       : 
         (
-          <CategoryPage performances={performances} selectedPerformance={selectedPerformance} />
+          <CategoryPage selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance} />
         )
       }
     </Fragment>
