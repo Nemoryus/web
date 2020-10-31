@@ -1,13 +1,12 @@
 import React from 'react'
-import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 
-function Performance({performance, handleSelectedPerformance}) {
+function Performance({performance, setSelectedPerformance}) {
     return (
         <Box className='performance-item-wrapper overflow pos-rel fullHeight hand'>
-            <Box className='performance-item' onClick={() => handleSelectedPerformance(performance)}>
-                {/* {performance.img.firstPatch != '' &&
-                    <img className='performance-image' src={require(`../picture/${performance.img.firstPatch}`)} />
+            <Box className='performance-item' onClick={() => setSelectedPerformance(performance)}>
+                {/* {performance.img[0] != '' &&
+                    <img className='performance-image' src={require(`../picture/${performance.img[0]}`)} />
                 } */}
                 <Box className='overlay performance-overlay'>
                     <Box className="performance-name middle fullWidth">
