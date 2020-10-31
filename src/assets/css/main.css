@@ -574,6 +574,10 @@ footer p{
     z-index:1;
 }
 
+.arrow::after{
+    
+}
+
 .arrow:hover{
     box-shadow: 0 0 5px 5px rgba(255, 105, 135, .3);
 }
