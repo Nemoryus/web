@@ -42,10 +42,12 @@ function HomePage() {
             transform: 'rotate(180deg)'
         },
         show: {
-            zIndex: 0
+            zIndex: 0,
+            transform: 'translate(30%)'
         },
         hiden: {
-            zIndex: -200
+            zIndex: -200,
+            transform: 'translate(30%)'
         },
 
     }
@@ -104,8 +106,8 @@ function HomePage() {
                                         <Box className='vertical-line-red hight-25 center' />
                                     </Box>
                                     <Box className='pos-rel fullHeight'>
-                                        <Box className='arrow-img-wrapper pos-abs' onClick={toggleShowGrid}>
-                                            <img className='arrow-img' style={show ? styles.arrowRotate180 : styles.arrowRotate0} src={SipkaImg} width="40" /> :
+                                        <Box className={'pos-abs arrow-img-wrapper' + (show ? "-leftBorder" : "-rightBorder")} onClick={toggleShowGrid}>
+                                        {show ? <Box className='arrow arrow-left'/> : <Box className='arrow arrow-right'/>}
                                         </Box>
                                     </Box>
                                 </Box>
