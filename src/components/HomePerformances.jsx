@@ -46,10 +46,10 @@ export default function HomePerformances({ performances, setSelectedPerformance 
                     </Grid>
                     <Grid item xs={4} className="no-padd-btm">
                         <Grid container spacing={3} className="fullHeight">
-                            <Grid item xs={6} className="no-padd-btm change-fs">
+                            <Grid item xs={6} className="no-padd-btm">
                                 <Performance performance={performances[7]} setSelectedPerformance={setSelectedPerformance}/>
                             </Grid>
-                            <Grid item xs={6} className="no-padd-btm change-fs">
+                            <Grid item xs={6} className="no-padd-btm">
                                 <Performance performance={performances[8]} setSelectedPerformance={setSelectedPerformance}/>
                             </Grid>
                         </Grid>
