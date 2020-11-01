@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
+import { useHistory } from 'react-router-dom'
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 
@@ -39,11 +40,15 @@ function SliderImages({ images }) {
   )
 };
 
-function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
+function CategoryPage({ setHeaderType, selectedPerformance, setSelectedPerformance }) {
+  setHeaderType(0)
   const performances = getPerformances(selectedPerformance.category)
+  const history = useHistory()
+
   const showProductionPage = () => {
     window.scrollTo(0, 0) // on change go back to top
     setSelectedPerformance(null)
+    history.push('production')
   }
 
   return (
@@ -58,11 +63,13 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
         </div>
 
       <Box className="page-content content-light padd-top padd-btm t-center">
-        <p className="bold push-btm-dbl">{selectedPerformance.additionalData.info}<br></br>{selectedPerformance.additionalData.note}</p>
+        <p className="bold">{selectedPerformance.additionalData.info}<br></br>{selectedPerformance.additionalData.note}</p>
         {selectedPerformance.poster != '' &&
-          <img className="push-btm-hlf" src={require(`../picture/${selectedPerformance.poster}`)}/>
+          <Fragment>
+            <img className="push-btm-hlf push-top-dbl" src={require(`../picture/${selectedPerformance.poster}`)}/>
+            <span>(official poster)</span>
+          </Fragment>
         }
-        <span>(official poster)</span>
         <h3 className='page-title padd-top-dbl'>Review</h3>
         {selectedPerformance.reviews.map((review) => {
           return (

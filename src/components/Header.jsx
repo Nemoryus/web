@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from 'react-router-dom'
 import Grid from "@material-ui/core/Grid";
 import Logo from '../picture/logo.png';
@@ -9,9 +9,21 @@ import DropMenu from "../components/DropMenu"
 import Hidden from '@material-ui/core/Hidden';
 import LanguageSelect from '../components/LanguageSelect';
 
-export default function Header(props) {
-    return (
-        <header className="header-wrapper">
+export default function Header({headerType}) {
+    const [headerActive, setHeaderActive] = useState(false)
+
+    const handleHeaderActive = () => {
+        if(window.scrollY >= 1) {
+            setHeaderActive(true)
+        } else {
+            setHeaderActive(false)
+        }
+    }
+
+    window.addEventListener('scroll', handleHeaderActive)
+
+    return(
+        <header className={`header-wrapper ${headerType == -1 ? "header-wrapper--trans" : headerType == 0 ? "header-wrapper--grad" : ""} ${headerActive ? "active" : ""}`}>
             <Grid className="header" container justify="center" alignItems="center">
                 <Grid item xs={6} md={2}>
                     <NavLink to="/home">

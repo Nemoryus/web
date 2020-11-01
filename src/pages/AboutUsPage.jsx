@@ -7,9 +7,11 @@ import ProfilPicture from '../picture/profilPicutre.png'
 import ProfilPicture2 from '../picture/profilPicture2.png'
 import { Text } from '../containers/Language';
 
-function AboutUsPage() {
-   return(
-        <Box id="about-us-page" className="content-light padd-top padd-btm">
+function AboutUsPage({ setHeaderType }) {
+    setHeaderType(1)
+
+    return(
+        <Box id="about-us-page" className="content-light content-padd-top padd-btm">
             <h3 className='page-title padd-top-dbl'><Text tid="aboutUs"/></h3>
             <p className='page-title-text push-btm push-top padd-btm-hlf padd-top-hlf'>
                 Lorem ipsum dolor sit amet, consectetuer 

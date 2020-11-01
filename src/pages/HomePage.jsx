@@ -17,7 +17,8 @@ import BaletkaImg from '../picture/baletka.jpg';
 import { getPerformances } from '../data/constans'
 import { MUSICALS } from '../data/data';
 
-function HomePage() {
+function HomePage({ setHeaderType }) {
+    setHeaderType(-1)
     const vidRef = useRef(null);
     let [videoHover, setVideoHover] = useState(false);
     let [videoIsPlayed, setVideoIsPlayed] = useState(false);
@@ -50,7 +51,6 @@ function HomePage() {
             zIndex: -200,
             transform: 'translate(30%)'
         },
-
     }
 
     const toggleShowGrid = () => {
@@ -75,7 +75,7 @@ function HomePage() {
         <Fragment>
             {
                 selectedPerformance == null ? (
-                    <div className='container-home'>
+                    <div className='container-home content-dark'>
                         <div className='inner-container-home-first  pos-rel padd-btm-dbl' style={styles.backGroundWithBlurEfect}>
                             <img className={'baletka-img pos-abs-00 ' + (show ? "whitBlur" : "whithoutBlur")} width='100%' max-height='100%' src={BaletkaImg}></img>
                             <Box className="main-grid-wrapper pos-rel" display="flex" justifyContent="space-between" >
@@ -152,11 +152,11 @@ function HomePage() {
                             </div>
                         </div>
                     </div>
-                )
+                ) 
                     :
-                    (
-                        <CategoryPage selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance} />
-                    )
+                (
+                    <CategoryPage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance} />
+                )
             }
         </Fragment>
     );

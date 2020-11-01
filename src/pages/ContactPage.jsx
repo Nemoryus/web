@@ -7,7 +7,8 @@ import Box from "@material-ui/core/Box";
 import { Text } from '../containers/Language';
 import ContactFormular from '../components/ContactFormular'
 
-function ContactPage() {
+function ContactPage({ setHeaderType }) {
+    setHeaderType(1)
     const [isOpenedForm, setOpenForm] = useState(false);
 
     const toggleOpenedForm = () => {
@@ -15,7 +16,7 @@ function ContactPage() {
     };
 
     return (
-        <Box id="contact-page" className='content-dark padd-top padd-btm t-center'>
+        <Box id="contact-page" className='content-dark content-padd-top padd-btm t-center'>
             <h3 className='page-title padd-top-dbl'><Text tid="contact"/></h3>
             <Box className="push-btm push-top padd-btm-hlf padd-top-hlf">
                 <Grid className="contact-content" container alignItems='center'>

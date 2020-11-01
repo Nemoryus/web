@@ -82,7 +82,7 @@ export default function CategoryMenu({ performances, selectedPerformance, setSel
                     <Grid key={index} item xs={index == middleIndex ? 4 : 2} className={index == middleIndex ? "selected" : ""}>
                         {index == middleIndex && 
                             <IconButton className="t-white" onClick={() => goLeft(true)}>
-                                <SvgIcon>
+                                <SvgIcon fontSize='large'>
                                     <ArrowLeftIcon />
                                 </SvgIcon>
                             </IconButton>
@@ -90,7 +90,7 @@ export default function CategoryMenu({ performances, selectedPerformance, setSel
                         {item.name}
                         {index == middleIndex && 
                             <IconButton className="t-white" onClick={() => goRight(true)}>
-                                <SvgIcon>
+                                <SvgIcon fontSize='large'>
                                     <ArrowRightIcon />
                                 </SvgIcon>
                             </IconButton>

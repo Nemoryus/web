@@ -18,7 +18,8 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 
 import { getPerformances } from '../data/constans'
 
-export default function ProductionPage() {
+export default function ProductionPage({ setHeaderType }) {
+  setHeaderType(1)
   const gridSize = 6; // count of performances in a grid 
   const [selectedPerformance, setSelectedPerformance] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('ALL');
@@ -63,7 +64,7 @@ export default function ProductionPage() {
     <Fragment>
       {
         selectedPerformance == null ? (
-          <Grid container id="production-page" justify="center" className="content-light padd-top padd-btm">
+          <Grid container id="production-page" justify="center" className="content-light content-padd-top padd-btm">
             <Grid item xs={9}>
               <h3 className='page-title padd-top-dbl'><span className='hand' onClick={() => setSelectedCategory('ALL')}><Text tid="production"/></span></h3>
               <Grid container justify="center" className="padd-btm push-btm-hlf">
@@ -84,9 +85,9 @@ export default function ProductionPage() {
             </Grid>
           </Grid>
         ) 
-      : 
+          : 
         (
-          <CategoryPage selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance} />
+          <CategoryPage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance} />
         )
       }
     </Fragment>

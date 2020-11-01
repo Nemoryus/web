@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { LanguageProvider } from '../containers/Language';
 
 //import z main
@@ -15,16 +15,18 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 function Main() {
+  const [headerType, setHeaderType] = useState(-1) // -1 - fully transparented, 0 - gradient, 1 - fully colored
+  
   return (
     <LanguageProvider>
-        <Header/>
+        <Header headerType={headerType}/>
 
         <main className="content">
           <Switch>
-            <Route path="/home" component={HomePage} exact />
-            <Route path="/about-us" component={AboutUsPage} />
-            <Route path="/contact" component={ContactPage} />
-            <Route path="/production" component={ProductionPage} />
+            <Route path="/home" exact render={() => <HomePage setHeaderType={setHeaderType}/>} />
+            <Route path="/about-us" render={() => <AboutUsPage setHeaderType={setHeaderType}/>} />
+            <Route path="/contact" render={() => <ContactPage setHeaderType={setHeaderType}/>} />
+            <Route path="/production" render={() => <ProductionPage setHeaderType={setHeaderType}/>} />
           </Switch>
         </main>
 
