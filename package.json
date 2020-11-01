@@ -25,6 +25,7 @@
     "react-scripts": "3.4.3",
     "react-scrollbar": "^0.5.6",
     "react-scrollbar-js": "^1.0.1",
+    "react-textfit": "^1.1.0",
     "redux": "^4.0.5",
     "redux-form": "^8.3.6",
     "simplebar": "^5.3.0"
