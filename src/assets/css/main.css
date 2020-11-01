@@ -121,6 +121,24 @@ a {
 .no-padd-btm {
     padding-bottom: 0 !important;
 }
+.padd-hlf{
+    padding: 15px !important
+}
+.padd{
+    padding: 30px !important
+}
+.padd-dbl{
+    padding: 60px !important
+}
+.push-hlf{
+    margin: 15px !important
+}
+.push{
+    margin: 30px !important
+}
+.push-dbl{
+    margin: 60px !important
+}
 .padd-btm-hlf {
 	padding-bottom: 15px !important
 }
@@ -1066,17 +1084,6 @@ footer p{
 }
 
 
-/* Material UI Fix */
-.MuiGrid-direction-xs-column > .MuiGrid-grid-xs-8 {
-    max-width: 100%;
-    max-height: 66.666667%;
-}
-.MuiGrid-direction-xs-column > .MuiGrid-grid-xs-4 {
-    max-width: 100%;
-    max-height: 33.333333%;
-}
-
-
 /*         Performance item - begin          */
 .performance-item {
     transition: transform 0.35s ease-in-out;
@@ -1093,44 +1100,38 @@ footer p{
 .performance-item .performance-name,
 .performance-item .performance-overlay-title {
     font-weight: bold;
-    text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
 }
-.performance-item .performance-name {
-    color: white;
-    font-size: 20px;
-    display: block;
+.performance-item .text-fit > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .performance-item .performance-overlay-text {
-    width: 80%;
-    margin: 0 auto;
-    display: none
+    position: absolute;
+    top: 0;
+    opacity: 0;
 }
-.performance-item .performance-overlay-title {
-    font-size: 18px;
-    color: #FF0000;
-}
+.performance-item .performance-overlay-title,
 .performance-item .performance-overlay-info {
-    font-size: 12px;
-    color: white;
-    text-align: center;
-    font-weight: bold;
+    padding: 5px
+}
+.performance-item .performance-overlay-info > div {
+    align-items: baseline;
 }
 .performance-item:hover {
     transform: scale(1.10); 
 }
 .performance-item:hover .performance-name {
-    display: none;
+    opacity: 0;
 }
 .performance-item:hover .performance-overlay {
     opacity: .9;
 }
 .performance-item:hover .performance-overlay-text {
-    display: block;
-}
-.change-fs .performance-overlay-title{
-    font-size: 15px!important;
+    opacity: 1;
 }
 /*         Performance item - end          */
 
@@ -1160,3 +1161,22 @@ footer p{
     opacity: 0;
 }
 /*         Slider settings - end          */
+
+/*         Material UI fix - begin          */
+.MuiGrid-direction-xs-column > .MuiGrid-grid-xs-8 {
+    max-width: 100%;
+    max-height: 66.666667%;
+}
+.MuiGrid-direction-xs-column > .MuiGrid-grid-xs-4 {
+    max-width: 100%;
+    max-height: 33.333333%;
+}
+.MuiGrid-direction-xs-column > .MuiGrid-grid-xs-7 {
+    max-width: 100%;
+    max-height: 58.333333%;
+}
+.MuiGrid-direction-xs-column > .MuiGrid-grid-xs-5 {
+    max-width: 100%;
+    max-height: 41.666667%;
+}
+/*         Material UI fix - end          */
