@@ -83,7 +83,7 @@ function HomePage({ setHeaderType }) {
                                     <Box className="fullHeight flex-column">
                                         <Box className='vertical-line-red hight-25 center' />
                                         <Box className='center hight-50' >
-                                            <Box className='rotated-270 flex-column center' >
+                                            <Box className='rotated-270 flex-column center'>
                                                 <span className='home-page-span font-size-20 letter-s t-red'>PRODUCTION</span>
                                             </Box>
                                         </Box>
