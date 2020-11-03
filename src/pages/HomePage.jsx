@@ -41,11 +41,9 @@ function HomePage({ setHeaderType }) {
         },
         show: {
             zIndex: 0,
-            transform: 'translate(30%)'
         },
         hiden: {
             zIndex: -200,
-            transform: 'translate(30%)'
         },
     }
 
@@ -79,8 +77,8 @@ function HomePage({ setHeaderType }) {
         <Fragment>
             {
                 selectedPerformance == null ? (
-                    <div className='container-home content-dark'>
-                        <div className='inner-container-home-first  pos-rel padd-btm-dbl' style={styles.backGroundWithBlurEfect}>
+                    <div id="home-page" className='content-dark'>
+                        <div className='content-padd-top pos-rel padd-btm-dbl' style={styles.backGroundWithBlurEfect}>
                             <img className={'baletka-img pos-abs-00 ' + (show ? "whitBlur" : "whithoutBlur")} width='100%' max-height='100%' src={BaletkaImg}></img>
                             <Box className="main-grid-wrapper pos-rel" display="flex" justifyContent="space-between" >
                                 <Box className='width-small flex-row'>
@@ -126,7 +124,7 @@ function HomePage({ setHeaderType }) {
                                 <div className="scrolling">On Monday (September 28, 2020) we started preparation for Stravinsky's evening which will combine two well-known works - Petrushka and The Firebird from the work of a Russian composer named Igor Fiodorovich Stravinsky. It is an interesting combination of modern ballet - dance, music and design. <strong style={{ color: 'red' }}> /NEWS/</strong></div>
                             </div>
                         </div>
-                        <div className='inner-container-home-second'>
+                        <div>
                             <h4>ABOUT US</h4>
 
                             <p>

@@ -701,7 +701,7 @@ footer p{
     padding-right: 45px;
 }
 
-.container-home .wrapper-social-icons{
+#home-page .wrapper-social-icons{
     width: 45px;
     float: right;
 }
@@ -722,7 +722,7 @@ footer p{
     backdrop-filter: none;
 }
 
-.inner-container-home-first .wrapper-social-icons a{
+#home-page .wrapper-social-icons a{
     margin:0!important;
 }
 
@@ -739,7 +739,7 @@ footer p{
     text-orientation: upright;
 }
 
-.container-home .container {
+#home-page .container {
     box-shadow: -1px 0px 10px 0px rgba(250, 8, 8, 0.842); 
     color: white;
     overflow: hidden;
@@ -771,26 +771,20 @@ footer p{
     height: 100%;
 }
 
-.inner-container-home-first{
-    padding-top: 100px;
-    height: 40%;
-}
-
-
-.container-home .nav-link-button{
+#home-page .nav-link-button{
     height: 46px;
     padding: 13px 0;
     margin:40px auto 0 auto;
 }
 
-.container-home h4{
+#home-page h4{
     margin:100px auto 0 auto;
     color:white;
     letter-spacing: 5px;
     text-align: center;
 }
 
-.container-home p{
+#home-page p{
     width: 30%;
     margin:3% auto 0 auto   ;
     color: white;
@@ -805,7 +799,7 @@ footer p{
     z-index: 200;
 }
 
-.container-home .video-cointainer{
+#home-page .video-cointainer{
     display: block;
     position: relative;
     margin: 10% auto 0 auto;
@@ -814,40 +808,40 @@ footer p{
 }
 
 @media screen and (max-width: 1280px){
-    .container-home p{
+    #home-page p{
         width: 30%;
     }
 }
 
 @media screen and (max-width: 960px){   
-    .container-home p {
+    #home-page p {
         width: 40%;
         }
 
-    .container-home .video-cointainer {
+    #home-page .video-cointainer {
         width: 640px;
     }
     
 }
 
 @media screen and (max-width: 700px){
-    .container-home p{
+    #home-page p{
         width: 55%;
     }
 
-    .container-home .video-cointainer {
+    #home-page .video-cointainer {
         width: 500px;
     }
 }
 
 @media screen and (max-width: 600px){
-    .container-home .video-cointainer {
+    #home-page .video-cointainer {
         width: 420px;
     }  
 }
 
 @media screen and (max-width: 600px){
-    .container-home .video-cointainer {
+    #home-page .video-cointainer {
         width: 320px;
     }
 }
