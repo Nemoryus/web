@@ -94,7 +94,7 @@ function HomePage({ setHeaderType }) {
                                         <Box className='vertical-line-red hight-25 center' />
                                     </Box>
                                     <Box className='pos-rel fullHeight'>
-                                        <Box className={'pos-abs arrow-img-wrapper' + (show ? "-leftBorder" : "-rightBorder")} onClick={toggleShowGrid}>
+                                        <Box className={'pos-abs arrow-img-wrapper'+(show ? "-leftBorder" : "-rightBorder")} onClick={toggleShowGrid}>
                                         {show ? <Box className='arrow arrow-left'/> : <Box className='arrow arrow-right'/>}
                                         </Box>
                                     </Box>
