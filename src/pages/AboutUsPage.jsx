@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import {NavLink} from "react-router-dom"
 
 import Button from '@material-ui/core/Button';
+import Link from '@material-ui/core/Link';
 import Box from "@material-ui/core/Box";
 import ProfilPicture from '../picture/profilPicutre.png'
 import ProfilPicture2 from '../picture/profilPicture2.png'
@@ -32,11 +33,11 @@ function AboutUsPage({ setHeaderType }) {
                 zzril delenit augue duis dolore te feugait
                 nulla facilisi.
             </p>
-            <Box className="page-content">
+            <Box className="page-content t-center">
                 <img src={ProfilPicture2}/>
                 <h1>JÁN ĎUROVČÍK</h1>
                 <img src={ProfilPicture}/>
-                <p className='page-content-text'>
+                <p className='page-content-text push-top push-btm-hlf'>
                     Has studied choreography at the Academy 
                     of Music and Dramatic Arts (VŠMU) in 
                     Bratislava under the direction of 
@@ -50,7 +51,10 @@ function AboutUsPage({ setHeaderType }) {
                 </p>
             </Box>
             <Box className='t-center padd-btm-dbl push-btm push-top-dbl'>
-                <Button component={NavLink} className='btn btn-1' to='/'>View all</Button>
+                <Link className='btn btn-1' rel="noreferrer" target="_blank" href="http://www.jandurovcik.com/en/biography-gallery" >
+                    view all
+                </Link>
+                {/* <Button component={NavLink} className='btn btn-1' to='/'>view all</Button> */}
             </Box>
         </Box>
     );   

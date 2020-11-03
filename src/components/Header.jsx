@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { NavLink } from 'react-router-dom'
-import Grid from "@material-ui/core/Grid";
-import Logo from '../picture/logo.png';
 
-//import components
+import Grid from "@material-ui/core/Grid";
+import Hidden from '@material-ui/core/Hidden';
+
 import MainNavigation from "../components/MainNavigation"
 import DropMenu from "../components/DropMenu"
-import Hidden from '@material-ui/core/Hidden';
 import LanguageSelect from '../components/LanguageSelect';
+import Logo from '../picture/logo.png';
 
 export default function Header({headerType}) {
     const [headerActive, setHeaderActive] = useState(false)

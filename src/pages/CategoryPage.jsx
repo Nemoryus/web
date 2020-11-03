@@ -1,17 +1,14 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, useContext, Fragment } from "react";
 import { useHistory } from 'react-router-dom'
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
-import SvgIcon from '@material-ui/core/SvgIcon';
-import IconButton from '@material-ui/core/IconButton';
-import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
+// Slider
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-import { getPerformances } from '../data/constans'
+import { PerformancesCtx } from "./Main";
 
 function SliderImages({ images }) {
   const settings = {
@@ -56,7 +53,7 @@ function SliderMenu({ performances, startedMenuPosition, setSelectedPerformance 
       setSelectedPerformance(performances[next])
     }
   };
-
+  
   return (
     <Slider {...settings}>
       {performances.map((performance) => {
@@ -71,8 +68,9 @@ function SliderMenu({ performances, startedMenuPosition, setSelectedPerformance 
 };
 
 function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
-  const performances = getPerformances(selectedPerformance.category)
   const history = useHistory()
+  const { getPerformances } = useContext(PerformancesCtx);
+  const performances = getPerformances(selectedPerformance.category)
   const [startedMenuPosition] = useState(selectedPerformance.id - 1)
 
   useEffect(() => {

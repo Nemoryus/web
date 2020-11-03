@@ -1,12 +1,11 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState, useContext } from "react";
 import { Text } from '../containers/Language';
-
 
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 
 import CategoryPage from "./CategoryPage"
-import ProductionMenu from '../components/ProductionMenu';
+import ProductionCategoryMenu from '../components/ProductionCategoryMenu';
 import ProductionPerformanceMenu from '../components/ProductionPerformanceMenu';
 import ProductionGrid from '../components/ProductionGrid'
 import ProductionGridA from '../components/ProductionGridA'
@@ -16,13 +15,14 @@ import ProductionGridB from '../components/ProductionGridB'
 import ScrollBar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 
-import { getPerformances } from '../data/constans'
+import { PerformancesCtx } from "./Main";
 
 export default function ProductionPage({ setHeaderType }) {
-  const gridSize = 6; // count of performances in a grid 
+  const { getPerformances } = useContext(PerformancesCtx);
   const [selectedPerformance, setSelectedPerformance] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [performances, setPerformances] = useState(getPerformances('ALL')); // set all performances as default
+  const gridSize = 6; // count of performances in a grid 
 
   useEffect(() => {
     if(selectedPerformance != null) {
@@ -72,10 +72,10 @@ export default function ProductionPage({ setHeaderType }) {
               <h3 className='page-title padd-top-dbl'><span className='hand' onClick={() => setSelectedCategory('ALL')}><Text tid="production"/></span></h3>
               <Grid container justify="center" className="padd-btm push-btm-hlf">
                 <Grid item xs={8}>
-                  <ProductionMenu selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+                  <ProductionCategoryMenu selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
                 </Grid>
               </Grid>
-              <ProductionPerformanceMenu selectedCategory={selectedCategory} setSelectedPerformance={setSelectedPerformance} />
+              <ProductionPerformanceMenu performances={performances} setSelectedPerformance={setSelectedPerformance} />
               <ProductionGridLayout/>
               {/*{firstTime && CreateAllGrid(handleSelectedPredstavenie)}
               <div className='scroleArea'>

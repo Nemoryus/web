@@ -15,7 +15,7 @@ function WelcomePage() {
         <img className="logo" src={Logo}/>
       </NavLink>
 
-      <video className="video" autoPlay loop muted >
+      <video className="fullSize video" autoPlay loop muted >
         <source src={BaletkaVideo} type="video/mp4"/>
       </video>
 
