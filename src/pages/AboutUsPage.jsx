@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {NavLink} from "react-router-dom"
 
 import Button from '@material-ui/core/Button';
@@ -8,7 +8,10 @@ import ProfilPicture2 from '../picture/profilPicture2.png'
 import { Text } from '../containers/Language';
 
 function AboutUsPage({ setHeaderType }) {
-    setHeaderType(1)
+
+    useEffect(() => {
+      setHeaderType(1)
+    }, [])
 
     return(
         <Box id="about-us-page" className="content-light content-padd-top padd-btm">

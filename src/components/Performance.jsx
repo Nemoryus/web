@@ -5,8 +5,6 @@ import { Textfit } from 'react-textfit';
 
 function Performance({performance, setSelectedPerformance}) {
     const maxFontSizeName = 50;
-    const maxFontSizeTitle = 40;
-    const maxFontSizeInfo = 20;
 
     return (
         <Box className='performance-item-wrapper bold t-white overflow pos-rel fullHeight hand'>
@@ -14,30 +12,22 @@ function Performance({performance, setSelectedPerformance}) {
                 {performance.images.length > 0 &&
                     <img className='performance-image' src={require(`../picture/${performance.images[0]}`)} />
                 }
-                <Box className='overlay performance-overlay pos-abs t-center'>
+                <Box className='overlay performance-overlay t-center'>
                     <Box className="performance-name fullHeight padd text-fit">
                         <Textfit max={maxFontSizeName}>
                             {performance.name}
                         </Textfit>
                     </Box>
-                    <Box className='performance-overlay-text fullWidth fullHeight padd text-fit'>
-                        <Grid container direction='column' justify="center" alignItems="center">
-                            <Grid item xs={7} className="fullWidth">
-                                <Box className="fullHeight text-fit performance-overlay-title t-red">
-                                    <Textfit max={maxFontSizeTitle}>
-                                        {performance.additionalData.title}
-                                    </Textfit>
-                                </Box>
-                            </Grid>
-                            <Grid item xs={5} className="fullWidth">
-                                <Box className="fullHeight text-fit performance-overlay-info">
-                                    <Textfit max={maxFontSizeInfo}>
-                                        {performance.additionalData.info}<br></br>
-                                        {performance.additionalData.note}
-                                    </Textfit>
-                                </Box>
-                            </Grid>
-                        </Grid>
+                    <Box className='middle performance-overlay-text'>
+                        <Box className='performance-overlay-title t-red push-btm-hlf'>
+                            {performance.additionalData.title}
+                        </Box>
+                        <Box className='performance-overlay-info'>
+                            {performance.additionalData.info}
+                        </Box>
+                        <Box className='performance-overlay-info'>
+                            {performance.additionalData.note}
+                        </Box>
                     </Box>
                 </Box>
             </Box>

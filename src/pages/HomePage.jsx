@@ -1,4 +1,4 @@
-import React, { useRef, useState, Fragment } from 'react';
+import React, { useRef, useEffect, useState, Fragment } from 'react';
 import { Box } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import { NavLink } from 'react-router-dom'
@@ -9,16 +9,12 @@ import BaletkaVideo from '../video/introVideo.mp4'
 //img
 import PlayButtonImg from '../picture/video-play.svg';
 import StopButtonImg from '../picture/video-stop.svg';
-import SipkaImg from '../picture/sipka.svg';
 import SocialIcons from '../components/SocialIcons';
 import BaletkaImg from '../picture/baletka.jpg';
 
-
-import { getPerformances } from '../data/constans'
 import { MUSICALS } from '../data/data';
 
 function HomePage({ setHeaderType }) {
-    setHeaderType(-1)
     const vidRef = useRef(null);
     let [videoHover, setVideoHover] = useState(false);
     let [videoIsPlayed, setVideoIsPlayed] = useState(false);
@@ -52,6 +48,14 @@ function HomePage({ setHeaderType }) {
             transform: 'translate(30%)'
         },
     }
+
+    useEffect(() => {
+        if(selectedPerformance != null) {
+            setHeaderType(0)
+        } else {
+            setHeaderType(-1)
+        }
+    }, [])
 
     const toggleShowGrid = () => {
         setShow((show) => !show);

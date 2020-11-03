@@ -19,14 +19,17 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 import { getPerformances } from '../data/constans'
 
 export default function ProductionPage({ setHeaderType }) {
-  setHeaderType(1)
   const gridSize = 6; // count of performances in a grid 
   const [selectedPerformance, setSelectedPerformance] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [performances, setPerformances] = useState(getPerformances('ALL')); // set all performances as default
 
   useEffect(() => {
-    window.scrollTo(0, 0) // on change go back to top
+    if(selectedPerformance != null) {
+      setHeaderType(0)
+    } else {
+      setHeaderType(1)
+    }
   }, [selectedPerformance])
 
   useEffect(() => {
@@ -87,7 +90,7 @@ export default function ProductionPage({ setHeaderType }) {
         ) 
           : 
         (
-          <CategoryPage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance} />
+          <CategoryPage selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance} />
         )
       }
     </Fragment>

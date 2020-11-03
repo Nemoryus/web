@@ -2,65 +2,101 @@ import React, { useState, useEffect, Fragment } from "react";
 import { useHistory } from 'react-router-dom'
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
+import SvgIcon from '@material-ui/core/SvgIcon';
+import IconButton from '@material-ui/core/IconButton';
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
-import CategoryMenu from '../components/CategoryMenu';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 import { getPerformances } from '../data/constans'
 
-// Slider
-import AwesomeSlider from 'react-awesome-slider';
-import withAutoplay from 'react-awesome-slider/dist/autoplay';
-import 'react-awesome-slider/dist/styles.css';
-const AutoplaySlider = withAutoplay(AwesomeSlider);
-
 function SliderImages({ images }) {
-  useEffect(() => {
-    document.getElementsByClassName('awssld__bullets')[0].firstChild.click()
-  }, [images])
-  
+  const settings = {
+    arrows: false,
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    speed: 500,
+    autoplaySpeed: 3000,
+    fade: true,
+    cssEase: "linear",
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnHover: false
+  };
+
   return (
-    <div>
-      <AutoplaySlider
-        fillParent={true}
-        play={true}
-        cancelOnInteraction={false} // should stop playing on user interaction
-        interval={5000}
-        bullets={true}
-        organicArrows={false}
-      >
-        {images.map((image, index) => {
-          return (
-            <div key={index} data-src={require(`../picture/${image}`)}>
-              {/* <div className="slider-content">sss</div> */}
-            </div>
-          )
-        })}
-      </AutoplaySlider>
-    </div>
+    <Slider {...settings}>
+      {images.map((image, index) => {
+        return (
+          <img key={index} className="slider-image" src={require(`../picture/${image}`)}/>
+        )
+      })}
+    </Slider>
   )
 };
 
-function CategoryPage({ setHeaderType, selectedPerformance, setSelectedPerformance }) {
-  setHeaderType(0)
+function SliderMenu({ performances, startedMenuPosition, setSelectedPerformance }) {
+  const settings = {
+    arrows: false,
+    dots: false,
+    infinite: true,
+    centerMode: true,
+    speed: 500,
+    slidesToShow: 5,
+    focusOnSelect: true,
+    slidesToScroll: 1,
+    // variableWidth: true,
+    swipeToSlide: true,
+    initialSlide: startedMenuPosition,
+    beforeChange: (current, next) => {
+      setSelectedPerformance(performances[next])
+    }
+  };
+
+  return (
+    <Slider {...settings}>
+      {performances.map((performance) => {
+        return (
+          <Box key={performance.name} className="category-menu-item t-center hand">
+            <Box>{performance.name}</Box>
+          </Box>
+        )
+      })}
+    </Slider>
+  )
+};
+
+function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
   const performances = getPerformances(selectedPerformance.category)
   const history = useHistory()
+  const [startedMenuPosition] = useState(selectedPerformance.id - 1)
+
+  useEffect(() => {
+    window.scrollTo(0, 0) // at the beginning go to top of the page
+  }, [])
 
   const showProductionPage = () => {
-    window.scrollTo(0, 0) // on change go back to top
+    window.scrollTo(0, 0) // on click to back to production go to top of the page
     setSelectedPerformance(null)
     history.push('production')
   }
 
   return (
     <Box id="category-page">
-        <div className="slider-wrapper__lettering">
-          {selectedPerformance.images.length > 0 &&
-            <SliderImages images={selectedPerformance.images}/>
-          }
-          <div className="category-menu-wrapper">
-            <CategoryMenu performances={performances} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance}/>
+      <div className="slider-wrapper">
+        {selectedPerformance.images.length > 0 &&
+          <SliderImages images={selectedPerformance.images}/>
+        }
+        <div className="category-menu-wrapper t-white fullWidth">
+          <div className="category-menu">
+            <SliderMenu performances={performances} startedMenuPosition={startedMenuPosition} setSelectedPerformance={setSelectedPerformance}/>
           </div>
         </div>
+      </div>
 
       <Box className="page-content content-light padd-top padd-btm t-center">
         <p className="bold">{selectedPerformance.additionalData.info}<br></br>{selectedPerformance.additionalData.note}</p>
@@ -71,9 +107,9 @@ function CategoryPage({ setHeaderType, selectedPerformance, setSelectedPerforman
           </Fragment>
         }
         <h3 className='page-title padd-top-dbl'>Review</h3>
-        {selectedPerformance.reviews.map((review) => {
+        {selectedPerformance.reviews.map((review, index) => {
           return (
-            <p className="quote-block t-center push-btm-dbl">
+            <p key={index} className="quote-block t-center push-btm-dbl">
               <q>{review.body}</q>
               <span className="bold push-top-hlf blc">{review.author}</span>
             </p>

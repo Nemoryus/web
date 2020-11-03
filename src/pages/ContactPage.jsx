@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from '@material-ui/core/Button';
 
 import Grid from "@material-ui/core/Grid";
@@ -8,8 +8,11 @@ import { Text } from '../containers/Language';
 import ContactFormular from '../components/ContactFormular'
 
 function ContactPage({ setHeaderType }) {
-    setHeaderType(1)
     const [isOpenedForm, setOpenForm] = useState(false);
+    
+    useEffect(() => {
+        setHeaderType(1)
+    }, [])
 
     const toggleOpenedForm = () => {
         setOpenForm((isOpenedForm) => !isOpenedForm);
