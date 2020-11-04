@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext, Fragment } from "react";
-import { useHistory } from 'react-router-dom'
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 
@@ -68,7 +67,6 @@ function SliderMenu({ performances, startedMenuPosition, setSelectedPerformance 
 };
 
 function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
-  const history = useHistory()
   const { getPerformances } = useContext(PerformancesCtx);
   const performances = getPerformances(selectedPerformance.category)
   const [startedMenuPosition] = useState(selectedPerformance.id - 1)
@@ -80,7 +78,6 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
   const showProductionPage = () => {
     window.scrollTo(0, 0) // on click to back to production go to top of the page
     setSelectedPerformance(null)
-    history.push('production')
   }
 
   return (

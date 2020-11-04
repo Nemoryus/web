@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { NavLink } from 'react-router-dom'
 
 import Grid from "@material-ui/core/Grid";
 import Hidden from '@material-ui/core/Hidden';
@@ -9,7 +8,7 @@ import DropMenu from "../components/DropMenu"
 import LanguageSelect from '../components/LanguageSelect';
 import Logo from '../picture/logo.png';
 
-export default function Header({headerType}) {
+export default function Header({ headerType, handleLogoClicked }) {
     const [headerActive, setHeaderActive] = useState(false)
 
     const handleHeaderActive = () => {
@@ -26,9 +25,7 @@ export default function Header({headerType}) {
         <header className={`header-wrapper ${headerType == -1 ? "header-wrapper--trans" : headerType == 0 ? "header-wrapper--grad" : ""} ${headerActive ? "active" : ""}`}>
             <Grid className="header" container justify="center" alignItems="center">
                 <Grid item xs={6} md={2}>
-                    <NavLink to="/home">
-                        <img className="logo" src={Logo}/>
-                    </NavLink>
+                    <img onClick={() => handleLogoClicked()} className="logo hand" src={Logo}/>
                 </Grid>
                 <Hidden mdUp>
                     <Grid className='drop-menu-container' item xs={6}>

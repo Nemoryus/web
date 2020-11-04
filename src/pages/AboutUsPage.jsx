@@ -15,7 +15,7 @@ function AboutUsPage({ setHeaderType }) {
     }, [])
 
     return(
-        <Box id="about-us-page" className="content-light content-padd-top padd-btm">
+        <Box id="about-us-page" className="content-light content-padd-top padd-btm-dbl">
             <h3 className='page-title padd-top-dbl'><Text tid="aboutUs"/></h3>
             <p className='page-title-text push-btm push-top padd-btm-hlf padd-top-hlf'>
                 Lorem ipsum dolor sit amet, consectetuer 
@@ -50,11 +50,10 @@ function AboutUsPage({ setHeaderType }) {
                     Stage Bornem in Belgium.
                 </p>
             </Box>
-            <Box className='t-center padd-btm-dbl push-btm push-top-dbl'>
+            <Box className='t-center padd-btm push-btm push-top-dbl'>
                 <Link className='btn btn-1' rel="noreferrer" target="_blank" href="http://www.jandurovcik.com/en/biography-gallery" >
                     view all
                 </Link>
-                {/* <Button component={NavLink} className='btn btn-1' to='/'>view all</Button> */}
             </Box>
         </Box>
     );   

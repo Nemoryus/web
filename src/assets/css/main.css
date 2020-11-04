@@ -809,7 +809,7 @@ footer p{
     margin: 80px 0;
     font-weight: bold;
     letter-spacing: 13px;
-    font-size: 75px;
+    font-size: 70px;
     word-spacing: 13px;
 } 
 #about-us-page .nav-link-button {
@@ -921,7 +921,7 @@ footer p{
     z-index: 101;
 }
 #category-page .slider-wrapper .slick-dots button:before {
-    color: #bada55;
+    color: #FF0000;
     opacity: .5
 }
 #category-page .slider-wrapper .slick-dots button:hover:before {

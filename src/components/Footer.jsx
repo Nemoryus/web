@@ -11,14 +11,13 @@ import SocialIcons from '../components/SocialIcons'
 import LanguageSelect from '../components/LanguageSelect';
 import Logo from '../picture/logo.png';
 
-export default function Footer() {
+export default function Footer({ handleLogoClicked }) {
+
     return (
         <footer className="footer-wrapper">
             <Grid className="footer" container alignItems="center">
                 <Grid item xs={4} md={1}>
-                    <NavLink to="/home">
-                        <img className="logo" src={Logo}/>
-                    </NavLink>
+                    <img onClick={() => handleLogoClicked()} className="logo hand" src={Logo}/>
                 </Grid>
                 <Grid item xs={4} md={2}>
                     <Box className="padd-lft push-lft-hlf">
