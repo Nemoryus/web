@@ -1,48 +1,29 @@
 import React, { useRef, useEffect, useState, useContext, Fragment } from 'react';
 import { NavLink, useHistory } from 'react-router-dom'
-import { Box, Button } from '@material-ui/core';
+import { Box, Button, Grid } from '@material-ui/core';
+import SvgIcon from '@material-ui/core/SvgIcon';
+import IconButton from '@material-ui/core/IconButton';
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 import HomePerformances from "../components/HomePerformances"
-import BaletkaVideo from '../video/introVideo.mp4'
+import SocialIcons from '../components/SocialIcons';
 
 import PlayButtonImg from '../picture/video-play.svg';
 import StopButtonImg from '../picture/video-stop.svg';
-import SocialIcons from '../components/SocialIcons';
-import BaletkaImg from '../picture/baletka.jpg';
+import BallerinaImg from '../picture/baletka.jpg';
+import BallerinaVideo from '../video/introVideo.mp4'
 
 import { PerformancesCtx } from "./Main";
 
 function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }) {
     const history = useHistory()
     const { getPerformances } = useContext(PerformancesCtx);
+    const performances = [...getPerformances('MUSICALS')];
     const [videoHover, setVideoHover] = useState(false);
     const [videoIsPlayed, setVideoIsPlayed] = useState(false);
-    const [show, setShow] = useState(false);
+    const [showPerformances, setShowPerformances] = useState(false);
     const vidRef = useRef(null);
-
-    // performances useStates
-    const performances = [...getPerformances('MUSICALS')];
-
-    const styles = {
-        showGrid: {
-            left: '0%'
-        },
-        hidenGrid: {
-            left: '-120%'
-        },
-        arrowRotate0: {
-            transform: 'rotate(0deg)'
-        },
-        arrowRotate180: {
-            transform: 'rotate(180deg)'
-        },
-        show: {
-            zIndex: 0,
-        },
-        hiden: {
-            zIndex: -200,
-        },
-    }
 
     useEffect(() => {
         setHeaderType(-1)
@@ -54,8 +35,8 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
         }
     }, [selectedPerformance])
 
-    const toggleShowGrid = () => {
-        setShow((show) => !show);
+    const toggleShowPerformances = () => {
+        setShowPerformances((showPerformances) => !showPerformances);
     }
 
     const toggleVideoHover = () => {
@@ -74,53 +55,61 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
 
     return (
         <div id="home-page" className='content-dark padd-btm-dbl'>
-            <div className='content-padd-top pos-rel padd-btm-dbl' style={styles.backGroundWithBlurEfect}>
-                <img className={'baletka-img pos-abs-00 ' + (show ? "whitBlur" : "whithoutBlur")} width='100%' max-height='100%' src={BaletkaImg}></img>
-                <Box className="main-grid-wrapper pos-rel" display="flex" justifyContent="space-between">
-                    <Box className='width-small flex-row'>
-                        <Box className="fullHeight flex-column">
-                            <Box className='vertical-line-red hight-25 center'/>
-                            <Box className='center hight-50'>
-                                <Box className='rotated-270 flex-column center'>
-                                    <span className='home-page-span font-size-20 letter-s t-red'>PRODUCTION</span>
+            <Box className="pos-rel production-section-wrapper">
+                <img className={`production-section-img ${showPerformances ? "blur" : ""}`} src={BallerinaImg}/>
+                <Box className="pos-abs production-section content-padd-top fullSize">
+                    <Box className="pos-rel fullSize">
+                        <Grid container className="padd-btm production-wrapper pos-rel" justify="center">
+                            <Grid item xs={1} className="production-side-wrapper">
+                                <Box className="production-btn-wrapper padd-btm t-red fullSize">
+                                    <span className="production-line push-btm"></span>
+                                    <Box className="pos-rel t-bold">
+                                        <span className="production-btn">Production</span>
+                                        <Box className="production-btn-arrow pos-abs">
+                                            {showPerformances ? 
+                                                <IconButton className="t-red no-padd" onClick={toggleShowPerformances}>
+                                                    <SvgIcon style={{ fontSize: 50 }}>
+                                                        <ArrowLeftIcon />
+                                                    </SvgIcon>
+                                                </IconButton>
+                                                :
+                                                <IconButton className="t-red no-padd" onClick={toggleShowPerformances}>
+                                                    <SvgIcon style={{ fontSize: 50 }}>
+                                                        <ArrowRightIcon />
+                                                    </SvgIcon>
+                                                </IconButton>
+                                            }
+                                        </Box>
+                                    </Box>
+                                    <span className="production-line push-top"></span>
                                 </Box>
-                            </Box>
-                            <Box className='vertical-line-red hight-25 center'/>
-                        </Box>
-                        <Box className='pos-rel fullHeight'>
-                            <Box className={'pos-abs arrow-img-wrapper'+(show ? "-leftBorder" : "-rightBorder")} onClick={toggleShowGrid}>
-                            {show ? <Box className='arrow arrow-left'/> : <Box className='arrow arrow-right'/>}
-                            </Box>
-                        </Box>
-                    </Box>
-                    <Box className='grid-section pos-rel fullHeight width-big'>
-                        <Box className='grid-wraper pos-abs fullSize push-top' style={show ? styles.showGrid : styles.hidenGrid}>
-                            <HomePerformances performances={performances} setSelectedPerformance={setSelectedPerformance} />
-                        </Box>
-                    </Box>
-                    <Box className='width-small fullHeight flex-column'>
-                        <Box className='follow-us-wrapper hight-33'>
-                            <p className="vericaltext t-red center bold">
-                                FOLLOW US
-                            </p>
-                        </Box>
-                        <Box className='vertical-line-wrapper hight-33 padd-top'>
-                            <Box className='vertical-line-red fullSize'/>
-                        </Box>
-                        <Box className='home-social-icon-wrapper hight-33 fullWidth padd-top-dbl'>
-                            <SocialIcons />
+                            </Grid>
+                            <Grid item xs={10} className="overflow fullHeight">
+                                <Box className={`pos-rel production-performances-wrapper ${showPerformances ? "active" : ""}`}>
+                                    <HomePerformances performances={performances} setSelectedPerformance={setSelectedPerformance} />
+                                    <Box className='t-center push-top'>
+                                        <Button className='btn btn-3' component={NavLink} to='/production'>view all</Button>
+                                    </Box>
+                                </Box>
+                            </Grid>
+                            <Grid item xs={1} className="production-side-wrapper">
+                                <Box className="production-follow-us-wrapper padd-btm t-red fullSize">
+                                    <Box className="production-follow-us t-bold">
+                                        Follow us
+                                    </Box>
+                                    <span className="production-line push-top-hlf push-btm-hlf"></span>
+                                    <SocialIcons />
+                                </Box>
+                            </Grid>
+                        </Grid>    
+                        <Box className="rolling-wrapper pos-abs">
+                            <Box className="rolling">On Monday (September 28, 2020) we started preparation for Stravinsky's evening which will combine two well-known works - Petrushka and The Firebird from the work of a Russian composer named Igor Fiodorovich Stravinsky. It is an interesting combination of modern ballet - dance, music and design. <span className="t-red t-bold"> /NEWS/</span></Box>
+                            <Box className="rolling">On Monday (September 28, 2020) we started preparation for Stravinsky's evening which will combine two well-known works - Petrushka and The Firebird from the work of a Russian composer named Igor Fiodorovich Stravinsky. It is an interesting combination of modern ballet - dance, music and design. <span className="t-red t-bold"> /NEWS/</span></Box>
                         </Box>
                     </Box>
                 </Box>
-                <Box className='t-center push-top push-btm'>
-                    <Button className='btn btn-3' component={NavLink} style={show ? styles.show : styles.hiden} to='/production'>view all</Button>
-                </Box>
-                <div className="container">
-                    <div className="scrolling">On Monday (September 28, 2020) we started preparation for Stravinsky's evening which will combine two well-known works - Petrushka and The Firebird from the work of a Russian composer named Igor Fiodorovich Stravinsky. It is an interesting combination of modern ballet - dance, music and design. <strong style={{ color: 'red' }}> /NEWS/</strong></div>
-                    <div className="scrolling">On Monday (September 28, 2020) we started preparation for Stravinsky's evening which will combine two well-known works - Petrushka and The Firebird from the work of a Russian composer named Igor Fiodorovich Stravinsky. It is an interesting combination of modern ballet - dance, music and design. <strong style={{ color: 'red' }}> /NEWS/</strong></div>
-                </div>
-            </div>
-            <Box className="page-content">
+            </Box>
+            <Box className="page-content padd-top">
                 <h4 className="page-title padd-top-dbl">ABOUT US</h4>
                 <p className="page-title-text push-btm push-top padd-btm-hlf padd-top-hlf">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
@@ -136,7 +125,7 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
                 <Box className='t-center padd-btm-dbl push-btm push-top-dbl'>
                     <Button component={NavLink} className='btn btn-2' to='/about-us'>enter</Button>
                 </Box>
-                <div className="video-cointainer pos-rel padd-btm push-btm" onClick={toggleVideoPlay} onMouseEnter={toggleVideoHover} onMouseLeave={toggleVideoHover}>
+                <div className="video-container pos-rel padd-btm push-btm" onClick={toggleVideoPlay} onMouseEnter={toggleVideoHover} onMouseLeave={toggleVideoHover}>
                     {!videoIsPlayed && 
                         <div className='overlay pos-abs'>
                             <img className="middle button-icon play-button" src={PlayButtonImg} />
@@ -144,7 +133,7 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
                     }
                     {videoHover && videoIsPlayed && <img className="middle button-icon stop-button" src={StopButtonImg} />}
                     <video className="fullSize" ref={vidRef} onEnded={() => toggleVideoPlay()}>
-                        <source src={BaletkaVideo} type="video/mp4" />
+                        <source src={BallerinaVideo} type="video/mp4" />
                     </video>
                 </div>
             </Box>

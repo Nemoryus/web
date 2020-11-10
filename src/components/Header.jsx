@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
 import Hidden from '@material-ui/core/Hidden';
 
 import MainNavigation from "../components/MainNavigation"
@@ -22,7 +23,19 @@ export default function Header({ headerType, handleLogoClicked }) {
     window.addEventListener('scroll', handleHeaderActive)
 
     return(
-        <header className={`header-wrapper ${headerType == -1 ? "header-wrapper--trans" : headerType == 0 ? "header-wrapper--grad" : ""} ${headerActive ? "active" : ""}`}>
+        // <header className={`header-wrapper ${headerType == -1 ? "header-wrapper--trans" : headerType == 0 ? "header-wrapper--grad" : ""} ${headerActive ? "active" : ""}`}>
+        // COMMENTED FUNCTIONALITY WITH HEADER EFFECT 
+        <header className={`header-wrapper ${headerActive ? "active" : ""}`}>
+            {headerType == -1 ? (
+                <Box className="header-effect header-effect--trans"/>
+            ) : headerType == 0 ? (
+                <>
+                    <Box className="header-effect header-effect--trans"/>
+                    <Box className="header-effect header-effect--grad"/>
+                </>
+            ) : (
+                <Box className="header-effect header-effect--full"/>
+            )}
             <Grid className="header" container justify="center" alignItems="center">
                 <Grid item xs={6} md={2}>
                     <img onClick={() => handleLogoClicked()} className="logo hand" src={Logo}/>

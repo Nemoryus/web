@@ -94,7 +94,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
       </div>
 
       <Box className="page-content content-light padd-top padd-btm t-center">
-        <p className="bold">{selectedPerformance.additionalData.info}<br></br>{selectedPerformance.additionalData.note}</p>
+        <p className="t-bold">{selectedPerformance.additionalData.info}<br></br>{selectedPerformance.additionalData.note}</p>
         {selectedPerformance.poster != '' &&
           <Fragment>
             <img className="push-btm-hlf push-top-dbl" src={require(`../picture/${selectedPerformance.poster}`)}/>
@@ -106,7 +106,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
           return (
             <p key={index} className="quote-block t-center push-btm-dbl">
               <q>{review.body}</q>
-              <span className="bold push-top-hlf blc">{review.author}</span>
+              <span className="t-bold push-top-hlf blc">{review.author}</span>
             </p>
           )
         })}

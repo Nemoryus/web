@@ -19,7 +19,7 @@ function ContactPage({ setHeaderType }) {
     };
 
     return (
-        <Box id="contact-page" className='content-dark content-padd-top padd-btm t-center'>
+        <Box id="contact-page" className='content-dark content-padd-top padd-btm-dbl t-center'>
             <h3 className='page-title padd-top-dbl'><Text tid="contact"/></h3>
             <Box className="push-btm push-top padd-btm-hlf padd-top-hlf">
                 <Grid className="contact-content" container alignItems='center'>
