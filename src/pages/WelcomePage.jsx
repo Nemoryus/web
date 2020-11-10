@@ -3,12 +3,12 @@ import { NavLink } from 'react-router-dom'
 
 import SocialIcons from '../components/SocialIcons'
 import Logo from '../picture/logo.png';
-import BaletkaVideo from '../video/introVideo.mp4';
+import BallerinaVideo from '../video/introVideo.mp4';
 
 
 function WelcomePage() {
   return (
-    <div className="container-baletka">
+    <div id="welcome-page">
       <div className="overlay"/>
       
       <NavLink className="wrapper-logo" to='/home'>
@@ -16,7 +16,7 @@ function WelcomePage() {
       </NavLink>
 
       <video className="fullSize video" autoPlay loop muted >
-        <source src={BaletkaVideo} type="video/mp4"/>
+        <source src={BallerinaVideo} type="video/mp4"/>
       </video>
 
       <SocialIcons/>
