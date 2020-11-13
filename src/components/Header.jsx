@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
@@ -12,6 +12,10 @@ import Logo from '../picture/logo.png';
 export default function Header({ headerType, handleLogoClicked }) {
     const [headerActive, setHeaderActive] = useState(false)
 
+    useEffect(() => {
+        window.addEventListener('scroll', handleHeaderActive)
+    }, [])
+
     const handleHeaderActive = () => {
         if(window.scrollY >= 1) {
             setHeaderActive(true)
@@ -19,8 +23,6 @@ export default function Header({ headerType, handleLogoClicked }) {
             setHeaderActive(false)
         }
     }
-
-    window.addEventListener('scroll', handleHeaderActive)
 
     return(
         // <header className={`header-wrapper ${headerType == -1 ? "header-wrapper--trans" : headerType == 0 ? "header-wrapper--grad" : ""} ${headerActive ? "active" : ""}`}>

@@ -18,20 +18,21 @@ function Performance({ performance, setSelectedPerformance, boxType}) {
                     <img className='performance-image fullSize' src={require(`../picture/${performance.images[0]}`)} />
                 }
                 <Box className='overlay'/>
-                <Box className='pos-abs overlay performance-overlay t-center'>
-                    <Box className="performance-name fullHeight padd text-fit">
-                        <Textfit max={maxFS}>
-                            {performance.name}
-                        </Textfit>
-                    </Box>
+                <Box className="pos-abs fullSize performance-name t-center padd text-fit">
+                    <Textfit max={maxFS}>
+                        {performance.name}
+                    </Textfit>
+                </Box>
+                <Box className='pos-abs fullSize performance-overlay t-center'>
+                    <Box className='overlay'/>
                     <Box className='middle overlay-text-wrapper'>
                         <Box className='overlay-title t-red push-btm-hlf'>
-                            {performance.additionalData.title}
+                            {performance.name}
                         </Box>
-                        {performance.additionalData.notes.map((note, index) => {
+                        {performance.theaters.map((theater, index) => {
                             return (
                                 <Box key={index} className='overlay-info'>
-                                    {note}
+                                    {theater}
                                 </Box>
                             )
                         })}

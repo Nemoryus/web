@@ -11,10 +11,6 @@ import ProductionGrid from '../components/ProductionGrid'
 import ProductionGridA from '../components/ProductionGridA'
 import ProductionGridB from '../components/ProductionGridB'
 
-
-import ScrollBar from "react-perfect-scrollbar";
-import "react-perfect-scrollbar/dist/css/styles.css";
-
 import { PerformancesCtx } from "./Main";
 
 export default function ProductionPage({ setHeaderType, selectedPerformance, setSelectedPerformance }) {

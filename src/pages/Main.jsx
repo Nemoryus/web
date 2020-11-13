@@ -45,12 +45,23 @@ function Main() {
         <Header headerType={headerType} handleLogoClicked={handleLogoClicked}/>
 
         <main className="content">
-          <Switch>
-            <Route path="/home" exact render={() => <HomePage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance}/>} />
-            <Route path="/about-us" render={() => <AboutUsPage setHeaderType={setHeaderType}/>} />
-            <Route path="/production" render={() => <ProductionPage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance}/>} />
-            <Route path="/contact" render={() => <ContactPage setHeaderType={setHeaderType}/>} />
-          </Switch>
+          {/* <Route render={({location}) => (
+            <TransitionGroup>
+              <CSSTransition
+                key={location.key}
+                timeout={500}
+                classNames="fade"
+              >
+                <Switch location={location}> */}
+                <Switch>
+                  <Route path="/home" exact render={() => <HomePage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance}/>} />
+                  <Route path="/about-us" render={() => <AboutUsPage setHeaderType={setHeaderType}/>} />
+                  <Route path="/production" render={() => <ProductionPage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance}/>} />
+                  <Route path="/contact" render={() => <ContactPage setHeaderType={setHeaderType}/>} />
+                </Switch>
+              {/* </CSSTransition>
+            </TransitionGroup>
+          )}/> */}
         </main>
 
         <Footer handleLogoClicked={handleLogoClicked}/>

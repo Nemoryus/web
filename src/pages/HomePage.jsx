@@ -68,13 +68,13 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
                                         <Box className="production-btn-arrow pos-abs">
                                             {showPerformances ? 
                                                 <IconButton className="t-red no-padd" onClick={toggleShowPerformances}>
-                                                    <SvgIcon style={{ fontSize: 50 }}>
+                                                    <SvgIcon style={{ fontSize: 70 }}>
                                                         <ArrowLeftIcon />
                                                     </SvgIcon>
                                                 </IconButton>
                                                 :
                                                 <IconButton className="t-red no-padd" onClick={toggleShowPerformances}>
-                                                    <SvgIcon style={{ fontSize: 50 }}>
+                                                    <SvgIcon style={{ fontSize: 70 }}>
                                                         <ArrowRightIcon />
                                                     </SvgIcon>
                                                 </IconButton>
