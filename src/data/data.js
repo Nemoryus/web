@@ -7,11 +7,9 @@ export const MUSICALS = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'Gasp',
-            info: 'October 06.2018 - August 08.2019',
-            note: 'Zilina - OC Duben'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Zilina - OC Duben"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -39,11 +37,9 @@ export const MUSICALS = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'Carmen Electra',
-            info: 'Tuesday',
-            note: 'Severka'
-        },
+        theaters: [
+            "Tuesday", "Severka"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -71,11 +67,9 @@ export const MUSICALS = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'Karol Duchon',
-            info: '09.2020 - 10.2020',
-            note: 'Zbojnicka koliba'
-        },
+        theaters: [
+            "09.2020 - 10.2020", "Zbojnicka koliba"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -103,11 +97,9 @@ export const MUSICALS = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'School of rock',
-            info: 'November 2020 - December 2020',
-            note: 'Bobrov national theater'
-        },
+        theaters: [
+            "November 2020 - December 2020", "Bobrov national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -139,12 +131,10 @@ export const MUSICALS = [
             'grease_3.jpg',
             'grease_4.jpg',
         ],
-        video: 'video patch',
-        additionalData: {
-            title: 'Grease',
-            info: 'Premiere 2012',
-            note: 'Kalich Theatre, Tower Stage Theatre'
-        },
+        trailer: 'https://www.youtube.com/embed/weNIxixFKmU',
+        theaters: [
+            "Premiere 2012", "Kalich Theater", "Tower Stage Theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -174,11 +164,9 @@ export const MUSICALS = [
             'grease_poster.jpg',
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'Heaven is a place on the earth',
-            info: 'Always',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "Always", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -207,11 +195,9 @@ export const MUSICALS = [
             'westside.jpg', // poster
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'West side Hano',
-            info: '28.12.1992',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "28.12.1992", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -239,11 +225,9 @@ export const MUSICALS = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'Voda co ma drzi nad vodou',
-            info: '08. October 2020 - 10. October 2020',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "08. October 2020 - 10. October 2020", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -271,11 +255,9 @@ export const MUSICALS = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'La dame aux camelias',
-            info: 'October 06.2018 - August 08.2019',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -306,11 +288,9 @@ export const BALLET_OPERA = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -338,11 +318,9 @@ export const BALLET_OPERA = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -370,11 +348,9 @@ export const BALLET_OPERA = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -402,11 +378,9 @@ export const BALLET_OPERA = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -434,11 +408,9 @@ export const BALLET_OPERA = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -466,11 +438,9 @@ export const BALLET_OPERA = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -498,11 +468,9 @@ export const BALLET_OPERA = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -530,11 +498,9 @@ export const BALLET_OPERA = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -565,11 +531,9 @@ export const SHOW = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -597,11 +561,9 @@ export const SHOW = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -629,11 +591,9 @@ export const SHOW = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -661,11 +621,9 @@ export const SHOW = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -693,11 +651,9 @@ export const SHOW = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -725,11 +681,9 @@ export const SHOW = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -757,11 +711,9 @@ export const SHOW = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -789,11 +741,9 @@ export const SHOW = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -821,11 +771,9 @@ export const SHOW = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -853,11 +801,9 @@ export const SHOW = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -885,11 +831,9 @@ export const SHOW = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -920,11 +864,9 @@ export const DANCE_THEATER = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -952,11 +894,9 @@ export const DANCE_THEATER = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -984,11 +924,9 @@ export const DANCE_THEATER = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -1016,11 +954,9 @@ export const DANCE_THEATER = [
         images: [
         ],
         video: 'DANCE_THEATER 5',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -1048,11 +984,9 @@ export const DANCE_THEATER = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -1080,11 +1014,9 @@ export const DANCE_THEATER = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',
@@ -1112,11 +1044,9 @@ export const DANCE_THEATER = [
         images: [
         ],
         video: 'video patch',
-        additionalData: {
-            title: 'title text',
-            info: 'info text',
-            note: 'Slovak national theater'
-        },
+        theaters: [
+            "October 06.2018 - August 08.2019", "Slovak national theater"
+        ],
         reviews: [
             {
                 body: '...I saw the best solo dancers I have ever seen in my life. Better than in America, Australia or anywhere else in Europe.',

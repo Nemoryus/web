@@ -11,15 +11,10 @@ import ProductionGrid from '../components/ProductionGrid'
 import ProductionGridA from '../components/ProductionGridA'
 import ProductionGridB from '../components/ProductionGridB'
 
-
-import ScrollBar from "react-perfect-scrollbar";
-import "react-perfect-scrollbar/dist/css/styles.css";
-
 import { PerformancesCtx } from "./Main";
 
-export default function ProductionPage({ setHeaderType }) {
+export default function ProductionPage({ setHeaderType, selectedPerformance, setSelectedPerformance }) {
   const { getPerformances } = useContext(PerformancesCtx);
-  const [selectedPerformance, setSelectedPerformance] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [performances, setPerformances] = useState(getPerformances('ALL')); // set all performances as default
   const gridSize = 6; // count of performances in a grid 

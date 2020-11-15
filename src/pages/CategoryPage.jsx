@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext, Fragment } from "react";
-import { useHistory } from 'react-router-dom'
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 
@@ -36,7 +35,7 @@ function SliderImages({ images }) {
   )
 };
 
-function SliderMenu({ performances, startedMenuPosition, setSelectedPerformance }) {
+function SliderMenu({ performances, startedMenuPosition, handleChangeSelectedPerformance }) {
   const settings = {
     arrows: false,
     dots: false,
@@ -50,7 +49,7 @@ function SliderMenu({ performances, startedMenuPosition, setSelectedPerformance 
     swipeToSlide: true,
     initialSlide: startedMenuPosition,
     beforeChange: (current, next) => {
-      setSelectedPerformance(performances[next])
+      handleChangeSelectedPerformance(performances[next])
     }
   };
   
@@ -68,36 +67,84 @@ function SliderMenu({ performances, startedMenuPosition, setSelectedPerformance 
 };
 
 function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
-  const history = useHistory()
   const { getPerformances } = useContext(PerformancesCtx);
   const performances = getPerformances(selectedPerformance.category)
   const [startedMenuPosition] = useState(selectedPerformance.id - 1)
+  const [showTrailerVideo, setShowTrailerVideo] = useState(false)
+  const [showTrailerVideoMini, setShowTrailerVideoMini] = useState(false)
 
   useEffect(() => {
-    window.scrollTo(0, 0) // at the beginning go to top of the page
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+    window.addEventListener('scroll', handleShowTrailerVideoMini)
+    return function cleanupListener() {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+      window.removeEventListener('scroll', handleShowTrailerVideoMini) // remove listener when leaving from the page
+    }
   }, [])
+  
+  const handleShowTrailerVideoMini = () => {
+    if(window.scrollY >= 1) {
+      setShowTrailerVideoMini(true)
+    } else {
+      setShowTrailerVideoMini(false)
+    }
+  }
 
   const showProductionPage = () => {
-    window.scrollTo(0, 0) // on click to back to production go to top of the page
     setSelectedPerformance(null)
-    history.push('production')
+  }
+
+  const toggleShowTrailerVideo = () => {
+    setShowTrailerVideo(prev => !prev)
+  }
+
+  const handleChangeSelectedPerformance = (newSelectedPerformance) => {
+    setShowTrailerVideo(false) // hide trailer video
+    setSelectedPerformance(newSelectedPerformance) // set new performance
   }
 
   return (
     <Box id="category-page">
-      <div className="slider-wrapper">
+      <div className="slider-wrapper pos-rel">
         {selectedPerformance.images.length > 0 &&
           <SliderImages images={selectedPerformance.images}/>
         }
         <div className="category-menu-wrapper t-white fullWidth">
           <div className="category-menu">
-            <SliderMenu performances={performances} startedMenuPosition={startedMenuPosition} setSelectedPerformance={setSelectedPerformance}/>
+            <SliderMenu performances={performances} startedMenuPosition={startedMenuPosition} handleChangeSelectedPerformance={handleChangeSelectedPerformance}/>
           </div>
         </div>
+        <Box className="trailer-btn-wrapper pos-abs">
+          <Button className='btn btn-4' onClick={toggleShowTrailerVideo}>Trailer</Button>
+        </Box>
+        {showTrailerVideo &&
+          <iframe className={`trailer-video ${showTrailerVideoMini ? "mini" : ""}`} src={`${selectedPerformance.trailer}?autoplay=1`}
+            frameBorder='0'
+            allow='autoplay; encrypted-media'
+            title={`${selectedPerformance.name} - trailer`}
+          />
+        }
       </div>
 
       <Box className="page-content content-light padd-top padd-btm t-center">
-        <p className="bold">{selectedPerformance.additionalData.info}<br></br>{selectedPerformance.additionalData.note}</p>
+        <p className="t-bold">
+          {selectedPerformance.theaters.map((theater, index) => {
+              return (
+                <span key={index}>
+                  {theater}
+                  <br></br>
+                </span>
+              )
+          })}
+        </p>
         {selectedPerformance.poster != '' &&
           <Fragment>
             <img className="push-btm-hlf push-top-dbl" src={require(`../picture/${selectedPerformance.poster}`)}/>
@@ -109,7 +156,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
           return (
             <p key={index} className="quote-block t-center push-btm-dbl">
               <q>{review.body}</q>
-              <span className="bold push-top-hlf blc">{review.author}</span>
+              <span className="t-bold push-top-hlf blc">{review.author}</span>
             </p>
           )
         })}
