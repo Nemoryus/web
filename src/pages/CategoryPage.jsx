@@ -141,7 +141,6 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
               <ArrowDropDownIcon/>
             </SvgIcon>
           </IconButton>}
-          {/* <Button className='btn btn-4' onClick={toggleShowTrailerVideo}>Trailer</Button> */}
         </Box>
         {showTrailerVideo &&
           <iframe className={`trailer-video ${showTrailerVideoMini ? "mini" : ""}`} src={`${selectedPerformance.trailer}?autoplay=1`}
@@ -151,7 +150,6 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
           />
         }
       </div>
-
       <Box className="page-content content-light padd-top padd-btm t-center">
         <p className="t-bold">
           {selectedPerformance.theaters.map((theater, index) => {

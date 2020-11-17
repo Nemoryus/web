@@ -21,7 +21,7 @@ function ContactPage({ setHeaderType }) {
     return (
         <Box id="contact-page" className='content-dark content-padd-top padd-btm-dbl t-center'>
             <h3 className='page-title padd-top-dbl'><Text tid="contact"/></h3>
-            <Box className="push-btm push-top padd-btm-hlf padd-top-hlf">
+            <Box className="push-btm push-top padd-btm-hlf padd-top">
                 <Grid className="contact-content" container alignItems='center'>
                     <Grid className="contact-info" item xs={isOpenedForm ? 5 : 12}>
                         <p>
@@ -50,7 +50,6 @@ function ContactPage({ setHeaderType }) {
                     }
                     </Grid>
                 </Grid>
-                <Box className="fake-space"></Box>
             </Box>
         </Box>
     );

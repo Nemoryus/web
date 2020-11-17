@@ -834,10 +834,15 @@ footer p{
     transform: rotate(90deg);
 }
 #contact-page .contact-form-wrapper .contact-form {
-    background-color: #000819;
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
+    background-color: #040821;
     padding: 60px 200px 40px 110px;
     color: white !important;
+    border-color: #FF0000;
+    border-style: solid;
+    border-width: 1px 0 1px 1px ;
+}
+#contact-page .contact-form-wrapper .contact-form-btn{
+    margin-top: 11px;
 }
 /*         Contact page - end          */
 
@@ -945,7 +950,7 @@ footer p{
     z-index: 203;
 }
 #category-page .trailer-btn-wrapper span{
-    color: whi te;
+    color: white;
 }
 #category-page .trailer-video {
     width: 100%;
