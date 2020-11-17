@@ -288,7 +288,20 @@ a:hover {
     text-transform: none !important;
     letter-spacing: 3px !important;
 }
+
+.btn-no-padd{
+    border-radius: 10px !important;
+    display: inline-block !important;
+    font-weight: bold !important;
+    border: 2px solid !important;
+    white-space: nowrap !important;
+    text-transform: none !important;
+    letter-spacing: 3px !important;
+}
 .btn:hover {
+    box-shadow: 0 0 5px 5px rgba(255,105,135,.3);
+}
+.btn-no-padd:hover {
     box-shadow: 0 0 5px 5px rgba(255,105,135,.3);
 }
 .btn.btn-1 {
@@ -303,6 +316,11 @@ a:hover {
     color: white !important;
     border-color: #FF0000 !important;
     background-color: #FF0000!important;
+}
+.btn-no-padd.btn-4 {
+    color: white;
+    border-color: #FF0000 !important;
+    background-color: rgba(4, 8, 33, .9) !important;
 }
 .btn.btn-4 {
     color: white;
@@ -441,7 +459,7 @@ a:hover {
     top: 0;
     height: 100px;
     width: 100%;
-    z-index: 200;
+    z-index: 300;
     transition: all .4s linear;
 }
 .header-wrapper.active {
@@ -920,10 +938,14 @@ footer p{
     transform: scale(2);
 }
 #category-page .trailer-btn-wrapper {    
+    width: 300px;
     right: -25px;
     top: 50%;
     transform: translateY(-50%) rotate(90deg);
     z-index: 203;
+}
+#category-page .trailer-btn-wrapper span{
+    color: whi te;
 }
 #category-page .trailer-video {
     width: 100%;

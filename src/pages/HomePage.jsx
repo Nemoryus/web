@@ -56,7 +56,7 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
     return (
         <div id="home-page" className='content-dark padd-btm-dbl'>
             <Box className="pos-rel production-section-wrapper">
-                <img className={`production-section-img ${showPerformances ? "blur" : ""}`} src={BallerinaImg}/>
+                <img className={`production-section-img ${showPerformances ? "`blur`" : ""}`} src={BallerinaImg}/>
                 <Box className="pos-abs production-section content-padd-top fullSize">
                     <Box className="pos-rel fullSize">
                         <Grid container className="padd-btm production-wrapper pos-rel" justify="center">

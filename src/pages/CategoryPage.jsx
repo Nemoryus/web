@@ -1,13 +1,19 @@
 import React, { useState, useEffect, useContext, Fragment } from "react";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import SvgIcon from '@material-ui/core/SvgIcon';
+
 
 // Slider
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 import { PerformancesCtx } from "./Main";
+import { BorderLeft, BorderRight } from "@material-ui/icons";
 
 function SliderImages({ images }) {
   const settings = {
@@ -28,7 +34,7 @@ function SliderImages({ images }) {
     <Slider {...settings}>
       {images.map((image, index) => {
         return (
-          <img key={index} className="slider-image" src={require(`../picture/${image}`)}/>
+          <img key={index} className="slider-image" src={require(`../picture/${image}`)} />
         )
       })}
     </Slider>
@@ -52,7 +58,7 @@ function SliderMenu({ performances, startedMenuPosition, handleChangeSelectedPer
       handleChangeSelectedPerformance(performances[next])
     }
   };
-  
+
   return (
     <Slider {...settings}>
       {performances.map((performance) => {
@@ -89,9 +95,9 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
       window.removeEventListener('scroll', handleShowTrailerVideoMini) // remove listener when leaving from the page
     }
   }, [])
-  
+
   const handleShowTrailerVideoMini = () => {
-    if(window.scrollY >= 1) {
+    if (window.scrollY >= 1) {
       setShowTrailerVideoMini(true)
     } else {
       setShowTrailerVideoMini(false)
@@ -115,15 +121,27 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
     <Box id="category-page">
       <div className="slider-wrapper pos-rel">
         {selectedPerformance.images.length > 0 &&
-          <SliderImages images={selectedPerformance.images}/>
+          <SliderImages images={selectedPerformance.images} />
         }
         <div className="category-menu-wrapper t-white fullWidth">
           <div className="category-menu">
-            <SliderMenu performances={performances} startedMenuPosition={startedMenuPosition} handleChangeSelectedPerformance={handleChangeSelectedPerformance}/>
+            <SliderMenu performances={performances} startedMenuPosition={startedMenuPosition} handleChangeSelectedPerformance={handleChangeSelectedPerformance} />
           </div>
         </div>
         <Box className="trailer-btn-wrapper pos-abs">
-          <Button className='btn btn-4' onClick={toggleShowTrailerVideo}>Trailer</Button>
+          {showTrailerVideo ? <IconButton onClick={toggleShowTrailerVideo} className='btn-no-padd btn-4 fullHeight' style={{ padding: 0 }}>
+            <span style={{ width: '75%' }}>TRAILER</span>
+            <SvgIcon style={{ fontSize: 40, width: '25%', height: '100%', color: '#FF0000', borderLeft: '2px solid #FF0000', padding: '10px' }}>
+              <CloseIcon />
+            </SvgIcon>
+          </IconButton> :
+          <IconButton onClick={toggleShowTrailerVideo} className='btn-no-padd btn-4 fullHeight' style={{ padding: 0 }}>
+            <span style={{ width: '75%' }}>TRAILER</span>
+            <SvgIcon style={{ fontSize: 100, width: '25%', height: '100%', color: '#FF0000', borderLeft: '2px solid #FF0000' }}>
+              <ArrowDropDownIcon/>
+            </SvgIcon>
+          </IconButton>}
+          {/* <Button className='btn btn-4' onClick={toggleShowTrailerVideo}>Trailer</Button> */}
         </Box>
         {showTrailerVideo &&
           <iframe className={`trailer-video ${showTrailerVideoMini ? "mini" : ""}`} src={`${selectedPerformance.trailer}?autoplay=1`}
@@ -137,17 +155,17 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
       <Box className="page-content content-light padd-top padd-btm t-center">
         <p className="t-bold">
           {selectedPerformance.theaters.map((theater, index) => {
-              return (
-                <span key={index}>
-                  {theater}
-                  <br></br>
-                </span>
-              )
+            return (
+              <span key={index}>
+                {theater}
+                <br></br>
+              </span>
+            )
           })}
         </p>
         {selectedPerformance.poster != '' &&
           <Fragment>
-            <img className="push-btm-hlf push-top-dbl" src={require(`../picture/${selectedPerformance.poster}`)}/>
+            <img className="push-btm-hlf push-top-dbl" src={require(`../picture/${selectedPerformance.poster}`)} />
             <span>(official poster)</span>
           </Fragment>
         }
@@ -161,7 +179,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
           )
         })}
         <Box className='t-center padd-btm-dbl push-btm push-top-dbl'>
-            <Button onClick={() => showProductionPage()} className='btn btn-1'>back</Button>
+          <Button onClick={() => showProductionPage()} className='btn btn-1'>back</Button>
         </Box>
       </Box>
     </Box>
