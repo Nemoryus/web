@@ -6,14 +6,12 @@ import CloseIcon from '@material-ui/icons/Close';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-
 // Slider
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 import { PerformancesCtx } from "./Main";
-import { BorderLeft, BorderRight } from "@material-ui/icons";
 
 function SliderImages({ images }) {
   const settings = {
@@ -130,38 +128,40 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
         </div>
         {!(showTrailerVideo && showTrailerVideoMini) &&
           <Box className={`trailer-btn-wrapper pos-abs ${showTrailerVideo ? "zIndex" : ""}`}>
-            {showTrailerVideo ? 
-              <IconButton onClick={toggleShowTrailerVideo} className='btn-no-padd btn-4 fullHeight' style={{ padding: 0 }}>
-                <span style={{ width: '75%' }}>TRAILER</span>
-                <SvgIcon style={{ fontSize: 40, width: '25%', height: '100%', color: '#FF0000', borderLeft: '2px solid #FF0000', padding: '10px' }}>
-                  <CloseIcon />
-                </SvgIcon>
-              </IconButton>
-              :
-              <IconButton onClick={toggleShowTrailerVideo} className='btn-no-padd btn-4 fullHeight' style={{ padding: 0 }}>
-                <span style={{ width: '75%' }}>TRAILER</span>
+            <IconButton onClick={toggleShowTrailerVideo} className='btn-no-padd btn-4 fullHeight' style={{ padding: 0 }}>
+              <span style={{ width: '75%' }}>TRAILER</span>
+              {showTrailerVideo ? 
+                  <SvgIcon style={{ fontSize: 40, width: '25%', height: '100%', color: '#FF0000', borderLeft: '2px solid #FF0000', padding: '10px' }}>
+                    <CloseIcon />
+                  </SvgIcon>
+                :
                 <SvgIcon style={{ fontSize: 100, width: '25%', height: '100%', color: '#FF0000', borderLeft: '2px solid #FF0000' }}>
                   <ArrowDropDownIcon/>
                 </SvgIcon>
-              </IconButton>
-            }
+              }
+            </IconButton>
           </Box>
         }
         {showTrailerVideo &&
-          <Box className={`trailer-video-wrapper ${showTrailerVideoMini ? "mini flex-column" : ""}`}>
-            {showTrailerVideoMini &&
-              <IconButton className="t-red close-btn"
-                onClick={toggleShowTrailerVideo}
-              >
-                <CloseIcon />
-              </IconButton>
+          <>
+            {!showTrailerVideoMini &&
+              <Box className="overlay pos-abs"/>
             }
-            <iframe className={`${showTrailerVideoMini ? "flex-grow fullWidth" : "fullSize"}`} src={`${selectedPerformance.trailer}?autoplay=1`}
-              frameBorder='0'
-              allow='autoplay; encrypted-media'
-              title={`${selectedPerformance.name} - trailer`}
-            />
-          </Box>
+            <Box className={`trailer-video-wrapper ${showTrailerVideoMini ? "mini flex-column" : ""}`}>
+              {showTrailerVideoMini &&
+                <IconButton className="t-red close-btn"
+                  onClick={toggleShowTrailerVideo}
+                >
+                  <CloseIcon />
+                </IconButton>
+              }
+              <iframe className={`${showTrailerVideoMini ? "flex-grow fullWidth" : "fullSize"}`} src={`${selectedPerformance.trailer}?autoplay=1`}
+                frameBorder='0'
+                allow='autoplay; encrypted-media'
+                title={`${selectedPerformance.name} - trailer`}
+              />
+            </Box>
+          </>
         }
       </div>
       <Box className="page-content content-light padd-top padd-btm t-center">
