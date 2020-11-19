@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState, useContext, Fragment } from 'react';
 import { NavLink, useHistory } from 'react-router-dom'
+
 import { Box, Button, Grid } from '@material-ui/core';
+import HomePageIntroPerformance from "../components/HomePageIntroPerformance"
 import SvgIcon from '@material-ui/core/SvgIcon';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
@@ -20,9 +22,10 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
     const history = useHistory()
     const { getPerformances } = useContext(PerformancesCtx);
     const performances = [...getPerformances('MUSICALS')];
+    const [introPerformance, setIntroPerformance] = useState(performances[2]);
     const [videoHover, setVideoHover] = useState(false);
     const [videoIsPlayed, setVideoIsPlayed] = useState(false);
-    const [showPerformances, setShowPerformances] = useState(false);
+    // const [showPerformances, setShowPerformances] = useState(false); // NEMAZAT - TRELLO CARD: HomePage - production section 
     const vidRef = useRef(null);
 
     useEffect(() => {
@@ -30,14 +33,24 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
     }, [])
 
     useEffect(() => {
+        setTimeout(() => { 
+            if(introPerformance.id == performances.length) {
+                setIntroPerformance(performances[0])
+            } else {
+                setIntroPerformance(performances[introPerformance.id])
+            }
+        }, 2500);
+    }, [introPerformance])
+
+    useEffect(() => {
         if(selectedPerformance != null) {
             history.push("/production");
         }
     }, [selectedPerformance])
 
-    const toggleShowPerformances = () => {
-        setShowPerformances((showPerformances) => !showPerformances);
-    }
+    // const toggleShowPerformances = () => {
+    //     setShowPerformances((showPerformances) => !showPerformances); // NEMAZAT - TRELLO CARD: HomePage - production section 
+    // }
 
     const toggleVideoHover = () => {
         setVideoHover((videoHover) => !videoHover);
@@ -55,7 +68,11 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
 
     return (
         <div id="home-page" className='content-dark padd-btm-dbl'>
-            <Box className="pos-rel production-section-wrapper">
+            <Box className="intro-section-wrapper overflow pos-rel">
+                <HomePageIntroPerformance introPerformance={introPerformance}/>
+            </Box>
+            {/* NEMAZAT - TRELLO CARD: HomePage - production section */}
+            {/* <Box className="pos-rel production-section-wrapper">
                 <img className={`production-section-img ${showPerformances ? "`blur`" : ""}`} src={BallerinaImg}/>
                 <Box className="pos-abs production-section content-padd-top fullSize">
                     <Box className="pos-rel fullSize">
@@ -108,9 +125,9 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
                         </Box>
                     </Box>
                 </Box>
-            </Box>
+            </Box> */}
             <Box className="page-content padd-top">
-                <h4 className="page-title padd-top-dbl">ABOUT US</h4>
+                <h4 className="page-title padd-top-dbl">About us</h4>
                 <p className="page-title-text push-btm push-top padd-btm-hlf padd-top-hlf">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet dolore
@@ -127,9 +144,10 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
                 </Box>
                 <div className="video-container pos-rel padd-btm push-btm" onClick={toggleVideoPlay} onMouseEnter={toggleVideoHover} onMouseLeave={toggleVideoHover}>
                     {!videoIsPlayed && 
-                        <div className='overlay pos-abs'>
+                        <>
+                            <div className='overlay pos-abs'/>
                             <img className="middle button-icon play-button" src={PlayButtonImg} />
-                        </div>
+                        </>
                     }
                     {videoHover && videoIsPlayed && <img className="middle button-icon stop-button" src={StopButtonImg} />}
                     <video className="fullSize" ref={vidRef} onEnded={() => toggleVideoPlay()}>

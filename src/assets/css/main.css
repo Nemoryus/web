@@ -1,8 +1,21 @@
 /* DEFAULT SETTINGS */
+@font-face {
+    font-family: 'Vonique64';
+    src: url('../fonts/Vonique64/Vonique64.ttf');
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
+}
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat'!important;
+    font-family: 'Montserrat' !important;
+}
+body, html {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
 }
 body {
     background-color: transparent !important;
@@ -15,6 +28,32 @@ li {
 a,
 a:hover {
     text-decoration: none !important; 
+}
+p {
+    font-size: 14px;
+    letter-spacing: 0;
+}
+h2, h3 {
+    font-weight: 400;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+h3 {
+    font-size: 34px;
+    line-height: 40px;
+}
+h4 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+}
+h6, p {
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+audio, canvas, iframe, img, svg, video {
+    vertical-align: middle;
 }
 
 /* CONSTANTS */
@@ -235,13 +274,16 @@ a:hover {
 }
 
 /* GENERAL */
-.flex-column{
+.flex-column {
     display: flex;
     flex-direction: column;
 }
-.flex-row{
+.flex-row {
     display: flex;
     flex-direction: row;
+}
+.flex-grow {
+    flex-grow: 1;
 }
 
 .page-content > * {
@@ -446,6 +488,7 @@ a:hover {
 .header .logo, 
 .footer .logo {
     width: 100px;
+    transition: all .4s linear;
 }
 .header .language-select, 
 .footer .language-select {
@@ -453,7 +496,6 @@ a:hover {
 }
 
 /*         Header - begin          */
-/* COMMENTED FUNCTIONALITY WITH HEADER EFFECT */
 .header-wrapper {
     position: fixed;
     top: 0;
@@ -464,6 +506,9 @@ a:hover {
 }
 .header-wrapper.active {
     height: 70px
+}
+.header-wrapper.active .logo{
+    width: 85px;
 }
 .header-wrapper .header-effect {
     position: absolute;
@@ -490,29 +535,7 @@ a:hover {
 .header-wrapper.active .header-effect--grad {
     opacity: 0;
 }
-/* .header-wrapper {
-    position: fixed;
-    top: 0;
-    height: 100px;
-    width: 100%;
-    z-index: 200;
-    background-color: rgba(4, 8, 33, 1);
-    transition: all .3s linear;
-}
-.header-wrapper--trans,
-.header-wrapper--grad {
-    background-color: transparent;
-}
-.header-wrapper--grad {
-    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(4,8,33,1) 95%);
-}
-.header-wrapper.active {
-    height: 70px
-}
-.header-wrapper--trans.active,
-.header-wrapper--grad.active {
-    background: rgba(4, 8, 33, .7);
-} */
+
 .header .MuiNativeSelect-icon{
     color: #FF0000;
 }
@@ -668,7 +691,114 @@ footer p{
 }
 
 /*         Home page - begin          */
-#home-page .production-section-wrapper .production-section-img {
+#home-page .intro-section-wrapper {
+    height: 100vh;
+    width: 100%;
+}
+#home-page .intro-performance-item .intro-performance-image-wrapper img {
+    object-fit: cover;
+}
+#home-page .intro-performance-item .overlay {
+    z-index: 3;
+}
+#home-page .intro-performance-item .intro-performance-title-wrapper {
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+}
+#home-page .intro-performance-title-wrapper .intro-performance-title {
+    font-size: 100px;
+    text-transform: uppercase;
+    font-family: 'Vonique64' !important;
+    line-height: .9;
+    word-spacing: 9999999px;
+    z-index: 5;
+    left: 0;
+}
+
+#home-page .intro-performance-image-wrapper .scale-appear, 
+#home-page .intro-performance-image-wrapper .scale-enter {
+    animation:  image-scale 2.5s cubic-bezier(.6,0,1,0), 
+                image-blur-in .1s 0s cubic-bezier(1,1,0,0), 
+                image-blur-out .1s 2.4s cubic-bezier(1,1,0,0);
+    z-index: 2;
+}
+#home-page .intro-performance-image-wrapper .scale-exit {
+    z-index: 1;
+}
+
+@keyframes image-scale {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(6);
+    }
+}
+
+@keyframes image-blur-in {
+    from {
+        filter: blur(20px);
+    }
+    to {
+        filter: blur(0px);
+    }
+}
+
+@keyframes image-blur-out {
+    from {
+        filter: blur(0px);
+    }
+    to {
+        filter: blur(20px);
+    }
+}
+
+#home-page .intro-performance-title-wrapper .scale-appear, 
+#home-page .intro-performance-title-wrapper .scale-enter {
+    animation:  title-font-size 1.8s .2s cubic-bezier(.4,0,1,0) forwards, 
+                title-blur-in .2s 0s cubic-bezier(1,1,0,0), 
+                title-hide 0s 2s cubic-bezier(1,1,0,0) forwards;
+    z-index: 2;
+}
+#home-page .intro-performance-title-wrapper .scale-exit {
+    z-index: 1;
+    display: none;
+}
+
+@keyframes title-font-size {
+    from {
+        font-size: 100px;
+    }
+    to {
+        font-size: 2000px;
+    }
+}
+
+@keyframes title-blur-in {
+    from {
+        filter: blur(20px);
+    }
+    to {
+        filter: blur(0px);
+    }
+}
+
+@keyframes title-hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* NEMAZAT - TRELLO CARD: HomePage - production section */
+/* #home-page .production-section-wrapper .production-section-img {
     object-fit: cover;
     height: 100vh;
     width: 100%;
@@ -738,7 +868,7 @@ footer p{
 #home-page .production-section .rolling-wrapper {
     bottom: 20px;
     background: transparent;
-}
+} */
 #home-page .page-content {
     width: 854px;
     margin: 0 auto;
@@ -949,23 +1079,27 @@ footer p{
     transform: translateY(-50%) rotate(90deg);
     z-index: 203;
 }
-#category-page .trailer-btn-wrapper span{
-    color: white;
+#category-page .trailer-btn-wrapper.zIndex {
+    z-index: 302
 }
-#category-page .trailer-video {
+#category-page .trailer-video-wrapper {
     width: 100%;
     height: 100%;
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: 201;
+    z-index: 301;
 }
-#category-page .trailer-video.mini {
+#category-page .trailer-video-wrapper.mini {
     width: 400px;
     height: 250px;
     bottom: 20px;
     right: 20px;
     position: fixed;
+    align-items: flex-end;
+}
+#category-page .trailer-video-wrapper.mini .close-btn{
+    width: fit-content;
 }
 #category-page .page-content {
     width: 350px;

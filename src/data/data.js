@@ -3,8 +3,9 @@ export const MUSICALS = [
         id: 1,
         name: 'Gasp',
         category: 'MUSICALS',
-        poster: '',
+        poster: 'gasp_poster.jpg',
         images: [
+            'gasp_0.jpg'
         ],
         video: 'video patch',
         theaters: [
@@ -33,8 +34,9 @@ export const MUSICALS = [
         id: 2,
         name: 'Carmen',
         category: 'MUSICALS',
-        poster: '',
+        poster: 'carmen_poster.jpg',
         images: [
+            'carmen_0.jpg'
         ],
         video: 'video patch',
         theaters: [
@@ -63,8 +65,9 @@ export const MUSICALS = [
         id: 3,
         name: 'Duchons',
         category: 'MUSICALS',
-        poster: '',
+        poster: 'duchons_poster.jpg',
         images: [
+            'gasp_0.jpg'
         ],
         video: 'video patch',
         theaters: [
@@ -93,8 +96,9 @@ export const MUSICALS = [
         id: 4,
         name: 'School of rock',
         category: 'MUSICALS',
-        poster: '',
+        poster: 'schoolOfRock_poster.jpg',
         images: [
+            'gasp_0.jpg'
         ],
         video: 'video patch',
         theaters: [
@@ -158,10 +162,9 @@ export const MUSICALS = [
         id: 6,
         name: 'Superstar',
         category: 'MUSICALS',
-        poster: '',
+        poster: 'superstar_poster.jpg',
         images: [
-            'superstar.jpg', 
-            'grease_poster.jpg',
+            'carmen_0.jpg', 
         ],
         video: 'video patch',
         theaters: [
@@ -190,9 +193,9 @@ export const MUSICALS = [
         id: 7,
         name: 'West side story',
         category: 'MUSICALS',
-        poster: '',
+        poster: 'westside_poster.jpg',
         images: [
-            'westside.jpg', // poster
+            'westside_0.jpg',
         ],
         video: 'video patch',
         theaters: [
@@ -221,8 +224,9 @@ export const MUSICALS = [
         id: 8,
         name: 'Voda nad vodou',
         category: 'MUSICALS',
-        poster: '',
+        poster: 'voda_poster.jpg',
         images: [
+            'gasp_0.jpg'
         ],
         video: 'video patch',
         theaters: [
@@ -251,8 +255,9 @@ export const MUSICALS = [
         id: 9,
         name: 'Camelias',
         category: 'MUSICALS',
-        poster: '',
+        poster: 'camelias_poster.jpg',
         images: [
+            'camelias_0.jpg'
         ],
         video: 'video patch',
         theaters: [
