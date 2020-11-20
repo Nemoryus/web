@@ -34,7 +34,7 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
     }, [])
 
     useEffect(() => {
-        setTimeout(() => { 
+        const autoplayTimer = setTimeout(() => { 
             if(nextActivePerformance.id == performances.length) {
                 setNextActivePerformance(performances[0])
             } else {
@@ -46,6 +46,7 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
                 setActivePerformance(performances[activePerformance.id])
             }
         }, 2500);
+        return () => clearTimeout(autoplayTimer);
     }, [activePerformance, nextActivePerformance])
 
     useEffect(() => {

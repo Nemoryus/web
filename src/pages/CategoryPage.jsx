@@ -5,6 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import ScrollToTop from '../components/ScrollTop'
 
 // Slider
 import "slick-carousel/slick/slick.css";
@@ -78,18 +79,8 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
   const [showTrailerVideoMini, setShowTrailerVideoMini] = useState(false)
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
     window.addEventListener('scroll', handleShowTrailerVideoMini)
     return function cleanupListener() {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
       window.removeEventListener('scroll', handleShowTrailerVideoMini) // remove listener when leaving from the page
     }
   }, [])
@@ -117,6 +108,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
 
   return (
     <Box id="category-page">
+      <ScrollToTop forceScroll={true} />
       <div className="slider-wrapper pos-rel">
         {selectedPerformance.images.length > 0 &&
           <SliderImages images={selectedPerformance.images} />

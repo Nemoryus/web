@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core'
 import CssBaseline from '@material-ui/core/CssBaseline';
+import ScrollToTop from './components/ScrollTop'
 
 import './App.css';
 import './assets/css/main.css'
@@ -41,13 +42,15 @@ function App() {
   return (
     <div className='appPage'>
       <BrowserRouter>
-        {/* <MuiThemeProvider theme={theme}> */}
-          <CssBaseline/>
-          <Switch>
-            <Route path="/" component={WelcomePage} exact/>
-            <Route path={["/contact", "/home", "/about-us", "/production"]} component={Main}/>
-          </Switch>
-        {/* </MuiThemeProvider> */}
+        <ScrollToTop>
+          {/* <MuiThemeProvider theme={theme}> */}
+            <CssBaseline/>
+            <Switch>
+              <Route path="/" component={WelcomePage} exact/>
+              <Route path={["/contact", "/home", "/about-us", "/production"]} component={Main}/>
+            </Switch>
+          {/* </MuiThemeProvider> */}
+        </ScrollToTop>
       </BrowserRouter>
     </div>
   );

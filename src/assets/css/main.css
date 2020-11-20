@@ -695,10 +695,15 @@ footer p{
     height: 100vh;
     width: 100%;
 }
+#home-page .intro-performance-item {
+    display: none;
+}
 #home-page .intro-performance-item.active {
     z-index: 2;
+    display: block;
 }
 #home-page .intro-performance-item.next-active {
+    display: block;
     z-index: 1;
 }
 #home-page .intro-performance-item .intro-performance-image-wrapper img {
