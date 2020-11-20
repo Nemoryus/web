@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState, useContext, Fragment } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 
 import { Box, Button, Grid } from '@material-ui/core';
-import HomePageIntroPerformance from "../components/HomePageIntroPerformance"
+import HomePagePerformances from "../components/HomePagePerformances"
 import SvgIcon from '@material-ui/core/SvgIcon';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
@@ -22,7 +22,8 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
     const history = useHistory()
     const { getPerformances } = useContext(PerformancesCtx);
     const performances = [...getPerformances('MUSICALS')];
-    const [introPerformance, setIntroPerformance] = useState(performances[2]);
+    const [activePerformance, setActivePerformance] = useState(performances[2]);
+    const [nextActivePerformance, setNextActivePerformance] = useState(performances[3])
     const [videoHover, setVideoHover] = useState(false);
     const [videoIsPlayed, setVideoIsPlayed] = useState(false);
     // const [showPerformances, setShowPerformances] = useState(false); // NEMAZAT - TRELLO CARD: HomePage - production section 
@@ -34,13 +35,18 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
 
     useEffect(() => {
         setTimeout(() => { 
-            if(introPerformance.id == performances.length) {
-                setIntroPerformance(performances[0])
+            if(nextActivePerformance.id == performances.length) {
+                setNextActivePerformance(performances[0])
             } else {
-                setIntroPerformance(performances[introPerformance.id])
+                setNextActivePerformance(performances[nextActivePerformance.id])
+            }
+            if(activePerformance.id == performances.length) {
+                setActivePerformance(performances[0])
+            } else {
+                setActivePerformance(performances[activePerformance.id])
             }
         }, 2500);
-    }, [introPerformance])
+    }, [activePerformance, nextActivePerformance])
 
     useEffect(() => {
         if(selectedPerformance != null) {
@@ -69,7 +75,7 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
     return (
         <div id="home-page" className='content-dark padd-btm-dbl'>
             <Box className="intro-section-wrapper overflow pos-rel">
-                <HomePageIntroPerformance introPerformance={introPerformance}/>
+                <HomePagePerformances performances={performances} activePerformance={activePerformance} nextActivePerformance={nextActivePerformance}/>
             </Box>
             {/* NEMAZAT - TRELLO CARD: HomePage - production section */}
             {/* <Box className="pos-rel production-section-wrapper">
