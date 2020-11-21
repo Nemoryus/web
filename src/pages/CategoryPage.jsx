@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import ScrollToTop from '../components/ScrollTop'
+import ScrollToTop from '../components/ScrollToTop'
 
 // Slider
 import "slick-carousel/slick/slick.css";
@@ -167,7 +167,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
             )
           })}
         </p>
-        {selectedPerformance.poster != '' &&
+        {selectedPerformance.poster !== '' &&
           <Fragment>
             <img className="push-btm-hlf push-top-dbl" src={require(`../picture/${selectedPerformance.poster}`)} />
             <span>(official poster)</span>

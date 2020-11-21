@@ -5,7 +5,7 @@ function HomePagePerformances({ performances, activePerformance, nextActivePerfo
     return (
         performances.map((performance) => {
             return(
-                <Box key={performance.id} className={`intro-performance-item pos-abs fullSize ${activePerformance.id == performance.id ? "active" : nextActivePerformance.id == performance.id && "next-active"}`}>
+                <Box key={performance.id} className={`intro-performance-item pos-abs fullSize ${activePerformance.id === performance.id ? "active" : nextActivePerformance.id === performance.id && "next-active"}`}>
                     <Box className="fullSize intro-performance-image-wrapper">
                         <img className="fullSize" src={require(`../picture/${performance.images[0]}`)}/>
                     </Box>

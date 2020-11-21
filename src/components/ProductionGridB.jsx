@@ -1,11 +1,10 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 
 import Performance from './Performance'
 
 export default function ProductionGridB({ performances, setSelectedPerformance}) {
-
+    
     return (
         <Grid container spacing={3} className="performances">
             <Grid item xs={4} className="no-padd-btm">

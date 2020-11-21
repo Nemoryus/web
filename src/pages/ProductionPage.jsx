@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState, useContext } from "react";
+import React, { memo, useEffect, useState, useContext } from "react";
 import { Text } from '../containers/Language';
 
 import Grid from "@material-ui/core/Grid";
@@ -13,10 +13,10 @@ import ProductionGridB from '../components/ProductionGridB'
 
 import { PerformancesCtx } from "./Main";
 
-export default function ProductionPage({ setHeaderType, selectedPerformance, setSelectedPerformance }) {
+function ProductionPage({ setHeaderType, selectedPerformance, setSelectedPerformance }) {
   const { getPerformances } = useContext(PerformancesCtx);
   const [selectedCategory, setSelectedCategory] = useState('ALL');
-  const [performances, setPerformances] = useState(getPerformances('ALL')); // set all performances as default
+  const [performances, setPerformances] = useState(getPerformances(selectedCategory)); // set all performances as default
   const gridSize = 6; // count of performances in a grid 
 
   useEffect(() => {
@@ -36,12 +36,12 @@ export default function ProductionPage({ setHeaderType, selectedPerformance, set
     let tmpPerformances = [];
     let countOfGrid = 0
     performances.map((performance, index) => {
-      if(index != 0) {
-        if(index % (gridSize * 2) == 0) {
+      if(index !== 0) {
+        if(index % (gridSize * 2) === 0) {
           arrayOfGrids.push(<ProductionGridB key={countOfGrid} performances={tmpPerformances} setSelectedPerformance={setSelectedPerformance} />);
           tmpPerformances = []
           countOfGrid++;
-        } else if(index % gridSize == 0) {
+        } else if(index % gridSize === 0) {
           arrayOfGrids.push(<ProductionGridA key={countOfGrid} performances={tmpPerformances} setSelectedPerformance={setSelectedPerformance} />);
           tmpPerformances = []
           countOfGrid++;
@@ -50,7 +50,7 @@ export default function ProductionPage({ setHeaderType, selectedPerformance, set
       tmpPerformances.push(performance);
     })
 
-    if(tmpPerformances.length != 0) {
+    if(tmpPerformances.length !== 0) {
       arrayOfGrids.push(<ProductionGrid key={countOfGrid} performances={tmpPerformances} setSelectedPerformance={setSelectedPerformance} />);
     }
     return (
@@ -59,7 +59,7 @@ export default function ProductionPage({ setHeaderType, selectedPerformance, set
   }
 
   return (
-    <Fragment>
+    <>
       {
         selectedPerformance == null ? (
           <Grid container id="production-page" justify="center" className="content-light content-padd-top padd-btm">
@@ -72,14 +72,6 @@ export default function ProductionPage({ setHeaderType, selectedPerformance, set
               </Grid>
               <ProductionPerformanceMenu performances={performances} setSelectedPerformance={setSelectedPerformance} />
               <ProductionGridLayout/>
-              {/*{firstTime && CreateAllGrid(handleSelectedPredstavenie)}
-              <div className='scroleArea'>
-              <ScrollBar>
-              <div>
-              {arrayOfGrid}
-              </div>
-              </ScrollBar>
-            </div> */}
             </Grid>
           </Grid>
         ) 
@@ -88,6 +80,7 @@ export default function ProductionPage({ setHeaderType, selectedPerformance, set
           <CategoryPage selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance} />
         )
       }
-    </Fragment>
+    </>
   );
 }
+export default memo(ProductionPage);

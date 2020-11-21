@@ -5,12 +5,6 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
-import InputAdornment from '@material-ui/core/InputAdornment';
-import FaceIcon from '@material-ui/icons/Face';
-import EmailIcon from '@material-ui/icons/Email';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import MessageIcon from '@material-ui/icons/Message';
-
 export default function ContactFormular({toggleOpen}) {
   const [email, setEmail] = useState({
       name: null,

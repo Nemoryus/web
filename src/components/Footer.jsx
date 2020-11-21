@@ -1,5 +1,4 @@
-import React from "react";
-import { NavLink } from 'react-router-dom'
+import React, { memo } from "react";
 
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
@@ -11,7 +10,7 @@ import SocialIcons from '../components/SocialIcons'
 import LanguageSelect from '../components/LanguageSelect';
 import Logo from '../picture/logo.png';
 
-export default function Footer({ handleLogoClicked }) {
+function Footer({ handleLogoClicked }) {
 
     return (
         <footer className="footer-wrapper">
@@ -41,3 +40,5 @@ export default function Footer({ handleLogoClicked }) {
         </footer>
     );
 }
+
+export default memo(Footer)

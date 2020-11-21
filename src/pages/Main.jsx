@@ -1,6 +1,5 @@
-import React, {useState, createContext} from 'react';
+import React, { useCallback, useState, createContext } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { LanguageProvider } from '../containers/Language';
 
 import AboutUsPage from "./AboutUsPage"
@@ -34,10 +33,10 @@ function Main() {
   const [headerType, setHeaderType] = useState(-1) // -1 - fully transparented, 0 - gradient, 1 - fully colored
   const [selectedPerformance, setSelectedPerformance] = useState(null)
   
-  const handleLogoClicked = () => {
+  const handleLogoClicked = useCallback(() => {
     setSelectedPerformance(null)
     history.push("/home");
-  }
+  }, [])
 
   return (
     <PerformancesCtx.Provider value={{ getPerformances }}>
@@ -45,23 +44,12 @@ function Main() {
         <Header headerType={headerType} handleLogoClicked={handleLogoClicked}/>
 
         <main className="content">
-          {/* <Route render={({location}) => (
-            <TransitionGroup>
-              <CSSTransition
-                key={location.key}
-                timeout={500}
-                classNames="fade"
-              >
-                <Switch location={location}> */}
-                <Switch>
-                  <Route path="/home" exact render={() => <HomePage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance}/>} />
-                  <Route path="/about-us" render={() => <AboutUsPage setHeaderType={setHeaderType}/>} />
-                  <Route path="/production" render={() => <ProductionPage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance}/>} />
-                  <Route path="/contact" render={() => <ContactPage setHeaderType={setHeaderType}/>} />
-                </Switch>
-              {/* </CSSTransition>
-            </TransitionGroup>
-          )}/> */}
+          <Switch>
+            <Route path="/home" exact render={() => <HomePage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance}/>} />
+            <Route path="/about-us" render={() => <AboutUsPage setHeaderType={setHeaderType}/>} />
+            <Route path="/production" render={() => <ProductionPage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance}/>} />
+            <Route path="/contact" render={() => <ContactPage setHeaderType={setHeaderType}/>} />
+          </Switch>
         </main>
 
         <Footer handleLogoClicked={handleLogoClicked}/>

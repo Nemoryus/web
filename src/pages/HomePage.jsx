@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useContext, Fragment } from 'react';
+import React, { memo, useRef, useEffect, useState, useContext } from 'react';
 import { NavLink, useHistory } from 'react-router-dom'
 
 import { Box, Button, Grid } from '@material-ui/core';
@@ -35,25 +35,25 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
 
     useEffect(() => {
         const autoplayTimer = setTimeout(() => { 
-            if(nextActivePerformance.id == performances.length) {
+            if(nextActivePerformance.id === performances.length) {
                 setNextActivePerformance(performances[0])
             } else {
                 setNextActivePerformance(performances[nextActivePerformance.id])
             }
-            if(activePerformance.id == performances.length) {
+            if(activePerformance.id === performances.length) {
                 setActivePerformance(performances[0])
             } else {
                 setActivePerformance(performances[activePerformance.id])
             }
         }, 2500);
         return () => clearTimeout(autoplayTimer);
-    }, [activePerformance, nextActivePerformance])
+    }, [performances, activePerformance, nextActivePerformance])
 
     useEffect(() => {
         if(selectedPerformance != null) {
             history.push("/production");
         }
-    }, [selectedPerformance])
+    }, [history, selectedPerformance])
 
     // const toggleShowPerformances = () => {
     //     setShowPerformances((showPerformances) => !showPerformances); // NEMAZAT - TRELLO CARD: HomePage - production section 
@@ -166,4 +166,4 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
     );
 }
 
-export default HomePage;
+export default memo(HomePage);

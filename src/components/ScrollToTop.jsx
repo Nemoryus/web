@@ -24,7 +24,7 @@ function ScrollToTop({ history, children, forceScroll }) {
             }
             unlisten();
         }
-    }, [])
+    }, [history, forceScroll])
 
     return (
         <>
