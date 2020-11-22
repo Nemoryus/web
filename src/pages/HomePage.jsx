@@ -1,4 +1,4 @@
-import React, { memo, useRef, useEffect, useState, useContext } from 'react';
+import React, { memo, useRef, useEffect, useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom'
 
 import { Box, Button, Grid } from '@material-ui/core';
@@ -13,51 +13,29 @@ import SocialIcons from '../components/SocialIcons';
 
 import PlayButtonImg from '../picture/video-play.svg';
 import StopButtonImg from '../picture/video-stop.svg';
-import BallerinaImg from '../picture/baletka.jpg';
+import NewsImg from '../picture/carmen_0.jpg';
 import BallerinaVideo from '../video/introVideo.mp4'
 
-import { PerformancesCtx } from "./Main";
-
 function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }) {
-    const history = useHistory()
-    const { getPerformances } = useContext(PerformancesCtx);
-    const performances = [...getPerformances('MUSICALS')];
-    const [activePerformance, setActivePerformance] = useState(performances[2]);
-    const [nextActivePerformance, setNextActivePerformance] = useState(performances[3])
+    // const history = useHistory()
     const [videoHover, setVideoHover] = useState(false);
     const [videoIsPlayed, setVideoIsPlayed] = useState(false);
-    // const [showPerformances, setShowPerformances] = useState(false); // NEMAZAT - TRELLO CARD: HomePage - production section 
+    const [showNews, setShowNews] = useState(false);
     const vidRef = useRef(null);
 
     useEffect(() => {
         setHeaderType(-1)
     }, [])
 
-    useEffect(() => {
-        const autoplayTimer = setTimeout(() => { 
-            if(nextActivePerformance.id === performances.length) {
-                setNextActivePerformance(performances[0])
-            } else {
-                setNextActivePerformance(performances[nextActivePerformance.id])
-            }
-            if(activePerformance.id === performances.length) {
-                setActivePerformance(performances[0])
-            } else {
-                setActivePerformance(performances[activePerformance.id])
-            }
-        }, 2500);
-        return () => clearTimeout(autoplayTimer);
-    }, [performances, activePerformance, nextActivePerformance])
+    // useEffect(() => {
+    //     if(selectedPerformance != null) {
+    //         history.push("/production");
+    //     }
+    // }, [history, selectedPerformance])
 
-    useEffect(() => {
-        if(selectedPerformance != null) {
-            history.push("/production");
-        }
-    }, [history, selectedPerformance])
-
-    // const toggleShowPerformances = () => {
-    //     setShowPerformances((showPerformances) => !showPerformances); // NEMAZAT - TRELLO CARD: HomePage - production section 
-    // }
+    const toggleShowNews = () => {
+        setShowNews((showNews) => !showNews); 
+    }
 
     const toggleVideoHover = () => {
         setVideoHover((videoHover) => !videoHover);
@@ -76,11 +54,61 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
     return (
         <div id="home-page" className='content-dark padd-btm-dbl'>
             <Box className="intro-section-wrapper overflow pos-rel">
-                <HomePagePerformances performances={performances} activePerformance={activePerformance} nextActivePerformance={nextActivePerformance}/>
+                <Box>
+                    <HomePagePerformances />
+                </Box>
+                <Box className={`pos-abs news-section-wrapper fullSize ${showNews ? "active" : ""}`}>
+                    <Box className="fullSize news-img pos-abs">
+                        <Box className="overlay pos-abs"/>
+                        <img className="fullSize" src={NewsImg}/>
+                    </Box>
+                    <Box className="pos-rel fullSize">
+                        <Grid container className="news-container pos-rel" justify="center">
+                            <Grid item xs={1}>
+                                <Box className="news-btn-wrapper t-red fullSize">
+                                    <span className="intro-vertical-line push-btm"></span>
+                                    <Box className="pos-rel t-bold">
+                                        <span className="news-btn">News</span>
+                                        <Box className="news-btn-arrow pos-abs">
+                                            {showNews ? 
+                                                <IconButton className="t-red no-padd" onClick={toggleShowNews}>
+                                                    <SvgIcon style={{ fontSize: 70 }}>
+                                                        <ArrowLeftIcon />
+                                                    </SvgIcon>
+                                                </IconButton>
+                                                :
+                                                <IconButton className="t-red no-padd" onClick={toggleShowNews}>
+                                                    <SvgIcon style={{ fontSize: 70 }}>
+                                                        <ArrowRightIcon />
+                                                    </SvgIcon>
+                                                </IconButton>
+                                            }
+                                        </Box>
+                                    </Box>
+                                    <span className="intro-vertical-line push-top"></span>
+                                </Box>
+                            </Grid>
+                            <Grid item xs={11} className="overflow fullHeight pos-rel">
+                                <Box className="pos-abs news-content push-btm-dbl">
+                                    <h3 className="news-header">CARMEN</h3>
+                                    <p className="push-btm">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eros purus, ornare eget leo nec, ultrices sagittis velit. Donec ut dolor urna. Etiam dapibus ipsum et ante sollicitudin, at porta ligula tempor. Mauris sed elit sem. Ut leo ante, vehicula in semper nec, facilisis ac massa. Vivamus sit amet imperdiet diam, vitae eleifend est. Maecenas tincidunt lacus sit amet dolor tempus, vitae volutpat sapien tempor.
+                                    </p>
+                                </Box>
+                                <Box className="pos-abs news-follow-us-wrapper t-red fullHeight">
+                                    <Box className="news-follow-us t-bold">
+                                        Follow us
+                                    </Box>
+                                    <span className="intro-vertical-line push-top-hlf push-btm-hlf"></span>
+                                    <SocialIcons />
+                                </Box>
+                            </Grid>
+                        </Grid>    
+                    </Box>
+                </Box>
             </Box>
-            {/* NEMAZAT - TRELLO CARD: HomePage - production section */}
-            {/* <Box className="pos-rel production-section-wrapper">
-                <img className={`production-section-img ${showPerformances ? "`blur`" : ""}`} src={BallerinaImg}/>
+            {/* <Box className="pos-abs news-wrapper">
+                <img className="production-section-img" src={BallerinaImg}/>
                 <Box className="pos-abs production-section content-padd-top fullSize">
                     <Box className="pos-rel fullSize">
                         <Grid container className="padd-btm production-wrapper pos-rel" justify="center">
@@ -90,14 +118,14 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
                                     <Box className="pos-rel t-bold">
                                         <span className="production-btn">Production</span>
                                         <Box className="production-btn-arrow pos-abs">
-                                            {showPerformances ? 
-                                                <IconButton className="t-red no-padd" onClick={toggleShowPerformances}>
+                                            {showNews ? 
+                                                <IconButton className="t-red no-padd" onClick={toggleShowNews}>
                                                     <SvgIcon style={{ fontSize: 70 }}>
                                                         <ArrowLeftIcon />
                                                     </SvgIcon>
                                                 </IconButton>
                                                 :
-                                                <IconButton className="t-red no-padd" onClick={toggleShowPerformances}>
+                                                <IconButton className="t-red no-padd" onClick={toggleShowNews}>
                                                     <SvgIcon style={{ fontSize: 70 }}>
                                                         <ArrowRightIcon />
                                                     </SvgIcon>
@@ -126,10 +154,6 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
                                 </Box>
                             </Grid>
                         </Grid>    
-                        <Box className="rolling-wrapper pos-abs">
-                            <Box className="rolling">On Monday (September 28, 2020) we started preparation for Stravinsky's evening which will combine two well-known works - Petrushka and The Firebird from the work of a Russian composer named Igor Fiodorovich Stravinsky. It is an interesting combination of modern ballet - dance, music and design. <span className="t-red t-bold"> /NEWS/</span></Box>
-                            <Box className="rolling">On Monday (September 28, 2020) we started preparation for Stravinsky's evening which will combine two well-known works - Petrushka and The Firebird from the work of a Russian composer named Igor Fiodorovich Stravinsky. It is an interesting combination of modern ballet - dance, music and design. <span className="t-red t-bold"> /NEWS/</span></Box>
-                        </Box>
                     </Box>
                 </Box>
             </Box> */}

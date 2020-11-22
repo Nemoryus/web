@@ -28,7 +28,7 @@ function Performance({ performance, setSelectedPerformance, boxType}) {
                         <Box className='overlay-title t-red push-btm-hlf'>
                             {performance.name}
                         </Box>
-                        {performance.theaters.map((theater, index) => {
+                        {performance.additional_info.map((theater, index) => {
                             return (
                                 <Box key={index} className='overlay-info'>
                                     {theater}

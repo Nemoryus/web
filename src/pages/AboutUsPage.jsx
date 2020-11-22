@@ -14,7 +14,7 @@ function AboutUsPage({ setHeaderType }) {
 
     return(
         <Box id="about-us-page" className="content-light content-padd-top padd-btm-dbl">
-            <h3 className='page-title padd-top-dbl'><Text tid="aboutUs"/></h3>
+            <h3 className='page-title push-top-dbl padd-top-dbl'><Text tid="aboutUs"/></h3>
             <p className='page-title-text push-btm push-top padd-btm-hlf padd-top-hlf'>
                 Lorem ipsum dolor sit amet, consectetuer 
                 adipiscing elit, sed diam nonummy nibh

@@ -20,6 +20,11 @@ function ProductionPage({ setHeaderType, selectedPerformance, setSelectedPerform
   const gridSize = 6; // count of performances in a grid 
 
   useEffect(() => {
+    // always on loading page remove currently selected performance
+    setSelectedPerformance(null)
+  }, [])
+
+  useEffect(() => {
     if(selectedPerformance != null) {
       setHeaderType(0)
     } else {
@@ -60,26 +65,22 @@ function ProductionPage({ setHeaderType, selectedPerformance, setSelectedPerform
 
   return (
     <>
-      {
-        selectedPerformance == null ? (
-          <Grid container id="production-page" justify="center" className="content-light content-padd-top padd-btm">
-            <Grid item xs={9}>
-              <h3 className='page-title padd-top-dbl'><span className='hand' onClick={() => setSelectedCategory('ALL')}><Text tid="production"/></span></h3>
-              <Grid container justify="center" className="padd-btm push-btm-hlf">
-                <Grid item xs={8}>
-                  <ProductionCategoryMenu selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-                </Grid>
+      {selectedPerformance == null ? (
+        <Grid container id="production-page" justify="center" className="content-light content-padd-top padd-btm">
+          <Grid item xs={9}>
+            <h3 className='page-title push-top-dbl padd-top-dbl'><span className='hand' onClick={() => setSelectedCategory('ALL')}><Text tid="production"/></span></h3>
+            <Grid container justify="center" className="padd-btm push-btm-hlf">
+              <Grid item xs={8}>
+                <ProductionCategoryMenu selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
               </Grid>
-              <ProductionPerformanceMenu performances={performances} setSelectedPerformance={setSelectedPerformance} />
-              <ProductionGridLayout/>
             </Grid>
+            <ProductionPerformanceMenu performances={performances} setSelectedPerformance={setSelectedPerformance} />
+            <ProductionGridLayout/>
           </Grid>
-        ) 
-          : 
-        (
-          <CategoryPage selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance} />
-        )
-      }
+        </Grid>
+      ) : (
+        <CategoryPage selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance} />
+      )}
     </>
   );
 }

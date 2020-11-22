@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { withRouter } from 'react-router-dom';
 
-const scrollToTop = () => {
+export const scrollToTop = () => {
     window.scrollTo({
         top: 0,
         left: 0,

@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext, Fragment } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import ScrollToTop from '../components/ScrollToTop'
+import ScrollToTop, { scrollToTop } from '../components/ScrollToTop'
 
 // Slider
 import "slick-carousel/slick/slick.css";
@@ -98,6 +98,9 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
   }
 
   const toggleShowTrailerVideo = () => {
+    if(!showTrailerVideo) {
+      scrollToTop()
+    }
     setShowTrailerVideo(prev => !prev)
   }
 
@@ -120,7 +123,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
         </div>
         {!(showTrailerVideo && showTrailerVideoMini) &&
           <Box className={`trailer-btn-wrapper pos-abs ${showTrailerVideo ? "zIndex" : ""}`}>
-            <IconButton onClick={toggleShowTrailerVideo} className='btn-no-padd btn-4 fullHeight' style={{ padding: 0 }}>
+            <IconButton onClick={toggleShowTrailerVideo} className='no-padd btn btn-4 fullHeight'>
               <span style={{ width: '75%' }}>TRAILER</span>
               {showTrailerVideo ? 
                   <SvgIcon style={{ fontSize: 40, width: '25%', height: '100%', color: '#FF0000', borderLeft: '2px solid #FF0000', padding: '10px' }}>
@@ -158,7 +161,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
       </div>
       <Box className="page-content content-light padd-top padd-btm t-center">
         <p className="t-bold">
-          {selectedPerformance.theaters.map((theater, index) => {
+          {selectedPerformance.additional_info.map((theater, index) => {
             return (
               <span key={index}>
                 {theater}
@@ -168,10 +171,10 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
           })}
         </p>
         {selectedPerformance.poster !== '' &&
-          <Fragment>
+          <>
             <img className="push-btm-hlf push-top-dbl" src={require(`../picture/${selectedPerformance.poster}`)} />
             <span>(official poster)</span>
-          </Fragment>
+          </>
         }
         <h3 className='page-title padd-top-dbl'>Review</h3>
         {selectedPerformance.reviews.map((review, index) => {

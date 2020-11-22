@@ -7,8 +7,8 @@ export const MUSICALS = [
         images: [
             'gasp_0.jpg'
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Zilina - OC Duben"
         ],
         reviews: [
@@ -38,8 +38,8 @@ export const MUSICALS = [
         images: [
             'carmen_0.jpg'
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "Tuesday", "Severka"
         ],
         reviews: [
@@ -69,8 +69,8 @@ export const MUSICALS = [
         images: [
             'gasp_0.jpg'
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "09.2020 - 10.2020", "Zbojnicka koliba"
         ],
         reviews: [
@@ -100,8 +100,8 @@ export const MUSICALS = [
         images: [
             'gasp_0.jpg'
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "November 2020 - December 2020", "Bobrov national theater"
         ],
         reviews: [
@@ -136,7 +136,7 @@ export const MUSICALS = [
             'grease_4.jpg',
         ],
         trailer: 'https://www.youtube.com/embed/weNIxixFKmU',
-        theaters: [
+        additional_info: [
             "Premiere 2012", "Kalich Theater", "Tower Stage Theater"
         ],
         reviews: [
@@ -166,8 +166,8 @@ export const MUSICALS = [
         images: [
             'carmen_0.jpg', 
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "Always", "Slovak national theater"
         ],
         reviews: [
@@ -197,8 +197,8 @@ export const MUSICALS = [
         images: [
             'westside_0.jpg',
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "28.12.1992", "Slovak national theater"
         ],
         reviews: [
@@ -228,8 +228,8 @@ export const MUSICALS = [
         images: [
             'gasp_0.jpg'
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "08. October 2020 - 10. October 2020", "Slovak national theater"
         ],
         reviews: [
@@ -259,8 +259,8 @@ export const MUSICALS = [
         images: [
             'camelias_0.jpg'
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -292,8 +292,8 @@ export const BALLET_OPERA = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -322,8 +322,8 @@ export const BALLET_OPERA = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -352,8 +352,8 @@ export const BALLET_OPERA = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -382,8 +382,8 @@ export const BALLET_OPERA = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -412,8 +412,8 @@ export const BALLET_OPERA = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -442,8 +442,8 @@ export const BALLET_OPERA = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -472,8 +472,8 @@ export const BALLET_OPERA = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -502,8 +502,8 @@ export const BALLET_OPERA = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -535,8 +535,8 @@ export const SHOW = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -565,8 +565,8 @@ export const SHOW = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -595,8 +595,8 @@ export const SHOW = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -625,8 +625,8 @@ export const SHOW = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -655,8 +655,8 @@ export const SHOW = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -685,8 +685,8 @@ export const SHOW = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -715,8 +715,8 @@ export const SHOW = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -745,8 +745,8 @@ export const SHOW = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -775,8 +775,8 @@ export const SHOW = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -805,8 +805,8 @@ export const SHOW = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -835,8 +835,8 @@ export const SHOW = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -868,8 +868,8 @@ export const DANCE_THEATER = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -898,8 +898,8 @@ export const DANCE_THEATER = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -928,8 +928,8 @@ export const DANCE_THEATER = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -958,8 +958,8 @@ export const DANCE_THEATER = [
         poster: '',
         images: [
         ],
-        video: 'DANCE_THEATER 5',
-        theaters: [
+        trailer: 'DANCE_THEATER 5',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -988,8 +988,8 @@ export const DANCE_THEATER = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -1018,8 +1018,8 @@ export const DANCE_THEATER = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [
@@ -1048,8 +1048,8 @@ export const DANCE_THEATER = [
         poster: '',
         images: [
         ],
-        video: 'video patch',
-        theaters: [
+        trailer: 'trailer patch',
+        additional_info: [
             "October 06.2018 - August 08.2019", "Slovak national theater"
         ],
         reviews: [

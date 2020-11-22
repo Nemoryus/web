@@ -20,7 +20,7 @@ function ContactPage({ setHeaderType }) {
 
     return (
         <Box id="contact-page" className='content-dark content-padd-top padd-btm-dbl'>
-            <h3 className='page-title padd-top-dbl'><Text tid="contact" /></h3>
+            <h3 className='page-title push-top-dbl padd-top-dbl'><Text tid="contact"/></h3>
             <Box className="push-btm push-top padd-btm-hlf padd-top">
                 <Grid className="contact-content" container alignItems='center'>
                     <Grid className="contact-info fullHeight padd-top-90 t-center" item xs={isOpenedForm ? 5 : 12}>
