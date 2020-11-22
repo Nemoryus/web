@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { memo, useState, useEffect } from "react";
 import Button from '@material-ui/core/Button';
 
 import Grid from "@material-ui/core/Grid";
@@ -56,4 +56,4 @@ function ContactPage({ setHeaderType }) {
         </Box>
     );
 }
-export default ContactPage;
+export default memo(ContactPage);

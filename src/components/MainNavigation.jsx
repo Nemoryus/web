@@ -21,7 +21,7 @@ const navItems = [
 export default function MainNavigation({ from }) {
    return(
        <React.Fragment>
-            {from == 'Header' ?
+            {from === 'Header' ?
                 <Grid className="header-navigation" container justify="center">
                     {
                         navItems.map(navItem => {

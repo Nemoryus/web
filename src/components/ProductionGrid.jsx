@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 
 import Performance from './Performance'
 
@@ -8,7 +7,7 @@ export default function ProductionGrid({ performances, setSelectedPerformance })
 
     return (
         <Grid container spacing={3} className="performances">
-            {performances.length == 1 &&
+            {performances.length === 1 &&
                 <Fragment>
                     <Grid item xs={4} className="no-padd-btm fullHeight"></Grid>
                     <Grid item xs={4} className="no-padd-btm fullHeight">
@@ -21,7 +20,7 @@ export default function ProductionGrid({ performances, setSelectedPerformance })
                     <Grid item xs={4} className="no-padd-btm fullHeight"></Grid>
                 </Fragment>
             }
-            {performances.length == 2 &&
+            {performances.length === 2 &&
                 <Fragment>
                     <Grid item xs={4} className="no-padd-btm fullHeight"></Grid>
                     <Grid item xs={4} className="no-padd-btm fullHeight">
@@ -41,7 +40,7 @@ export default function ProductionGrid({ performances, setSelectedPerformance })
                     <Grid item xs={4} className="no-padd-btm fullHeight"></Grid>
                 </Fragment>
             }
-            {performances.length == 3 &&
+            {performances.length === 3 &&
                 <Fragment>
                     <Grid item xs={4} className="no-padd-btm fullHeight">
                         <Grid container direction='column' spacing={3} className="fullHeight">
@@ -66,7 +65,7 @@ export default function ProductionGrid({ performances, setSelectedPerformance })
                     </Grid>
                 </Fragment>
             }
-            {performances.length == 4 &&
+            {performances.length === 4 &&
                 <Fragment>
                     <Grid item xs={4} className="no-padd-btm fullHeight">
                         <Grid container direction='column' spacing={3} className="fullHeight">
@@ -98,7 +97,7 @@ export default function ProductionGrid({ performances, setSelectedPerformance })
                     </Grid>
                 </Fragment>
             }
-            {performances.length == 5 &&
+            {performances.length === 5 &&
                 <Fragment>
                     <Grid item xs={4} className="no-padd-btm fullHeight">
                         <Grid container direction='column' spacing={3} className="fullHeight">

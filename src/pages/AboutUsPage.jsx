@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
-import {NavLink} from "react-router-dom"
+import React, { memo, useEffect } from "react";
 
-import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import Box from "@material-ui/core/Box";
 import ProfilPicture from '../picture/profilPicutre.png'
@@ -11,7 +9,7 @@ import { Text } from '../containers/Language';
 function AboutUsPage({ setHeaderType }) {
 
     useEffect(() => {
-      setHeaderType(1)
+        setHeaderType(1)
     }, [])
 
     return(
@@ -58,4 +56,4 @@ function AboutUsPage({ setHeaderType }) {
         </Box>
     );   
 }
-export default AboutUsPage;
+export default memo(AboutUsPage);

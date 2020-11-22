@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Box from "@material-ui/core/Box";
 
 export default function ProductionPerformanceMenu({ performances, setSelectedPerformance }) {
@@ -8,7 +8,7 @@ export default function ProductionPerformanceMenu({ performances, setSelectedPer
         performances.map((performance, index) => {
             menuItems.push(
                 <span key={menuItems.length} className="production-performance-btn-wrapper" >
-                    <span className={`production-performance-btn hand ${index % 2 != 0 ? "t-red" : ""}`} onClick={() => setSelectedPerformance(performance)}>{performance.name}</span>
+                    <span className={`production-performance-btn hand ${index % 2 !== 0 ? "t-red" : ""}`} onClick={() => setSelectedPerformance(performance)}>{performance.name}</span>
                 </span>
             );
         })
