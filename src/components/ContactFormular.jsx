@@ -75,7 +75,7 @@ export default function ContactFormular({toggleOpen}) {
           value={email.message || ""}
           onChange={handleChange}
         />
-        <Button className='btn btn-2 contact-form-btn' onClick={sendEmail}>send</Button>
+        <Button className='btn btn-2 contact-form-btn t-center-none' onClick={sendEmail}>send</Button>
       </form>
     </ClickAwayListener>
   );

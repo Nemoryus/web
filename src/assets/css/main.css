@@ -34,6 +34,9 @@ a:hover {
 .width-big{
     width: 80%;
 }
+.width-fit-content{
+    width: fit-content!important;
+}
 .hight-33{
     height: 33%;
 }
@@ -56,6 +59,9 @@ a:hover {
 
 .t-center {
     text-align: center
+}
+.t-none {
+    text-align: none!important;
 }
 .t-red {
     color: #FF0000 !important;
@@ -154,6 +160,9 @@ a:hover {
 }
 .padd-top-dbl {
 	padding-top: 60px !important
+}
+.padd-top-90{
+    padding-top: 90px!important;
 }
 .padd-lft-hlf {
 	padding-left: 15px !important
@@ -818,6 +827,14 @@ footer p{
 #contact-page .contact-info {
     transition: all .5s;
 }
+#contact-page .contact-info-weapper {
+    transition: all .5s;
+}
+
+#contact-page .t-left {
+    /* text-align: left; */
+    transition: width .5s;
+}
 #contact-page .contact-form-btn-wrapper {
     transition: all .5s;
     /* transition: width 1s, max-width 1s, flex-basis 1s; */
@@ -825,9 +842,9 @@ footer p{
 #contact-page .contact-form-wrapper {
     transition: all .5s;
     position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate(0,-50%);
+    right: 2.2%;
+    top: 35%;
+    transform: translate(0,-35%);
     width: 100%;
 }
 #contact-page .contact-form-btn-wrapper .contact-form-btn {
@@ -843,6 +860,9 @@ footer p{
 }
 #contact-page .contact-form-wrapper .contact-form-btn{
     margin-top: 11px;
+}
+#contact-page .contact-form .MuiInput-underline:after{
+    border-bottom: 2px solid #FF0000;
 }
 /*         Contact page - end          */
 
@@ -943,8 +963,8 @@ footer p{
     transform: scale(2);
 }
 #category-page .trailer-btn-wrapper {    
-    width: 300px;
-    right: -25px;
+    width: 207px;
+    right: -29px;
     top: 50%;
     transform: translateY(-50%) rotate(90deg);
     z-index: 203;
