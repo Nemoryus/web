@@ -340,6 +340,16 @@ audio, canvas, iframe, img, svg, video {
     text-transform: none;
     letter-spacing: 3px;
 }
+.btn-no-padd {
+    border-radius: 0px;
+    display: inline-block;
+    font-weight: bold;
+    border: 2px solid;
+    white-space: nowrap;
+    text-transform: none;
+    letter-spacing: 3px;
+}
+
 .btn:hover {
     box-shadow: 0 0 5px 5px rgba(255,105,135,.3);
 }
@@ -363,6 +373,10 @@ audio, canvas, iframe, img, svg, video {
     color: white;
     border-color: #FF0000 !important;
     background-color: rgba(4, 8, 33, .9) !important;
+}
+.btn-no-padd.btn-2 {
+    color: white !important;
+    border-color: #FF0000 !important;
 }
 .btn.btn-4 {
     color: white;
@@ -975,13 +989,14 @@ footer p{
 #contact-page .contact-form-wrapper {
     transition: all .5s;
     position: absolute;
-    right: 2.2%;
+    right: 0.9%;
     top: 35%;
     transform: translate(0,-35%);
     width: 100%;
 }
 #contact-page .contact-form-btn-wrapper .contact-form-btn {
     transform: rotate(90deg);
+    padding: 10px 36px!important;
 }
 #contact-page .contact-form-wrapper .contact-form {
     background-color: #040821;
@@ -1036,6 +1051,14 @@ footer p{
 
 /*         Category page - begin         */
 /* slider settings in this page */
+
+#category-page .MuiInputBase-input.MuiInput-input:hover{
+    border-bottom:none!important
+}
+#category-page .trailer-btn-text{
+    width: 75%;
+    font-size: 0.875rem;
+}
 #category-page .slider-wrapper {
     height: 100vh;
 }
@@ -1098,8 +1121,8 @@ footer p{
     transform: scale(2);
 }
 #category-page .trailer-btn-wrapper {    
-    width: 207px;
-    right: -30px;
+    width: 194px;
+    right: -25px;
     top: 50%;
     transform: translateY(-50%) rotate(90deg);
     z-index: 203;

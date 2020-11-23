@@ -124,7 +124,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
         {!(showTrailerVideo && showTrailerVideoMini) &&
           <Box className={`trailer-btn-wrapper pos-abs ${showTrailerVideo ? "zIndex" : ""}`}>
             <IconButton onClick={toggleShowTrailerVideo} className='no-padd btn btn-4 fullHeight'>
-              <span style={{ width: '75%' }}>TRAILER</span>
+              <span className='trailer-btn-text'>Trailer</span>
               {showTrailerVideo ? 
                   <SvgIcon style={{ fontSize: 40, width: '25%', height: '100%', color: '#FF0000', borderLeft: '2px solid #FF0000', padding: '10px' }}>
                     <CloseIcon />

@@ -1,22 +1,22 @@
 import React from 'react';
-import { useState } from "react"; 
+import { useState } from "react";
 import emailjs from 'emailjs-com';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
-export default function ContactFormular({toggleOpen}) {
+export default function ContactFormular({ toggleOpen }) {
   const [email, setEmail] = useState({
-      name: null,
-      email: null,
-      subject: null,
-      message: null
+    name: null,
+    email: null,
+    subject: null,
+    message: null
   });
-  
+
   const handleChange = event => {
     setEmail({ ...email, [event.target.name]: event.target.value })
   }
-  
+
   function sendEmail(e) {
     e.preventDefault();
     console.log('a')
@@ -29,8 +29,9 @@ export default function ContactFormular({toggleOpen}) {
 
   return (
     <ClickAwayListener onClickAway={toggleOpen}>
-      <form className='contact-form t-left'>
+      <form disableUnderline={true} className='contact-form t-left'>
         <TextField
+          disableUnderline={true}
           className="push-btm"
           required
           fullWidth
@@ -43,7 +44,7 @@ export default function ContactFormular({toggleOpen}) {
         <TextField
           className="push-btm"
           required
-          fullWidth 
+          fullWidth
           label="Your email"
           name="email"
           value={email.email || ""}
@@ -52,18 +53,18 @@ export default function ContactFormular({toggleOpen}) {
         <TextField
           className="push-btm"
           required
-          fullWidth 
+          fullWidth
           label="Subject"
           name="subject"
           value={email.subject || ""}
           onChange={handleChange}
         />
-        <TextField 
+        <TextField
           className="push-btm"
-          rows={4} 
-          multiline 
+          rows={4}
+          multiline
           required
-          fullWidth 
+          fullWidth
           label="Message"
           name="message"
           value={email.message || ""}
