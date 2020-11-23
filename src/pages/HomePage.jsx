@@ -68,7 +68,7 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
                                 <Box className="news-btn-wrapper t-red fullSize">
                                     <span className="intro-vertical-line push-btm"></span>
                                     <Box className="pos-rel t-bold">
-                                        <span className="news-btn">News</span>
+                                        <span className="news-btn t-white">News</span>
                                         <Box className="news-btn-arrow pos-abs">
                                             {showNews ? 
                                                 <IconButton className="t-red no-padd" onClick={toggleShowNews}>
@@ -96,7 +96,7 @@ function HomePage({ setHeaderType, selectedPerformance, setSelectedPerformance }
                                     </p>
                                 </Box>
                                 <Box className="pos-abs news-follow-us-wrapper t-red fullHeight">
-                                    <Box className="news-follow-us t-bold">
+                                    <Box className="news-follow-us t-bold t-white">
                                         Follow us
                                     </Box>
                                     <span className="intro-vertical-line push-top-hlf push-btm-hlf"></span>
