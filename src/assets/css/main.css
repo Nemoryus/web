@@ -330,6 +330,7 @@ audio, canvas, iframe, img, svg, video {
 }
 
 .MuiButton-root.btn,
+.MuiLink-root.btn, 
 .MuiIconButton-root.btn {
     border-radius: 0px;
     padding: 10px 65px;
