@@ -45,7 +45,7 @@ function App() {
         {/* <MuiThemeProvider theme={theme}> */}
           <CssBaseline/>
           <Switch>
-            <Route path="/" component={WelcomePage} exact/>
+            <Route path={process.env.PUBLIC_URL+"/" }component={WelcomePage} exact/>
             <Route path={["/contact", "/home", "/about-us", "/production"]} component={Main}/>
           </Switch>
         {/* </MuiThemeProvider> */}

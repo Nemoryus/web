@@ -22,7 +22,6 @@ function ContactPage({ setHeaderType }) {
         
         <Box id="contact-page" className='content-dark content-padd-top padd-btm-dbl'>
             <h3 className='page-title push-top-dbl padd-top-dbl'><Text tid="contact"/></h3>
-            <a href="https://www.zlatovbrne.cz/?page_id=58">   <img src="w3c.png" alt="W3C home"/> </a>
             <Box className="push-btm push-top padd-btm-hlf padd-top">
                 <Grid className="contact-content" container alignItems='center'>
                     <Grid className="contact-info fullHeight padd-top-90 t-center" item xs={isOpenedForm ? 5 : 12}>
