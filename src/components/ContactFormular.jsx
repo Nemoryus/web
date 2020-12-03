@@ -28,7 +28,7 @@ export default function ContactFormular({ toggleOpen }) {
   }
 
   return (
-    <ClickAwayListener onClickAway={toggleOpen}>
+    <ClickAwayListener disableUnderline={true} onClickAway={toggleOpen}>
       <form disableUnderline={true} className='contact-form t-left'>
         <TextField
           disableUnderline={true}
@@ -42,6 +42,7 @@ export default function ContactFormular({ toggleOpen }) {
           onChange={handleChange}
         />
         <TextField
+          disableUnderline={true}
           className="push-btm"
           required
           fullWidth

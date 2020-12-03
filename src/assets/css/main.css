@@ -965,6 +965,7 @@ footer p{
 /*         About page - end          */
 
 /*         Contact page - begin             */
+
 #contact-page .contact-content {
     height: 600px;
     position: relative;
@@ -990,14 +991,14 @@ footer p{
 #contact-page .contact-form-wrapper {
     transition: all .5s;
     position: absolute;
-    right: 0.9%;
-    top: 35%;
+    right: 0.8%;
+    top: 26%;
     transform: translate(0,-35%);
     width: 100%;
 }
 #contact-page .contact-form-btn-wrapper .contact-form-btn {
     transform: rotate(90deg);
-    padding: 10px 36px!important;
+    padding: 12px 34px!important;
 }
 #contact-page .contact-form-wrapper .contact-form {
     background-color: #040821;
@@ -1012,6 +1013,9 @@ footer p{
 }
 #contact-page .contact-form .MuiInput-underline:after{
     border-bottom: 2px solid #FF0000;
+}
+#contact-page .contact-form .MuiInput-underline{
+    border-color: transparent!important;
 }
 /*         Contact page - end          */
 
