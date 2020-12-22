@@ -10,6 +10,7 @@ import ProductionPerformanceMenu from '../components/ProductionPerformanceMenu';
 import ProductionGrid from '../components/ProductionGrid'
 import ProductionGridA from '../components/ProductionGridA'
 import ProductionGridB from '../components/ProductionGridB'
+import ProductionGridC from '../components/ProductionGridC'
 
 import { PerformancesCtx } from "./Main";
 

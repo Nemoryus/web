@@ -95,9 +95,14 @@ audio, canvas, iframe, img, svg, video {
 .overflow {
     overflow: hidden;
 }
-
+.overflow-auto {
+    overflow: auto;
+}
 .t-center {
-    text-align: center
+    text-align: center;
+}
+.t-left {
+    text-align: left;
 }
 .t-none {
     text-align: none!important;
@@ -504,10 +509,6 @@ audio, canvas, iframe, img, svg, video {
 .footer .logo {
     width: 100px;
 }
-.header .language-select, 
-.footer .language-select {
-    float: right;
-}
 
 /*         Header - begin          */
 .header-wrapper {
@@ -646,6 +647,31 @@ audio, canvas, iframe, img, svg, video {
     }
 }
 /*         Drop menu - end       */
+
+/*         Language select - begin          */
+.header .language-select, 
+.footer .language-select {
+    float: right;
+}
+.header .MuiSelect-icon{
+    color: #FF0000;
+}
+.MuiPaper-rounded{
+    background-color: #040821!important;
+    color: white!important;
+    top: 66px!important;
+}
+
+option{
+    text-align: center;
+    cursor: pointer;
+}
+
+/* .header .MuiSelect-outlined {
+    left:66px;
+} */
+
+/*         Language select - end          */
 /*         Header - end          */
 
 /*         Footer - begin     */
@@ -978,6 +1004,12 @@ footer p{
 }
 #contact-page .contact-info-weapper {
     transition: all .5s;
+}
+#contact-page p{
+    
+    /* transition-property: text-align;
+  transition-duration: 4s;
+  transition-delay: 2s; */
 }
 
 #contact-page .t-left {

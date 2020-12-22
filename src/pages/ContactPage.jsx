@@ -26,18 +26,18 @@ function ContactPage({ setHeaderType }) {
                 <Grid className="contact-content" container alignItems='center'>
                     <Grid className="contact-info fullHeight padd-top-90 t-center" item xs={isOpenedForm ? 5 : 12}>
                         <Box>
-                            <p>
+                            <p className={isOpenedForm ? "kokotina" : "kokotina2"}>
                                 <span className="o-low">Ján Durovčík</span>
                             </p>
-                            <p>
+                            <p className={isOpenedForm ? "t-left" : "t-center"}>
                                 Adress<br />
                                 <span className="o-low">Pribinova 25, 811 09 Bratislava, SLOVAKIA</span>
                             </p>
-                            <p>
+                            <p className={isOpenedForm ? "t-left" : "t-center"}>
                                 Phone<br />
                                 <span className="o-low">+421-2-54645811</span>
                             </p>
-                            <p>
+                            <p className={isOpenedForm ? "t-left" : "t-center"}>
                                 Email<br />
                                 <span className="o-low">jan@jan.sk</span>
                             </p>
