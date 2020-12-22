@@ -6,10 +6,11 @@ import ProfilPicture from '../picture/profilPicutre.png'
 import ProfilPicture2 from '../picture/profilPicture2.png'
 import { Text } from '../containers/Language';
 
-function AboutUsPage({ setHeaderType }) {
+function AboutUsPage({ setHeaderType, setSelectedPerformance }) {
 
     useEffect(() => {
         setHeaderType(1)
+        setSelectedPerformance(null)
     }, [])
 
     return(
