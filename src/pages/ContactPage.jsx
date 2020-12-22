@@ -7,11 +7,12 @@ import Box from "@material-ui/core/Box";
 import { Text } from '../containers/Language';
 import ContactFormular from '../components/ContactFormular'
 
-function ContactPage({ setHeaderType }) {
+function ContactPage({ setHeaderType, setSelectedPerformance }) {
     const [isOpenedForm, setOpenForm] = useState(false);
 
     useEffect(() => {
         setHeaderType(1)
+        setSelectedPerformance(null)
     }, [])
 
     const toggleOpenedForm = () => {

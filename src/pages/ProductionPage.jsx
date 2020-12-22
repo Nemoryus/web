@@ -21,11 +21,6 @@ function ProductionPage({ setHeaderType, selectedPerformance, setSelectedPerform
   const gridSize = 6; // count of performances in a grid 
 
   useEffect(() => {
-    // always on loading page remove currently selected performance
-    setSelectedPerformance(null)
-  }, [])
-
-  useEffect(() => {
     if(selectedPerformance != null) {
       setHeaderType(0)
     } else {

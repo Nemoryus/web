@@ -23,7 +23,6 @@ function SliderImages({ images }) {
     speed: 500,
     autoplaySpeed: 3000,
     fade: true,
-    cssEase: "linear",
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: false

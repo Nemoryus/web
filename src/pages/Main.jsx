@@ -46,9 +46,9 @@ function Main() {
         <main className="content">
           <Switch>
             <Route path="/home" exact render={() => <HomePage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance}/>} />
-            <Route path="/about-us" render={() => <AboutUsPage setHeaderType={setHeaderType}/>} />
+            <Route path="/about-us" render={() => <AboutUsPage setHeaderType={setHeaderType} setSelectedPerformance={setSelectedPerformance} />}/>
             <Route path="/production" render={() => <ProductionPage setHeaderType={setHeaderType} selectedPerformance={selectedPerformance} setSelectedPerformance={setSelectedPerformance}/>} />
-            <Route path="/contact" render={() => <ContactPage setHeaderType={setHeaderType}/>} />
+            <Route path="/contact" render={() => <ContactPage setHeaderType={setHeaderType} setSelectedPerformance={setSelectedPerformance} />}/>
           </Switch>
         </main>
 
