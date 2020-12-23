@@ -2,7 +2,7 @@ import React, { memo, useEffect, useState, useContext } from "react";
 import { Text } from '../containers/Language';
 
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
+import Box from "@material-ui/core/Box"; 
 
 import CategoryPage from "./CategoryPage"
 import ProductionCategoryMenu from '../components/ProductionCategoryMenu';
