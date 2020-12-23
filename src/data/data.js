@@ -3,7 +3,7 @@ export const MUSICALS = [
         id: 1,
         name: 'Gasp',
         category: 'MUSICALS',
-        poster: 'gasp_poster.jpg',
+        poster: 'labutko_poster.jpg',
         images: [
             'gasp_0.jpg'
         ],
@@ -65,7 +65,7 @@ export const MUSICALS = [
         id: 3,
         name: 'Duchons',
         category: 'MUSICALS',
-        poster: 'duchons_poster.jpg',
+        poster: 'robin_hood_poster.jpg',
         images: [
             'gasp_0.jpg'
         ],
@@ -96,7 +96,7 @@ export const MUSICALS = [
         id: 4,
         name: 'School of rock',
         category: 'MUSICALS',
-        poster: 'schoolOfRock_poster.jpg',
+        poster: 'romeo_julia_poster.jpg',
         images: [
             'gasp_0.jpg'
         ],
@@ -162,7 +162,7 @@ export const MUSICALS = [
         id: 6,
         name: 'Superstar',
         category: 'MUSICALS',
-        poster: 'superstar_poster.jpg',
+        poster: 'vtak_ohnivak_poster.jpg',
         images: [
             'carmen_0.jpg', 
         ],
