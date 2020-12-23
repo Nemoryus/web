@@ -20,25 +20,24 @@ function ContactPage({ setHeaderType, setSelectedPerformance }) {
     };
 
     return (
-        
         <Box id="contact-page" className='content-dark content-padd-top padd-btm-dbl'>
             <h3 className='page-title push-top-dbl padd-top-dbl'><Text tid="contact"/></h3>
             <Box className="push-btm push-top padd-btm-hlf padd-top">
                 <Grid className="contact-content" container alignItems='center'>
                     <Grid className="contact-info fullHeight padd-top-90 t-center" item xs={isOpenedForm ? 5 : 12}>
                         <Box>
-                            <p className={isOpenedForm ? "kokotina" : "kokotina2"}>
+                            <p>
                                 <span className="o-low">Ján Durovčík</span>
                             </p>
-                            <p className={isOpenedForm ? "t-left" : "t-center"}>
+                            <p>
                                 Adress<br />
                                 <span className="o-low">Pribinova 25, 811 09 Bratislava, SLOVAKIA</span>
                             </p>
-                            <p className={isOpenedForm ? "t-left" : "t-center"}>
+                            <p>
                                 Phone<br />
                                 <span className="o-low">+421-2-54645811</span>
                             </p>
-                            <p className={isOpenedForm ? "t-left" : "t-center"}>
+                            <p>
                                 Email<br />
                                 <span className="o-low">jan@jan.sk</span>
                             </p>
