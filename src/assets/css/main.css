@@ -170,6 +170,12 @@ audio, canvas, iframe, img, svg, video {
 .blc {
     display: block;
 }
+.tbl {
+    display: table;
+}
+.tbl-cell {
+    display: table-cell;
+}
 
 .no-push {
 	margin: 0 !important
@@ -361,20 +367,8 @@ audio, canvas, iframe, img, svg, video {
     text-transform: none;
     letter-spacing: 3px;
 }
-.btn-no-padd {
-    border-radius: 0px;
-    display: inline-block;
-    font-weight: bold;
-    border: 2px solid;
-    white-space: nowrap;
-    text-transform: none;
-    letter-spacing: 3px;
-}
 
 .btn:hover {
-    box-shadow: 0 0 5px 5px rgba(255,105,135,.3);
-}
-.btn-no-padd:hover {
     box-shadow: 0 0 5px 5px rgba(255,105,135,.3);
 }
 .btn.btn-1 {
@@ -387,8 +381,7 @@ audio, canvas, iframe, img, svg, video {
 }
 .btn.btn-3 {
     color: white !important;
-    border-color: #FF0000 !important;
-    background-color: #FF0000!important;
+    border-color: white !important;
 }
 .btn.btn-4 {
     color: white;
@@ -722,11 +715,11 @@ footer p{
                image-scale-out 1.25s cubic-bezier(1,.2,.85,.5) 4.5s forwards;
 }
 #home-page .performances-item.use-animation {
-    bottom: 84px;
-    width: 310px;
-    height: 330px;
-    left: 45%;
-    padding: 15px 20px;
+    bottom: 161px;
+    width: 262px;
+    height: 314px;
+    left: 50%;
+    padding: 0px 20px;
     animation:  image-scale-in 1s cubic-bezier(1,.2,.85,.5) forwards,
                 image-blur .5s cubic-bezier(1,.2,.85,.5) forwards,
                 image-fade-in 0s cubic-bezier(1,.2,.85,.5) forwards,
@@ -766,7 +759,7 @@ footer p{
 
 #home-page .performances-item .overlay {
     opacity: .5;
-    animation: previous-image-overlay 1.25s cubic-bezier(1,.2,.85,.5) forwards
+    animation: image-overlay 1.25s cubic-bezier(1,.2,.85,.5) forwards
 }
 #home-page .performances-item:not(.use-animation) .overlay {
     animation-delay: 4.5s;
@@ -774,7 +767,7 @@ footer p{
 #home-page .performances-item.use-animation .overlay {
     animation-delay: 7.5s;
 }
-@keyframes previous-image-overlay {
+@keyframes image-overlay {
     to {
         opacity: .9;
     }
@@ -783,7 +776,7 @@ footer p{
 #home-page .performances-item .image-content {
     top: 60%;
     left: 160px;
-    padding-left: 60px;
+    padding-left: 15px;
     max-width: 40%;
     transform: translateY(-50%);
     z-index: 199;
@@ -807,23 +800,42 @@ footer p{
 }
 #home-page .performances-item .image-content-name {
     font-size: 80px;
+    line-height: 1;
     letter-spacing: 10px;
 }
 #home-page .performances-item .image-content-addinfo {
     font-size: 18px;
 }
-
+#home-page .performances-item .image-content-btn {
+    text-transform: lowercase;
+    font-size: 20px;
+}
+#home-page .performances-item .image-content-btn:hover {
+    background-color: transparent;
+}
+#home-page .performances-item .image-content-btn .MuiButton-endIcon {
+    margin-left: 0
+}
 #home-page .performances-wrapper .slider-performances {
     z-index: 200;
-    bottom: 80px;
-    left: 45%;
-    width: 65%;
+    bottom: 70px;
+    left: 50%;
+    width: 55%;
 }
 #home-page .slider-performances .slick-arrow {
-    top: 100%;
+    position: absolute;
+    left: -45px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: border .3s, color .3s, background-color .5s;
 }
-#home-page .slider-performances .slick-arrow.slick-next {
-    left: 0;
+#home-page .slider-performances .slick-arrow.slick-prev-arrow {
+    transform: rotate(180deg);
+    top: 130px;
+}
+#home-page .slider-performances .slick-arrow.slick-next-arrow {
+    top: 175px;
 }
 #home-page .slider-performances .slick-slide {
     padding: 15px 20px;
@@ -840,9 +852,14 @@ footer p{
         opacity: 0;
     }
 }
-#home-page .slider-performances .slick-slide img {
+#home-page .slider-performances .slicker-item img {
     box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5);
-    height: 300px;
+    height: 314px;
+}
+#home-page .slider-performances .slicker-item .slicker-item-name {
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
 }
 
 /*         Home page - News section          */
@@ -916,8 +933,9 @@ footer p{
     text-transform: uppercase;
     font-size: 20px;
     white-space: normal;
-    padding: 10px;
+    padding: 5px 20px;
     text-align: left;
+    line-height: 1.2;
 }
 #home-page .news-follow-us-wrapper {
     display: flex;
@@ -1046,7 +1064,6 @@ footer p{
 }
 #contact-page .contact-form-btn-wrapper {
     transition: all .5s;
-    /* transition: width 1s, max-width 1s, flex-basis 1s; */
 }
 #contact-page .contact-form-wrapper {
     transition: all .5s;

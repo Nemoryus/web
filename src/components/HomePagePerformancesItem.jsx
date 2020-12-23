@@ -14,7 +14,7 @@ function HomePagePerformancesItem({ performance, setSelectedPerformance, useAnim
                     <Box className="image-content-category">
                         {performance.category}
                     </Box>
-                    <Box className="image-content-name t-fancy push-btm">
+                    <Box className="image-content-name t-fancy push-top push-btm-hlf t-bold">
                         {performance.name}
                     </Box>
                     <Box className="image-content-addinfo">
@@ -27,8 +27,8 @@ function HomePagePerformancesItem({ performance, setSelectedPerformance, useAnim
                             )
                         })}
                     </Box>
-                    <Box className="push-top">
-                        <Button className="no-padd t-red t-bold" endIcon={<ArrowRightIcon/>} onClick={() => setSelectedPerformance(performance)}>
+                    <Box className="push-top-dbl">
+                        <Button className="image-content-btn no-padd t-red t-bold" endIcon={<ArrowRightIcon style={{ fontSize: 40 }}/>} onClick={() => setSelectedPerformance(performance)}>
                             more info
                         </Button>
                     </Box>

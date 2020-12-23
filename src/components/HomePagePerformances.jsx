@@ -5,38 +5,40 @@ import HomePagePerformancesItem from "./HomePagePerformancesItem";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import IconButton from '@material-ui/core/IconButton';
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 
 import { PerformancesCtx } from "../pages/Main";
 
-function PrevArrow({ className, style, onClick, moveBackward }) {
+function PrevArrow({ onClick, enabledButtons, moveBackward }) {
 
     const handleOnClick = () => {
-        onClick()
-        moveBackward()
+        if(enabledButtons) {
+            onClick()
+            moveBackward()
+        }
     }
 
     return (
-      <div
-        className={className}
-        style={style}
-        onClick={handleOnClick}
-      />
+        <IconButton className={`btn btn-3 no-padd slick-arrow slick-prev-arrow ${enabledButtons ? "" : "disabled"}`} onClick={handleOnClick}>
+            <KeyboardArrowRightIcon/>
+        </IconButton>
     );
 }
 
-function NextArrow({ className, style, onClick, moveForward }) {
+function NextArrow({ onClick, enabledButtons, moveForward }) {
 
     const handleOnClick = () => {
-        onClick()
-        moveForward()
+        if(enabledButtons) {
+            onClick()
+            moveForward()
+        }
     }
 
     return (
-      <div
-        className={className}
-        style={style}
-        onClick={handleOnClick}
-      />
+        <IconButton className={`btn btn-3 no-padd slick-arrow slick-next-arrow ${enabledButtons ? "" : "disabled"}`} onClick={handleOnClick}>
+            <KeyboardArrowRightIcon/>
+        </IconButton>
     );
 }
 
@@ -50,7 +52,7 @@ function SliderPerformances({
         moveBackward,
         setSelectedPerformance 
     }) {
-    const [forward, setForward] = useState(true)
+    const [enabledButtons, setEnabledButtons] = useState(true)
 
     const settings = {
         className: "fullHeight",
@@ -63,16 +65,18 @@ function SliderPerformances({
         slidesToShow: 4,
         slidesToScroll: 1,
         pauseOnHover: false,
-        nextArrow: <NextArrow moveForward={moveForward} />,
-        prevArrow: <PrevArrow moveBackward={moveBackward} />,
+        nextArrow: <NextArrow enabledButtons={enabledButtons} moveForward={moveForward} />,
+        prevArrow: <PrevArrow enabledButtons={enabledButtons} moveBackward={moveBackward} />,
         beforeChange: (current, next) => {
-            if((current == 8 && next == 0) || (current < next && (current != 0 || next != 8))) {
+            setEnabledButtons(false)
+            if((current == performances.length - 1 && next == 0) || (current < next && (current != 0 || next != performances.length - 1))) {
                 // hide current performance
                 let sliderWrapper = document.getElementsByClassName('slider-performances')[0]
                 sliderWrapper.querySelectorAll("[data-index='" +  current + "']")[0].style.opacity = 0;
             }
         },
         afterChange: (current) => {
+            setEnabledButtons(true)
             if(document.getElementsByClassName('performances-item').length === 1 || isActivePerformanceA()) {
                 setPerformanceB(performances[current])
             } else {
@@ -91,8 +95,11 @@ function SliderPerformances({
         <Slider {...settings}>
             {performances.map((performance) => {
                 return (
-                    <Box key={performance.name} className="pos-rel center hand" onClick={() => setSelectedPerformance(performance)}>
+                    <Box key={performance.name} className="slicker-item pos-rel center hand" onClick={() => setSelectedPerformance(performance)}>
                         <img className="fullWidth" src={require(`../picture/${performance.poster}`)}/>
+                        <Box className="slicker-item-name t-center t-bold">
+                            {performance.name}
+                        </Box>
                     </Box>
                 )
             })}
