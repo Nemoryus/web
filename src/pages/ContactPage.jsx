@@ -48,7 +48,7 @@ function ContactPage({ setHeaderType, setSelectedPerformance }) {
                     </Grid>
                     <ClickAwayListener onClickAway={closeOpenedForm}>
                         <Box>
-                            <Button className='btn btn-2 contact-form-btn' onClick={toggleOpenedForm}>Contact form</Button>
+                            <Button className='btn btn-2 contact-form-btn' onClick={toggleOpenedForm}>contact form</Button>
                             <Grid className={`contact-form-wrapper ${isOpenedForm ? "opened" : ""}`} item xs={6}>
                                 <ContactFormular isOpenedForm={isOpenedForm}/>
                             </Grid>
