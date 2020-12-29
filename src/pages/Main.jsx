@@ -36,7 +36,7 @@ function Main() {
   const handleLogoClicked = useCallback(() => {
     setSelectedPerformance(null)
     history.push("/home");
-  }, [])
+  }, [history])
 
   return (
     <PerformancesCtx.Provider value={{ getPerformances }}>

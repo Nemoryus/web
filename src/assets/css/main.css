@@ -227,9 +227,6 @@ audio, canvas, iframe, img, svg, video {
 .padd-top-dbl {
 	padding-top: 60px !important
 }
-.padd-top-90{
-    padding-top: 90px!important;
-}
 .padd-lft-hlf {
 	padding-left: 15px !important
 }
@@ -1074,40 +1071,43 @@ footer p{
     height: 600px;
     position: relative;
 }
-.fake-space {
-    height: 200px;
-}
 #contact-page .contact-info {
     transition: all .5s;
 }
-#contact-page .contact-info-weapper {
-    transition: all .5s;
+#contact-page .contact-info p {
+    width: 50%;
+    margin: 0 auto;
 }
-#contact-page p{
-    
-    /* transition-property: text-align;
-  transition-duration: 4s;
-  transition-delay: 2s; */
-}
-
-#contact-page .t-left {
-    /* text-align: left; */
+#contact-page .contact-info span {
     transition: width .5s;
+    text-align: center;
+    display: inline-block;
+    width: 0;
+    white-space: nowrap;
 }
-#contact-page .contact-form-btn-wrapper {
-    transition: all .5s;
-}
-#contact-page .contact-form-wrapper {
-    transition: all .5s;
-    position: absolute;
-    right: 0.8%;
-    top: 26%;
-    transform: translate(0,-35%);
+#contact-page .contact-info .text-center span {
+    display: inline-block;
     width: 100%;
 }
-#contact-page .contact-form-btn-wrapper .contact-form-btn {
-    transform: rotate(90deg);
-    padding: 12px 34px!important;
+
+#contact-page .contact-form-btn {
+    position: absolute;
+    right: -55px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+#contact-page .contact-form-wrapper {
+    display: block;
+    transition: all .5s;
+    position: absolute;
+    width: 50%;
+    right: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#contact-page .contact-form-wrapper.opened {
+    right: 0;
 }
 #contact-page .contact-form-wrapper .contact-form {
     background-color: #040821;
@@ -1116,9 +1116,6 @@ footer p{
     border-color: #FF0000;
     border-style: solid;
     border-width: 1px 0 1px 1px ;
-}
-#contact-page .contact-form-wrapper .contact-form-btn{
-    margin-top: 11px;
 }
 #contact-page .contact-form .MuiInput-underline:after{
     border-bottom: 2px solid #FF0000;
@@ -1138,6 +1135,7 @@ footer p{
 #production-page .production-category-btn-wrapper .underline-effect:after {
     left: -2.5px;
 }
+/* PERFORMANCE LIST IN PERFORMANCE PAGE 
 #production-page .production-performance-btn-wrapper {
     font-weight: bold;
     display: inline-block;
@@ -1157,7 +1155,7 @@ footer p{
 }
 #production-page .production-performance-btn:hover {
     transform: scale(1.25); 
-}
+} */
 #production-page .performances {
     height: 722px;
 }

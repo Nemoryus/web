@@ -6,7 +6,6 @@ import Box from "@material-ui/core/Box";
 
 import CategoryPage from "./CategoryPage"
 import ProductionCategoryMenu from '../components/ProductionCategoryMenu';
-import ProductionPerformanceMenu from '../components/ProductionPerformanceMenu';
 import ProductionGrid from '../components/ProductionGrid'
 import ProductionGridA from '../components/ProductionGridA'
 import ProductionGridB from '../components/ProductionGridB'
@@ -69,7 +68,8 @@ function ProductionPage({ setHeaderType, selectedPerformance, setSelectedPerform
                 <ProductionCategoryMenu selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
               </Grid>
             </Grid>
-            <ProductionPerformanceMenu performances={performances} setSelectedPerformance={setSelectedPerformance} />
+            {/* PERFORMANCE LIST IN PERFORMANCE PAGE  
+            <ProductionPerformanceMenu performances={performances} setSelectedPerformance={setSelectedPerformance} /> */}
             <ProductionGridLayout/>
           </Grid>
         </Grid>
