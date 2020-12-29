@@ -1,11 +1,9 @@
-import React from 'react';
-import { useState } from "react";
+import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
-export default function ContactFormular({ toggleOpen }) {
+export default function ContactFormular({ isOpenedForm }) {
   const [email, setEmail] = useState({
     name: null,
     email: null,
@@ -28,21 +26,17 @@ export default function ContactFormular({ toggleOpen }) {
   }
 
   return (
-    <ClickAwayListener disableUnderline={true} onClickAway={toggleOpen}>
-      <form disableUnderline={true} className='contact-form t-left'>
+      <form className='contact-form t-left'>
         <TextField
-          disableUnderline={true}
           className="push-btm"
           required
           fullWidth
           label="Your name"
           name="name"
-          autoFocus
           value={email.name || ""}
           onChange={handleChange}
         />
         <TextField
-          disableUnderline={true}
           className="push-btm"
           required
           fullWidth
@@ -71,8 +65,7 @@ export default function ContactFormular({ toggleOpen }) {
           value={email.message || ""}
           onChange={handleChange}
         />
-        <Button className='btn btn-2 contact-form-btn t-center-none' onClick={sendEmail}>send</Button>
+        <Button className='btn btn-2 push-top-hlf' onClick={sendEmail}>send</Button>
       </form>
-    </ClickAwayListener>
   );
 }

@@ -69,7 +69,7 @@ function SliderPerformances({
         prevArrow: <PrevArrow enabledButtons={enabledButtons} moveBackward={moveBackward} />,
         beforeChange: (current, next) => {
             setEnabledButtons(false)
-            if((current == performances.length - 1 && next == 0) || (current < next && (current != 0 || next != performances.length - 1))) {
+            if((current === performances.length - 1 && next === 0) || (current < next && (current !== 0 || next !== performances.length - 1))) {
                 // hide current performance
                 let sliderWrapper = document.getElementsByClassName('slider-performances')[0]
                 sliderWrapper.querySelectorAll("[data-index='" +  current + "']")[0].style.opacity = 0;

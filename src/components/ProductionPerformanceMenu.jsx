@@ -12,7 +12,7 @@ export default function ProductionPerformanceMenu({ performances, setSelectedPer
                 </span>
             );
         })
-        return <Box className="production-performencas-menu padd-btm push-btm-hlf padd-top push-top-hlf">{menuItems}</Box>;
+        return <Box className="padd-btm push-btm-hlf padd-top push-top-hlf">{menuItems}</Box>;
     }
 
     return (

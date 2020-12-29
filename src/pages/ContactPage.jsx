@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
 import { Text } from '../containers/Language';
 import ContactFormular from '../components/ContactFormular'
@@ -16,42 +17,43 @@ function ContactPage({ setHeaderType, setSelectedPerformance }) {
     }, [])
 
     const toggleOpenedForm = () => {
-        setOpenForm((isOpenedForm) => !isOpenedForm);
+        setOpenForm((prev) => !prev);
     };
 
+    const closeOpenedForm = () => {
+        setOpenForm(false);
+    };
+    
     return (
         <Box id="contact-page" className='content-dark content-padd-top padd-btm-dbl'>
             <h3 className='page-title push-top-dbl padd-top-dbl'><Text tid="contact"/></h3>
             <Box className="push-btm push-top padd-btm-hlf padd-top">
                 <Grid className="contact-content" container alignItems='center'>
-                    <Grid className="contact-info fullHeight padd-top-90 t-center" item xs={isOpenedForm ? 5 : 12}>
+                    <Grid className="contact-info" item xs={isOpenedForm ? 6 : 12}>
+                        <p className={`${isOpenedForm ? "" : "text-center"}`}>
+                            <span className="o-low push-btm-hlf">Ján Durovčík</span>
+                            <br/>
+                            <span>Adress</span>
+                            <br/>
+                            <span className="o-low push-btm-hlf">Pribinova 25, 811 09 Bratislava, SLOVAKIA</span>
+                            <br/>
+                            <span>Phone</span>
+                            <br/>
+                            <span className="o-low push-btm-hlf">+421-2-54645811</span>
+                            <br/>
+                            <span>Email</span>
+                            <br/>
+                            <span className="o-low push-btm-hlf">jan@jan.sk</span>
+                        </p>
+                    </Grid>
+                    <ClickAwayListener onClickAway={closeOpenedForm}>
                         <Box>
-                            <p>
-                                <span className="o-low">Ján Durovčík</span>
-                            </p>
-                            <p>
-                                Adress<br />
-                                <span className="o-low">Pribinova 25, 811 09 Bratislava, SLOVAKIA</span>
-                            </p>
-                            <p>
-                                Phone<br />
-                                <span className="o-low">+421-2-54645811</span>
-                            </p>
-                            <p>
-                                Email<br />
-                                <span className="o-low">jan@jan.sk</span>
-                            </p>
-                        </Box>
-                    </Grid>
-                    <Grid className='contact-form-wrapper' item xs={isOpenedForm ? 6 : 1}>
-                        {isOpenedForm ?
-                            <ContactFormular toggleOpen={toggleOpenedForm} />
-                            :
-                            <Grid item xs={1} className="contact-form-btn-wrapper">
-                                <Button className='btn btn-2 contact-form-btn' onClick={toggleOpenedForm}>Contact form</Button>
+                            <Button className='btn btn-2 contact-form-btn' onClick={toggleOpenedForm}>Contact form</Button>
+                            <Grid className={`contact-form-wrapper ${isOpenedForm ? "opened" : ""}`} item xs={6}>
+                                <ContactFormular isOpenedForm={isOpenedForm}/>
                             </Grid>
-                        }
-                    </Grid>
+                        </Box>
+                    </ClickAwayListener>
                 </Grid>
             </Box>
         </Box>
