@@ -6,7 +6,7 @@ import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 function HomePagePerformancesItem({ performance, setSelectedPerformance, useAnimation }) {
 
     return (
-        <div key={performance.id} className={`pos-abs performances-item ${useAnimation ? "use-animation" : ""}`}>
+        <Box key={performance.id} className={`pos-abs performances-item ${useAnimation ? "use-animation" : ""}`}>
             <Box className="pos-rel fullSize">
                 <img className="fullSize" src={require(`../picture/${performance.images[0]}`)}/>
                 <Box className="overlay pos-abs"></Box>
@@ -34,7 +34,7 @@ function HomePagePerformancesItem({ performance, setSelectedPerformance, useAnim
                     </Box>
                 </Box>
             </Box>
-        </div>
+        </Box>
     )
 }
 

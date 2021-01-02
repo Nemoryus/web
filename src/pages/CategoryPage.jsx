@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
@@ -14,7 +14,7 @@ import Slider from "react-slick";
 
 import { PerformancesCtx } from "./Main";
 
-function SliderImages({ images }) {
+function SliderImages({ images, setChangeReview }) {
   const settings = {
     arrows: false,
     dots: true,
@@ -25,7 +25,10 @@ function SliderImages({ images }) {
     fade: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    pauseOnHover: false
+    pauseOnHover: false,
+    beforeChange: () => {
+      setChangeReview(true)
+    }
   };
 
   return (
@@ -33,6 +36,45 @@ function SliderImages({ images }) {
       {images.map((image, index) => {
         return (
           <img key={index} className="slider-image" src={require(`../picture/${image}`)} />
+        )
+      })}
+    </Slider>
+  )
+};
+
+function SliderReviews({ reviews, changeReview, setChangeReview }) {
+  const slickerRef = useRef(null);
+  const settings = {
+    arrows: false,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    focusOnSelect: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnHover: false
+  };
+
+  useEffect(() => {
+    if(changeReview) {
+      slickerRef.current.slickNext();
+    }
+    setChangeReview(false)
+  }, [changeReview])
+
+  return (
+    <Slider {...settings} ref={slickerRef}>
+      {reviews.map((review, index) => {
+        return (
+          <Box key={index}>
+            <Box className="slider-review-wrapper padd-hlf">
+              <Box className="slider-review t-bold">
+                <q>{review.body}</q>
+              </Box>
+              <Box className="slider-review-author push-top">{review.author}</Box>
+            </Box>
+          </Box>
         )
       })}
     </Slider>
@@ -76,6 +118,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
   const [startedMenuPosition] = useState(selectedPerformance.id - 1)
   const [showTrailerVideo, setShowTrailerVideo] = useState(false)
   const [showTrailerVideoMini, setShowTrailerVideoMini] = useState(false)
+  const [changeReview, setChangeReview] = useState(false)
 
   useEffect(() => {
     window.addEventListener('scroll', handleShowTrailerVideoMini)
@@ -106,6 +149,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
   const handleChangeSelectedPerformance = (newSelectedPerformance) => {
     setShowTrailerVideo(false) // hide trailer video
     setSelectedPerformance(newSelectedPerformance) // set new performance
+    setChangeReview(false)
   }
 
   return (
@@ -113,12 +157,15 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
       <ScrollToTop forceScroll={true} />
       <div className="slider-wrapper pos-rel">
         {selectedPerformance.images.length > 0 &&
-          <SliderImages images={selectedPerformance.images} />
+          <SliderImages images={selectedPerformance.images} setChangeReview={setChangeReview}/>
         }
         <div className="category-menu-wrapper t-white fullWidth">
           <div className="category-menu">
             <SliderMenu performances={performances} startedMenuPosition={startedMenuPosition} handleChangeSelectedPerformance={handleChangeSelectedPerformance} />
           </div>
+        </div>
+        <div className="category-reviews-wrapper fullHeight pos-abs t-white">
+          <SliderReviews reviews={selectedPerformance.reviews} changeReview={changeReview} setChangeReview={setChangeReview}/>
         </div>
         {!(showTrailerVideo && showTrailerVideoMini) &&
           <Box className={`trailer-btn-wrapper pos-abs ${showTrailerVideo ? "zIndex" : ""}`}>
@@ -129,9 +176,9 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
                     <CloseIcon />
                   </SvgIcon>
                 :
-                <SvgIcon style={{ fontSize: 100, width: '25%', height: '100%', color: '#FF0000', borderLeft: '2px solid #FF0000' }}>
-                  <ArrowDropDownIcon/>
-                </SvgIcon>
+                  <SvgIcon style={{ fontSize: 100, width: '25%', height: '100%', color: '#FF0000', borderLeft: '2px solid #FF0000' }}>
+                    <ArrowDropDownIcon/>
+                  </SvgIcon>
               }
             </IconButton>
           </Box>

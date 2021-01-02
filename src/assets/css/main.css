@@ -734,11 +734,10 @@ footer p{
     padding: 0;
     left: 0;
     bottom: 0;
-    animation: image-move-back 0s linear 2.5s forwards,
-               image-scale-out 1.25s cubic-bezier(1,.2,.85,.5) 4.5s forwards;
+    animation: image-move-back 0s linear 2.5s forwards;
 }
 #home-page .performances-item.use-animation {
-    bottom: 161px;
+    bottom: 241px;
     width: 262px;
     height: 314px;
     left: 50%;
@@ -746,9 +745,8 @@ footer p{
     animation:  image-scale-in 1s cubic-bezier(1,.2,.85,.5) forwards,
                 image-blur .5s cubic-bezier(1,.2,.85,.5) forwards,
                 image-fade-in 0s cubic-bezier(1,.2,.85,.5) forwards,
-                image-move-back 0s linear forwards,
-                image-scale-out 1.25s cubic-bezier(1,.2,.85,.5) forwards;
-    animation-delay: 2.5s, 2.5s, 2.5s, 6s, 7.5s;
+                image-move-back 0s linear forwards;
+    animation-delay: 2.5s, 2.5s, 2.5s, 6s;
 }
 @keyframes image-scale-in {
     to {
@@ -767,11 +765,6 @@ footer p{
 @keyframes image-fade-in {
     to {
         opacity: 1;
-    }
-}
-@keyframes image-scale-out {
-    to {
-        transform: scale(1.20);
     }
 }
 @keyframes image-move-back {
@@ -841,24 +834,22 @@ footer p{
 }
 #home-page .performances-wrapper .slider-performances {
     z-index: 200;
-    bottom: 70px;
+    bottom: 150px;
     left: 50%;
     width: 55%;
 }
 #home-page .slider-performances .slick-arrow {
     position: absolute;
-    left: -45px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     transition: border .3s, color .3s, background-color .5s;
+    right: 145px;
+    top: 100%;
 }
 #home-page .slider-performances .slick-arrow.slick-prev-arrow {
     transform: rotate(180deg);
-    top: 130px;
-}
-#home-page .slider-performances .slick-arrow.slick-next-arrow {
-    top: 175px;
+    right: 200px
 }
 #home-page .slider-performances .slick-slide {
     padding: 15px 20px;
@@ -1161,15 +1152,7 @@ footer p{
 /*         Production page - end          */
 
 /*         Category page - begin         */
-/* slider settings in this page */
-
-#category-page .MuiInputBase-input.MuiInput-input:hover{
-    border-bottom:none!important
-}
-#category-page .trailer-btn-text{
-    width: 75%;
-    font-size: 0.875rem;
-}
+/* main slider in this page */
 #category-page .slider-wrapper {
     height: 100vh;
 }
@@ -1192,7 +1175,8 @@ footer p{
     color: white;
     opacity: 1
 }
-/* menu under slider in this page */
+
+/* menu slider in this page */
 #category-page .category-menu-wrapper {
     background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(4,8,33,1) 95%);
     bottom: 0;
@@ -1231,6 +1215,35 @@ footer p{
     font-weight: bold;
     transform: scale(2);
 }
+
+/* reviews slider in this page */
+#category-page .category-reviews-wrapper {
+    left: 160px;
+    top: 0;
+    width: 40%;
+}
+#category-page .category-reviews-wrapper .slick-slider, 
+#category-page .category-reviews-wrapper .slick-list, 
+#category-page .category-reviews-wrapper .slick-track {
+    height: 100%
+} 
+#category-page .slider-review-wrapper {
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    /* background: linear-gradient(90deg, rgba(4,8,33,0) 0%, rgba(4,8,33,.7) 50%, rgba(4,8,33,0) 100%); */
+    background-color: rgba(4, 8, 33, .7);
+    box-shadow: 0px 0px 15px 10px rgba(4,8,33,.7);
+    width: 90%;
+    margin: 5%;
+}
+#category-page .slider-review-wrapper .slider-review {
+    font-size: 28px;
+}
+#category-page .slider-review-wrapper .slider-review-author {
+    font-size: 20px;
+}
+
 #category-page .trailer-btn-wrapper {    
     width: 194px;
     right: -25px;
@@ -1240,6 +1253,10 @@ footer p{
 }
 #category-page .trailer-btn-wrapper.zIndex {
     z-index: 302
+}
+#category-page .trailer-btn-wrapper .trailer-btn-text {
+    width: 75%;
+    font-size: 0.875rem;
 }
 #category-page .trailer-video-wrapper {
     width: 100%;
@@ -1257,7 +1274,7 @@ footer p{
     position: fixed;
     align-items: flex-end;
 }
-#category-page .trailer-video-wrapper.mini .close-btn{
+#category-page .trailer-video-wrapper.mini .close-btn {
     width: fit-content;
 }
 #category-page .page-content {
