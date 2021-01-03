@@ -14,20 +14,20 @@ import Slider from "react-slick";
 
 import { PerformancesCtx } from "./Main";
 
-function SliderImages({ images, setChangeReview }) {
+function SliderImages({ images, setChangedImage }) {
   const settings = {
     arrows: false,
     dots: true,
     infinite: true,
     autoplay: true,
     speed: 500,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 8000,
     fade: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: false,
     beforeChange: () => {
-      setChangeReview(true)
+      setChangedImage(true)
     }
   };
 
@@ -42,7 +42,7 @@ function SliderImages({ images, setChangeReview }) {
   )
 };
 
-function SliderReviews({ reviews, changeReview, setChangeReview }) {
+function SliderReviews({ reviews, changedImage, setChangedImage, changedPerformance, setChangedPerformance }) {
   const slickerRef = useRef(null);
   const settings = {
     arrows: false,
@@ -57,11 +57,12 @@ function SliderReviews({ reviews, changeReview, setChangeReview }) {
   };
 
   useEffect(() => {
-    if(changeReview) {
+    if(changedImage || changedPerformance) {
       slickerRef.current.slickNext();
     }
-    setChangeReview(false)
-  }, [changeReview])
+    setChangedPerformance(false)
+    setChangedImage(false)
+  }, [changedImage, changedPerformance])
 
   return (
     <Slider {...settings} ref={slickerRef}>
@@ -118,7 +119,8 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
   const [startedMenuPosition] = useState(selectedPerformance.id - 1)
   const [showTrailerVideo, setShowTrailerVideo] = useState(false)
   const [showTrailerVideoMini, setShowTrailerVideoMini] = useState(false)
-  const [changeReview, setChangeReview] = useState(false)
+  const [changedImage, setChangedImage] = useState(false)
+  const [changedPerformance, setChangedPerformance] = useState(false)
 
   useEffect(() => {
     window.addEventListener('scroll', handleShowTrailerVideoMini)
@@ -149,7 +151,8 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
   const handleChangeSelectedPerformance = (newSelectedPerformance) => {
     setShowTrailerVideo(false) // hide trailer video
     setSelectedPerformance(newSelectedPerformance) // set new performance
-    setChangeReview(false)
+    setChangedImage(false)
+    setChangedPerformance(true)
   }
 
   return (
@@ -157,7 +160,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
       <ScrollToTop forceScroll={true} />
       <div className="slider-wrapper pos-rel">
         {selectedPerformance.images.length > 0 &&
-          <SliderImages images={selectedPerformance.images} setChangeReview={setChangeReview}/>
+          <SliderImages images={selectedPerformance.images} setChangedImage={setChangedImage}/>
         }
         <div className="category-menu-wrapper t-white fullWidth">
           <div className="category-menu">
@@ -165,7 +168,7 @@ function CategoryPage({ selectedPerformance, setSelectedPerformance }) {
           </div>
         </div>
         <div className="category-reviews-wrapper fullHeight pos-abs t-white">
-          <SliderReviews reviews={selectedPerformance.reviews} changeReview={changeReview} setChangeReview={setChangeReview}/>
+          <SliderReviews reviews={selectedPerformance.reviews} changedImage={changedImage} setChangedImage={setChangedImage} changedPerformance={changedPerformance} setChangedPerformance={setChangedPerformance}/>
         </div>
         {!(showTrailerVideo && showTrailerVideoMini) &&
           <Box className={`trailer-btn-wrapper pos-abs ${showTrailerVideo ? "zIndex" : ""}`}>
