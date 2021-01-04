@@ -1227,12 +1227,12 @@ footer p{
 #category-page .category-reviews-wrapper .slick-track {
     height: 100%
 } 
-#category-page .slider-review-wrapper {
+#category-page .category-reviews-wrapper .slider-review-wrapper {
     top: 50%;
     position: absolute;
     transform: translateY(-50%);
-    background-color: rgba(4, 8, 33, .7);
-    box-shadow: 0px 0px 15px 10px rgba(4,8,33,.7);
+    background-color: rgba(4, 8, 33, .5);
+    box-shadow: 0px 0px 10px 10px rgba(4,8,33,.5);
     width: 90%;
     margin: 5%;
     opacity: 0;
